@@ -1,0 +1,15 @@
+{
+  "account": "anime_attention",
+  "list_id": "2072549805046587615",
+  "window_hours": 12,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 30,
+  "exclude_retweets": true,
+  "exclude_replies": true,
+  "page_size": 50,
+  "max_posts_per_run": 600,
+  "cost_per_post_usd": 0.005,
+  "keep_runs": 60,
+  "schedule": ["06:00", "18:00"]
+}
