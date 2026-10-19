@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>時間帯別の投稿数</title>
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #ffffff; --text: #0f1419; --sub: #5b6670; --muted: #8a959e; --line: #e3e7eb;
+    --grid: #eceff2; --s1: #2a78d6; --s2: #eb6834;
+    --q0: #cde2fb; --q1: #9ec5f4; --q2: #6da7ec; --q3: #3987e5; --q4: #256abf; --q5: #184f95; --q6: #0d366b;
+    --empty: #f0f2f4; --tip-bg: #0f1419; --tip-ink: #ffffff;
+    --i0: #0f1419; --i1: #0f1419; --i2: #0f1419; --i3: #ffffff; --i4: #ffffff; --i5: #ffffff; --i6: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0e12; --card: #151a20; --text: #e7ecf0; --sub: #a3aeb8; --muted: #6f7b86; --line: #26303a;
+      --grid: #212a33; --s1: #3987e5; --s2: #d95926;
+      --q0: #10243d; --q1: #104281; --q2: #184f95; --q3: #256abf; --q4: #3987e5; --q5: #6da7ec; --q6: #b7d3f6;
+      --empty: #1b2128; --tip-bg: #e7ecf0; --tip-ink: #0f1419;
+      --i0: #e7ecf0; --i1: #e7ecf0; --i2: #e7ecf0; --i3: #ffffff; --i4: #0b0e12; --i5: #0b0e12; --i6: #0b0e12;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--line); padding: 10px 16px; }
+  .bar { display: flex; align-items: center; gap: 12px; max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 17px; margin: 0; flex: 1; }
+  header a { color: var(--s1); text-decoration: none; font-size: 14px; white-space: nowrap; }
+  main { max-width: 760px; margin: 0 auto; padding: 12px 16px 60px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 14px; }
+  h2 { font-size: 15px; margin: 0 0 2px; }
+  .note { color: var(--sub); font-size: 12.5px; margin: 0 0 10px; }
+  .legend { display: flex; gap: 14px; font-size: 12.5px; color: var(--sub); margin-bottom: 6px; }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  svg { display: block; width: 100%; height: auto; overflow: visible; }
+  svg text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .hit { fill: transparent; cursor: pointer; }
+  .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table.heat { border-collapse: separate; border-spacing: 2px; font-size: 11px; font-variant-numeric: tabular-nums; }
+  table.heat th { color: var(--muted); font-weight: 500; padding: 0 2px; }
+  table.heat th.d { position: sticky; left: 0; background: var(--card); text-align: right; padding-right: 6px; white-space: nowrap; }
+  table.heat td { width: 22px; min-width: 22px; height: 22px; text-align: center; border-radius: 4px; cursor: pointer; }
+  table.heat td.na { background: var(--empty); color: transparent; cursor: default;
+                     background-image: repeating-linear-gradient(45deg, transparent 0 4px, var(--line) 4px 5px); }
+  details { margin-top: 10px; font-size: 13px; }
+  summary { color: var(--s1); cursor: pointer; }
+  table.num { border-collapse: collapse; margin-top: 8px; font-variant-numeric: tabular-nums; width: 100%; }
+  table.num th, table.num td { padding: 4px 6px; border-bottom: 1px solid var(--line); text-align: right; }
+  table.num th:first-child, table.num td:first-child { text-align: left; }
+  table.num th { color: var(--sub); font-weight: 500; }
+  #tip { position: fixed; z-index: 20; pointer-events: none; background: var(--tip-bg); color: var(--tip-ink);
+         font-size: 12.5px; line-height: 1.5; padding: 7px 10px; border-radius: 8px; max-width: 240px; display: none; }
+  .empty { text-align: center; color: var(--sub); padding: 40px 0; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>時間帯別の投稿数</h1>
+    <a href="./">← 返信候補</a>
+  </div>
+</header>
+<main id="main"><div class="empty">読み込み中…</div></main>
+<div id="tip"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const WD = ['日', '月', '火', '水', '木', '金', '土'];
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+function sv(tag, attrs) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+const f1 = (n) => (Math.round(n * 10) / 10).toFixed(1);
+
+// ツールチップ（マウスは追従、タップは表示/非表示）
+const tip = $('tip');
+function showTip(html, x, y) {
+  tip.innerHTML = html; tip.style.display = 'block';
+  const r = tip.getBoundingClientRect();
+  tip.style.left = Math.min(window.innerWidth - r.width - 8, Math.max(8, x - r.width / 2)) + 'px';
+  tip.style.top = Math.max(8, y - r.height - 12) + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+function bindTip(node, html) {
+  node.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') showTip(html(), e.clientX, e.clientY); });
+  node.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hideTip(); });
+  node.addEventListener('click', (e) => { e.stopPropagation(); showTip(html(), e.clientX, e.clientY); });
+}
+document.addEventListener('click', hideTip);
+window.addEventListener('scroll', hideTip, { passive: true });
+
+async function init() {
+  let data;
+  try { data = await (await fetch('hourly.json?t=' + Date.now(), { cache: 'no-store' })).json(); }
+  catch (e) { $('main').replaceChildren(el('div', 'empty', 'まだ記録がありません。次の定時実行（6:00 / 18:00）から記録されます。')); return; }
+  const keys = Object.keys(data.hours || {}).sort();
+  if (!keys.length) { $('main').replaceChildren(el('div', 'empty', 'まだ記録がありません。')); return; }
+
+  // 時刻（0〜23時台）ごとに平均を出す
+  const by = Array.from({ length: 24 }, () => ({ o: 0, x: 0, n: 0 }));
+  for (const k of keys) {
+    const v = data.hours[k], h = +k.slice(11, 13);
+    by[h].o += v.o; by[h].x += v.rt + v.rp; by[h].n += 1;
+  }
+  const days = new Set(keys.map(k => k.slice(0, 10)));
+  const main = $('main'); main.replaceChildren();
+
+  // ① 平均の積み上げ縦棒
+  const c1 = el('section', 'card');
+  c1.append(el('h2', null, '何時台に投稿が多いか（1時間あたりの平均件数）'),
+            el('p', 'note', `リストのメンバー全員の投稿。記録 ${keys.length}時間分（${days.size}日にまたがる）。棒をタップすると詳細`));
+  const lg = el('div', 'legend');
+  lg.innerHTML = '<span><i style="background:var(--s1)"></i>通常・引用（返信候補になる投稿）</span><span><i style="background:var(--s2)"></i>RT・返信</span>';
+  const chartBox = el('div'); c1.append(lg, chartBox);
+  const draw = () => chartBox.replaceChildren(barChart(by, chartBox.clientWidth || 340));
+  requestAnimationFrame(draw);
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(draw, 150); });
+  c1.append(numTable(by));
+  main.append(c1);
+
+  // ② 日付 × 時刻の一覧
+  const c2 = el('section', 'card');
+  c2.append(el('h2', null, '日ごとの投稿数（全種類の合計）'),
+            el('p', 'note', '縦が時刻、横が日付（右ほど新しい）。色が濃いほど多い。斜線は未計測。直近14日分'));
+  c2.append(heatmap(data.hours, [...days].sort().reverse().slice(0, 14)));
+  main.append(c2);
+
+  const upd = new Date(data.updated);
+  main.append(el('p', 'note', `最終更新 ${upd.getMonth() + 1}/${upd.getDate()} ${String(upd.getHours()).padStart(2, '0')}:${String(upd.getMinutes()).padStart(2, '0')}`));
+}
+
+function barChart(by, W) {
+  const H = 200, L = 24, R = 2, T = 8, B = 20;
+  const avg = by.map(b => b.n ? { o: b.o / b.n, x: b.x / b.n } : null);
+  const max = Math.max(1, ...avg.filter(Boolean).map(a => a.o + a.x));
+  const step = max <= 5 ? 1 : max <= 12 ? 2 : max <= 30 ? 5 : 10;
+  const top = Math.ceil(max / step) * step;
+  const y = (v) => T + (H - T - B) * (1 - v / top);
+  const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': '時間帯別の平均投稿数' });
+  for (let v = 0; v <= top; v += step) {
+    svg.append(sv('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), stroke: 'var(--grid)', 'stroke-width': 1 }));
+    const t = sv('text', { x: L - 6, y: y(v) + 3, 'text-anchor': 'end' }); t.textContent = v; svg.append(t);
+  }
+  const cw = (W - L - R) / 24, bw = Math.max(4, cw - Math.max(2, cw * 0.3));
+  const round = (x, yTop, w, h) => {  // 上の角だけ4px丸める
+    const r = Math.min(4, w / 2, h);
+    return `M${x},${yTop + h}V${yTop + r}Q${x},${yTop} ${x + r},${yTop}H${x + w - r}Q${x + w},${yTop} ${x + w},${yTop + r}V${yTop + h}Z`;
+  };
+  avg.forEach((a, h) => {
+    const x = L + h * cw + (cw - bw) / 2;
+    if (a) {
+      const yo = y(a.o), yx = y(a.o + a.x);
+      const hO = y(0) - yo, hX = yo - yx;
+      if (a.x > 0 && a.o > 0) {
+        svg.append(sv('rect', { x, y: yo, width: bw, height: Math.max(0, hO), fill: 'var(--s1)' }));
+        svg.append(sv('path', { d: round(x, yx, bw, Math.max(0, hX - 2)), fill: 'var(--s2)' }));  // 2pxのすき間
+      } else if (a.o > 0) {
+        svg.append(sv('path', { d: round(x, yo, bw, hO), fill: 'var(--s1)' }));
+      } else if (a.x > 0) {
+        svg.append(sv('path', { d: round(x, yx, bw, hX), fill: 'var(--s2)' }));
+      }
+    } else {
+      svg.append(sv('rect', { x, y: y(0) - 3, width: bw, height: 3, rx: 1.5, fill: 'var(--grid)' }));
+    }
+    if (h % 3 === 0) { const t = sv('text', { x: L + h * cw + cw / 2, y: H - 6, 'text-anchor': 'middle' }); t.textContent = h + '時'; svg.append(t); }
+    const hit = sv('rect', { class: 'hit', x: L + h * cw, y: T, width: cw, height: H - T - B });
+    const b = by[h];
+    bindTip(hit, () => a
+      ? `<b>${h}時台</b>　平均 ${f1(a.o + a.x)}件<br>通常・引用 ${f1(a.o)} ／ RT・返信 ${f1(a.x)}<br><span style="opacity:.7">${b.n}回分の平均</span>`
+      : `<b>${h}時台</b>　まだ計測していません`);
+    svg.append(hit);
+  });
+  svg.append(sv('line', { x1: L, x2: W - R, y1: y(0), y2: y(0), stroke: 'var(--muted)', 'stroke-width': 1 }));
+  return svg;
+}
+
+function numTable(by) {
+  const d = el('details'); d.append(el('summary', null, '数値の表で見る'));
+  const t = el('table', 'num');
+  t.innerHTML = '<tr><th>時間帯</th><th>平均</th><th>通常・引用</th><th>RT・返信</th><th>計測回数</th></tr>';
+  by.forEach((b, h) => {
+    const tr = el('tr');
+    const cells = b.n ? [f1((b.o + b.x) / b.n), f1(b.o / b.n), f1(b.x / b.n), b.n] : ['—', '—', '—', 0];
+    [`${h}時台`, ...cells].forEach(v => tr.append(el('td', null, v)));
+    t.append(tr);
+  });
+  d.append(t);
+  return d;
+}
+
+function heatmap(hours, dates) {
+  dates = dates.slice().reverse();  // 左が古く、右が新しい
+  const vals = Object.values(hours).map(v => v.o + v.rt + v.rp);
+  const max = Math.max(1, ...vals);
+  const wrap = el('div', 'scroll'), t = el('table', 'heat');
+  const h1 = el('tr'), h2 = el('tr');
+  h1.append(el('th', 'd')); h2.append(el('th', 'd'));
+  for (const d of dates) {
+    const wd = WD[new Date(Date.UTC(+d.slice(0, 4), +d.slice(5, 7) - 1, +d.slice(8, 10))).getUTCDay()];
+    h1.append(el('th', null, `${+d.slice(5, 7)}/${+d.slice(8, 10)}`.replace(/^\d+\//, (m) => dates.indexOf(d) === 0 || d.slice(8, 10) === '01' ? m : '')));
+    h2.append(el('th', null, wd));
+  }
+  t.append(h1, h2);
+  for (let h = 0; h < 24; h++) {
+    const tr = el('tr'); tr.append(el('th', 'd', h + '時'));
+    for (const d of dates) {
+      const k = `${d}T${String(h).padStart(2, '0')}`, v = hours[k];
+      if (!v) { tr.append(el('td', 'na', '')); continue; }
+      const n = v.o + v.rt + v.rp;
+      const q = Math.min(6, Math.floor((n / max) * 6.999));
+      const td = el('td', null, n);
+      td.style.background = `var(--q${q})`;
+      td.style.color = `var(--i${q})`;
+      bindTip(td, () => `<b>${+d.slice(5, 7)}/${+d.slice(8, 10)} ${h}時台</b>　${n}件<br>通常・引用 ${v.o} ／ RT ${v.rt} ／ 返信 ${v.rp}`);
+      tr.append(td);
+    }
+    t.append(tr);
+  }
+  wrap.append(t);
+  return wrap;
+}
+init();
+</script>
+</body>
+</html>

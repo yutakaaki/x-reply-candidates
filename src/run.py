@@ -158,6 +158,47 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id):
     return out, matched
 
 
+def hourly_counts(posts, cutoff, now):
+    """読めた範囲の中で丸ごと見えた1時間ごと（JST）に、投稿数を種類別に数える。
+    o=通常・引用、rt=リツイート、rp=返信。範囲の端で欠ける時間は数えない（開始10分の欠けまでは許容）"""
+    hour = timedelta(hours=1)
+    # 投稿は新しい順に切れ目なく読んでいるので、読めた一番古い投稿の時刻までは全件そろっている
+    start = parse_time(posts[-1]['created_at']).astimezone(JST) if posts else cutoff.astimezone(JST)
+    first = start.replace(minute=0, second=0, microsecond=0)
+    if start - first > timedelta(minutes=10):
+        first += hour
+    end = now.replace(minute=0, second=0, microsecond=0)
+    hours, h = {}, first
+    while h + hour <= end:
+        hours[h.strftime('%Y-%m-%dT%H')] = {'o': 0, 'rt': 0, 'rp': 0}
+        h += hour
+    for t in posts:
+        k = parse_time(t['created_at']).astimezone(JST).strftime('%Y-%m-%dT%H')
+        if k not in hours:
+            continue
+        refs = {r['type'] for r in t.get('referenced_tweets') or []}
+        hours[k]['rt' if 'retweeted' in refs else 'rp' if 'replied_to' in refs else 'o'] += 1
+    return hours
+
+
+def update_hourly(hours, now, keep_days=60):
+    """docs/hourly.json に時間帯ごとの投稿数をためる（同じ時間を複数回見たら多い方を採用）"""
+    path = os.path.join(DOCS, 'hourly.json')
+    try:
+        data = json.load(open(path, encoding='utf-8'))
+    except Exception:
+        data = {'hours': {}}
+    for k, v in hours.items():
+        old = data['hours'].get(k)
+        if not old or sum(v.values()) >= sum(old.values()):
+            data['hours'][k] = v
+    oldest = (now - timedelta(days=keep_days)).strftime('%Y-%m-%dT%H')
+    data['hours'] = {k: v for k, v in sorted(data['hours'].items()) if k >= oldest}
+    data['updated'] = now.isoformat()
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, separators=(',', ':'))
+
+
 def write_run(run, cfg):
     os.makedirs(RUNS_DIR, exist_ok=True)
     with open(os.path.join(RUNS_DIR, f'{run["id"]}.json'), 'w', encoding='utf-8') as f:
@@ -243,6 +284,9 @@ def main():
             f'／推定 ${run["stats"]["est_cost_usd"]}')
         if not reached:
             log(f'⚠️ 上限 {cfg["max_posts_per_run"]}件に達したため12時間分を取り切れていません')
+        hours = hourly_counts(posts, cutoff, now)
+        update_hourly(hours, now)
+        log(f'時間帯別の投稿数を記録: {len(hours)}時間分')
         status_msg = f'{len(run["posts"])}件の返信候補を更新しました'
     except xauth.ApiError as e:
         hint = {401: '認証切れ → login.command で再ログイン',
