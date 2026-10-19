@@ -35,6 +35,12 @@
   .tools { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
            font-size: 13px; color: var(--sub); }
   .tools label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  .sortbar { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-size: 13px; color: var(--sub); }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .seg button { font: inherit; font-size: 13px; padding: 6px 12px; border: 0; background: var(--card);
+                color: var(--text); cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button.on { background: var(--text); color: var(--bg); font-weight: 600; }
   .banner { border-radius: 12px; padding: 10px 14px; margin-bottom: 12px; font-size: 14px; }
   .banner.warn { background: var(--warn-bg); color: var(--warn); }
   .banner.err { background: var(--err-bg); color: var(--err); }
@@ -89,6 +95,13 @@
 <main>
   <div id="summary" class="summary"></div>
   <div id="banner"></div>
+  <div class="sortbar" id="sortbar" hidden>
+    並び順
+    <div class="seg" role="group" aria-label="並び順">
+      <button type="button" data-sort="imp">表示数順</button>
+      <button type="button" data-sort="date">投稿が新しい順</button>
+    </div>
+  </div>
   <div class="tools" id="tools" hidden>
     <span id="doneCount"></span>
     <label><input type="checkbox" id="hideDone"> 対応済みを隠す</label>
@@ -135,6 +148,7 @@ async function init() {
   sel.onchange = () => { history.replaceState(null, '', '?run=' + sel.value); load(sel.value); };
   $('hideDone').checked = store.get('hideDone', false);
   $('hideDone').onchange = (e) => { store.set('hideDone', e.target.checked); render(); };
+  document.querySelectorAll('.seg button').forEach(b => b.onclick = () => { store.set('sort', b.dataset.sort); render(); });
   load(sel.value);
 }
 
@@ -193,7 +207,13 @@ function render() {
   if (run.error) banner.append(el('div', 'banner err', '⚠️ ' + run.error));
   else if (s && !s.reached_window) banner.append(el('div', 'banner warn', '取得上限に達したため、12時間分を最後まで取り切れていません（古い時間帯が抜けている可能性）。'));
 
-  const posts = run.posts || [];
+  const sort = store.get('sort', 'imp');
+  document.querySelectorAll('.seg button').forEach(b => b.classList.toggle('on', b.dataset.sort === sort));
+  const posts = (run.posts || []).slice();
+  // 順位の数字は常に表示数の順位のまま。並べ方だけ変える
+  if (sort === 'date') posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  else posts.sort((a, b) => a.rank - b.rank);
+  $('sortbar').hidden = !posts.length;
   const hide = $('hideDone').checked;
   const nDone = posts.filter(p => done[p.id]).length;
   $('tools').hidden = !posts.length;
