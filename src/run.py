@@ -45,10 +45,14 @@ def run_id_for(now, cfg):
 def fetch_list_posts(token, cfg, cutoff):
     """リストのタイムライン（新しい順）を、12時間前より古くなるまでページ送りで取得"""
     params = {'max_results': cfg['page_size'],
-              'tweet.fields': 'created_at,public_metrics,referenced_tweets,author_id,note_tweet',
-              'expansions': 'author_id',
+              'tweet.fields': 'created_at,public_metrics,referenced_tweets,author_id,note_tweet,attachments,entities',
+              # 画像・動画（引用ポストの場合は引用元の画像・動画）も一緒にもらう
+              'expansions': 'author_id,attachments.media_keys,referenced_tweets.id,'
+                            'referenced_tweets.id.attachments.media_keys',
+              'media.fields': 'type,url,preview_image_url,variants,duration_ms,width,height',
               'user.fields': 'username,name,profile_image_url'}
-    posts, users, next_token, reached = [], {}, None, False
+    posts, next_token, reached = [], None, False
+    inc = {'users': {}, 'media': {}, 'tweets': {}}
     while len(posts) < cfg['max_posts_per_run']:
         p = dict(params)
         if next_token:
@@ -56,16 +60,53 @@ def fetch_list_posts(token, cfg, cutoff):
         j = xauth.api_get(f'/lists/{cfg["list_id"]}/tweets', p, token)
         data = j.get('data') or []
         posts.extend(data)
-        for u in (j.get('includes') or {}).get('users', []):
-            users[u['id']] = u
+        includes = j.get('includes') or {}
+        for u in includes.get('users', []):
+            inc['users'][u['id']] = u
+        for m in includes.get('media', []):
+            inc['media'][m['media_key']] = m
+        for t in includes.get('tweets', []):
+            inc['tweets'][t['id']] = t
         next_token = (j.get('meta') or {}).get('next_token')
         if not data or not next_token or parse_time(data[-1]['created_at']) < cutoff:
             reached = True  # 12時間分を取り切った（またはリストの投稿を全部見た）
             break
-    return posts, users, reached
+    return posts, inc, reached
 
 
-def pick_candidates(posts, users, cfg, cutoff, me_id):
+def media_of(t, inc):
+    """ポストの画像・動画を、ページで表示・再生しやすい形に整える"""
+    out = []
+    for key in (t.get('attachments') or {}).get('media_keys', []):
+        m = inc['media'].get(key)
+        if not m:
+            continue
+        item = {'type': m['type'], 'w': m.get('width'), 'h': m.get('height'),
+                'thumb': m.get('url') or m.get('preview_image_url', '')}
+        if m['type'] in ('video', 'animated_gif'):
+            mp4s = [v for v in m.get('variants', []) if v.get('content_type') == 'video/mp4']
+            # スマホで見る前提で、2Mbps以下で一番高画質なものを選ぶ（無ければ最低画質）
+            mp4s.sort(key=lambda v: v.get('bit_rate', 0))
+            fit = [v for v in mp4s if v.get('bit_rate', 0) <= 2_200_000]
+            if mp4s:
+                item['mp4'] = (fit[-1] if fit else mp4s[0])['url']
+            if m.get('duration_ms'):
+                item['duration'] = round(m['duration_ms'] / 1000)
+        out.append(item)
+    return out
+
+
+def clean_text(t, text, hide_ids):
+    """本文末尾の画像・動画・引用元への t.co リンクを消す（別枠で表示するため）"""
+    for u in (t.get('entities') or {}).get('urls', []):
+        exp = u.get('expanded_url', '')
+        if u.get('media_key') or any(f'/status/{i}' in exp for i in hide_ids):
+            text = text.replace(u['url'], '')
+    return text.strip()
+
+
+def pick_candidates(posts, inc, cfg, cutoff, me_id):
+    users = inc['users']
     out = []
     for t in posts:
         if parse_time(t['created_at']) < cutoff:
@@ -83,7 +124,13 @@ def pick_candidates(posts, users, cfg, cutoff, me_id):
             continue
         u = users.get(t.get('author_id'), {})
         username = u.get('username', 'i')
+        quoted_ids = [r['id'] for r in t.get('referenced_tweets') or [] if r['type'] == 'quoted']
+        media, media_from_quote = media_of(t, inc), False
+        if not media and quoted_ids and quoted_ids[0] in inc['tweets']:
+            media = media_of(inc['tweets'][quoted_ids[0]], inc)  # 引用ポストは引用元の動画・画像を見せる
+            media_from_quote = bool(media)
         text = (t.get('note_tweet') or {}).get('text') or t.get('text', '')
+        text = clean_text(t, text, quoted_ids)
         out.append({
             'id': t['id'],
             'url': f'https://x.com/{username}/status/{t["id"]}',
@@ -94,6 +141,8 @@ def pick_candidates(posts, users, cfg, cutoff, me_id):
             'text': html.unescape(text),
             'created_at': parse_time(t['created_at']).astimezone(JST).isoformat(),
             'is_quote': 'quoted' in refs,
+            'media': media,
+            'media_from_quote': media_from_quote,
             'impressions': imp,
             'replies': rep,
             'likes': m.get('like_count', 0),
@@ -184,8 +233,8 @@ def main():
     try:
         token = xauth.access_token()
         me_id = xauth.load_secrets().get('me_id')
-        posts, users, reached = fetch_list_posts(token, cfg, cutoff)
-        run['posts'], matched = pick_candidates(posts, users, cfg, cutoff, me_id)
+        posts, inc, reached = fetch_list_posts(token, cfg, cutoff)
+        run["posts"], matched = pick_candidates(posts, inc, cfg, cutoff, me_id)
         in_window = sum(1 for t in posts if parse_time(t['created_at']) >= cutoff)
         run['stats'] = {'fetched': len(posts), 'in_window': in_window, 'matched': matched,
                         'reached_window': reached,

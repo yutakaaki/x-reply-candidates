@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<!-- X の動画サーバーは他サイトからの参照元付きリクエストを 403 で拒否するため、参照元を送らない -->
+<meta name="referrer" content="no-referrer">
 <title>X返信候補</title>
 <style>
   :root {
@@ -63,7 +65,18 @@
   .btn.check { flex: none; width: 64px; cursor: pointer; font: inherit; font-weight: 600; font-size: 14px; }
   .card.done .btn.check { background: var(--done); color: #fff; border-color: var(--done); }
   .empty { text-align: center; color: var(--sub); padding: 60px 0; }
-  @media (max-width: 420px) { .text, .stats, .actions, .more { margin-left: 0; } }
+  .kind { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 6px; padding: 1px 7px;
+          margin: 8px 0 0 38px; }
+  .kind.video { background: #e0245e; color: #fff; }
+  .kind.gif { background: #7856ff; color: #fff; }
+  .kind.photo { background: #00a37a; color: #fff; }
+  .kind.none { background: var(--chip); color: var(--sub); }
+  .media { margin: 8px 0 0 38px; display: grid; gap: 4px; border-radius: 12px; overflow: hidden; }
+  .media.n2, .media.n3, .media.n4 { grid-template-columns: 1fr 1fr; }
+  .media video, .media img { display: block; width: 100%; max-height: 420px; object-fit: contain;
+                             background: #000; border-radius: 0; }
+  .media.n2 img, .media.n3 img, .media.n4 img { height: 160px; object-fit: cover; }
+  @media (max-width: 420px) { .text, .stats, .actions, .more, .kind, .media { margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -132,6 +145,42 @@ async function load(id) {
   render();
 }
 
+function dur(s) { return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; }
+
+// 動画／GIF／画像の種類ラベルと、ページ内で再生・表示できるプレイヤーを作る
+function renderMedia(p) {
+  const ms = p.media || [];
+  const from = p.media_from_quote ? '（引用元）' : '';
+  const v = ms.find(m => m.type === 'video'), g = ms.find(m => m.type === 'animated_gif');
+  const photos = ms.filter(m => m.type === 'photo');
+  let label;
+  if (v) label = el('span', 'kind video', `▶ 動画${v.duration ? ' ' + dur(v.duration) : ''}${from}`);
+  else if (g) label = el('span', 'kind gif', `GIF${from}`);
+  else if (photos.length) label = el('span', 'kind photo', `🖼 画像${photos.length > 1 ? '×' + photos.length : ''}${from}`);
+  else return [el('span', 'kind none', 'テキストのみ')];
+
+  const box = el('div', 'media');
+  const vids = ms.filter(m => (m.type === 'video' || m.type === 'animated_gif') && m.mp4);
+  if (vids.length) {
+    for (const m of vids) {
+      const vd = el('video'); vd.src = m.mp4; vd.poster = m.thumb || ''; vd.playsInline = true;
+      vd.setAttribute('playsinline', '');
+      if (m.type === 'animated_gif') { vd.autoplay = vd.loop = vd.muted = true; }
+      else { vd.controls = true; vd.preload = 'none'; }
+      box.append(vd);
+    }
+  } else {
+    const shown = photos.length ? photos : ms;
+    box.classList.add('n' + Math.min(shown.length, 4));
+    for (const m of shown.slice(0, 4)) {
+      const a = el('a'); a.href = m.thumb; a.target = '_blank'; a.rel = 'noopener';
+      const im = el('img'); im.src = m.thumb; im.loading = 'lazy'; im.alt = '';
+      a.append(im); box.append(a);
+    }
+  }
+  return [label, box];
+}
+
 function render() {
   const run = current, c = run.conditions || {}, s = run.stats;
   $('summary').innerHTML = '';
@@ -177,7 +226,9 @@ function render() {
     chk.onclick = () => { if (done[p.id]) delete done[p.id]; else done[p.id] = Date.now(); store.set('done', done); render(); };
     actions.append(reply, open, chk);
 
-    card.append(head, text);
+    card.append(head);
+    if (p.media) card.append(...renderMedia(p));
+    card.append(text);
     requestAnimationFrame(() => { if (text.scrollHeight > text.clientHeight + 2) {
       const more = el('button', 'more', 'もっと見る');
       more.onclick = () => { text.classList.add('open'); more.remove(); };
