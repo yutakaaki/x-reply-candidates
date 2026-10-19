@@ -7,7 +7,7 @@
   "top_n": 30,
   "exclude_retweets": true,
   "exclude_replies": true,
-  "page_size": 50,
+  "page_size": 20,
   "max_posts_per_run": 600,
   "cost_per_post_usd": 0.005,
   "keep_runs": 60,
