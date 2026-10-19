@@ -2,7 +2,7 @@
 # ダブルクリック: 毎日 6:00 / 18:00 の自動抽出を登録する（先に login.command を済ませておく）
 set -e
 cd "$(dirname "$0")/.."
-PROJECT_DIR="$(pwd)"
+PROJECT_DIR="$(pwd -P)"   # 実体のパス（書類フォルダ内のショートカット経由でも）
 PLIST="$HOME/Library/LaunchAgents/com.xreply.candidates.plist"
 mkdir -p "$PROJECT_DIR/logs" "$HOME/Library/LaunchAgents"
 
