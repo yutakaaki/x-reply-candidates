@@ -1,0 +1,929 @@
+{
+ "id": "20261020-1800",
+ "run_at": "2026-10-20T18:00:01+09:00",
+ "window_start": "2026-10-20T06:00:01+09:00",
+ "conditions": {
+  "window_hours": 12,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 30,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "posts": [
+  {
+   "id": "2112396688845603034",
+   "url": "https://x.com/DlyGachiakuta/status/2112396688845603034",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112396688845603034",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "Tan talking like he didnt just caused all the troubles 😭",
+   "created_at": "2026-10-20T13:13:11+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1284,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112396663620845568/img/obzOZk2nFc-HKHt9.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112396663620845568/vid/avc1/1284x720/FEdOE8iQJIkMOtG6.mp4",
+     "duration": 11
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 132294,
+   "replies": 0,
+   "likes": 100,
+   "retweets": 10,
+   "quotes": 1,
+   "bookmarks": 39,
+   "rank": 1
+  },
+  {
+   "id": "2112414738470916169",
+   "url": "https://x.com/DlyGachiakuta/status/2112414738470916169",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112414738470916169",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "They always became creative when is time to “torture” Otori Tan 😭",
+   "created_at": "2026-10-20T14:24:55+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1284,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112414715452219392/img/lNbEaGUg4q-JGbRB.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112414715452219392/vid/avc1/1284x720/43cGhh2HMqWNM4Z0.mp4",
+     "duration": 8
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 126297,
+   "replies": 5,
+   "likes": 2869,
+   "retweets": 114,
+   "quotes": 8,
+   "bookmarks": 1409,
+   "rank": 2
+  },
+  {
+   "id": "2112360801873092932",
+   "url": "https://x.com/Ceoflicuado/status/2112360801873092932",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112360801873092932",
+   "username": "Ceoflicuado",
+   "name": "Licuado de fresa",
+   "avatar": "https://pbs.twimg.com/profile_images/1960466785032933376/MDU9YwC2_normal.jpg",
+   "text": "La chica menos obsesionada con Shadow",
+   "created_at": "2026-10-20T10:50:35+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1376,
+     "h": 776,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112360554757025792/img/7OqJW2zywsLoHtKi.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112360554757025792/vid/avc1/1276x720/fO6aUgKZjMK-544U.mp4",
+     "duration": 35
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 34550,
+   "replies": 7,
+   "likes": 891,
+   "retweets": 36,
+   "quotes": 0,
+   "bookmarks": 246,
+   "rank": 3
+  },
+  {
+   "id": "2112400919941837225",
+   "url": "https://x.com/incelcorei9/status/2112400919941837225",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112400919941837225",
+   "username": "incelcorei9",
+   "name": "kozo",
+   "avatar": "https://pbs.twimg.com/profile_images/1984680999985561603/XD9VpP1g_normal.jpg",
+   "text": "she wasn't asking about that",
+   "created_at": "2026-10-20T13:30:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 2560,
+     "h": 1440,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112387865988755456/img/rWGZVAklDchxFrbo.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112387865988755456/vid/avc1/1280x720/vCgQ7HBjyvw54Koa.mp4",
+     "duration": 47
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 30387,
+   "replies": 2,
+   "likes": 881,
+   "retweets": 29,
+   "quotes": 0,
+   "bookmarks": 432,
+   "rank": 4
+  },
+  {
+   "id": "2112337058102751594",
+   "url": "https://x.com/Rixi0303/status/2112337058102751594",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112337058102751594",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Gosh... the entire chapter is so sweet ♥️\n\nCharlotte & Emma might genuinely be the CUTEST SISTERS from England I’ve ever seen in manga 🙏🏻",
+   "created_at": "2026-10-20T09:16:14+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1200,
+     "h": 1706,
+     "thumb": "https://pbs.twimg.com/media/HVCHSWvbMAAuTIB.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1200,
+     "h": 1706,
+     "thumb": "https://pbs.twimg.com/media/HVCHUCWaQAAYOlS.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 2160,
+     "h": 3062,
+     "thumb": "https://pbs.twimg.com/media/HVCHUjka8AEg30t.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1200,
+     "h": 1706,
+     "thumb": "https://pbs.twimg.com/media/HVCHW0_aQAA9Pz1.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 20015,
+   "replies": 3,
+   "likes": 1515,
+   "retweets": 71,
+   "quotes": 1,
+   "bookmarks": 523,
+   "rank": 5
+  },
+  {
+   "id": "2112391500877455656",
+   "url": "https://x.com/Rixi0303/status/2112391500877455656",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112391500877455656",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Yukiya & Miku's first ever karaoke date as OFFICIAL COUPLE 💕\n\nAhhhh their fingers intertwined and they're clearly craving more of each other at the end OMG 😭",
+   "created_at": "2026-10-20T12:52:34+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 784,
+     "h": 1145,
+     "thumb": "https://pbs.twimg.com/media/HVC42w-bkAAwEpy.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 784,
+     "h": 1145,
+     "thumb": "https://pbs.twimg.com/media/HVC43HZbwAAcNYb.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 784,
+     "h": 1145,
+     "thumb": "https://pbs.twimg.com/media/HVC43elboAAef9Y.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 784,
+     "h": 1145,
+     "thumb": "https://pbs.twimg.com/media/HVC432BbIAAPJg2.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 15795,
+   "replies": 9,
+   "likes": 1047,
+   "retweets": 53,
+   "quotes": 3,
+   "bookmarks": 260,
+   "rank": 6
+  },
+  {
+   "id": "2112372695073788086",
+   "url": "https://x.com/Ceoflicuado/status/2112372695073788086",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112372695073788086",
+   "username": "Ceoflicuado",
+   "name": "Licuado de fresa",
+   "avatar": "https://pbs.twimg.com/profile_images/1960466785032933376/MDU9YwC2_normal.jpg",
+   "text": "NO PUEDO TOMARME EN SERIO A SHADOW 😭",
+   "created_at": "2026-10-20T11:37:51+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112372160605958144/img/uX2Uw-wdLu1ONJbk.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112372160605958144/vid/avc1/1280x720/JY8d95fMFZhm2xWn.mp4",
+     "duration": 97
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 13761,
+   "replies": 2,
+   "likes": 541,
+   "retweets": 28,
+   "quotes": 0,
+   "bookmarks": 137,
+   "rank": 7
+  },
+  {
+   "id": "2112288281052500312",
+   "url": "https://x.com/GOJO_6E/status/2112288281052500312",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112288281052500312",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Green super saiyan vegeta..\n\nDragon ball super Broly (2018).",
+   "created_at": "2026-10-20T06:02:25+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/ext_tw_video_thumb/1675156409233678336/pu/img/rtP75_kzXk2n6TH5.jpg",
+     "mp4": "https://video.twimg.com/ext_tw_video/1675156409233678336/pu/vid/1280x720/Xqsd9ToxovEeSy9c.mp4?tag=12",
+     "duration": 140
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 9780,
+   "replies": 0,
+   "likes": 129,
+   "retweets": 7,
+   "quotes": 1,
+   "bookmarks": 72,
+   "rank": 8
+  },
+  {
+   "id": "2112384560948261068",
+   "url": "https://x.com/FlameKaizerX/status/2112384560948261068",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112384560948261068",
+   "username": "FlameKaizerX",
+   "name": "Flame",
+   "avatar": "https://pbs.twimg.com/profile_images/2022582243089367040/CKt85WVU_normal.jpg",
+   "text": "This animation is insane",
+   "created_at": "2026-10-20T12:25:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112380828319944704/img/Iq96JS91Atfl-HAV.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112380828319944704/vid/avc1/1280x720/qA2EgsleOzifPbdG.mp4",
+     "duration": 22
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 9742,
+   "replies": 5,
+   "likes": 330,
+   "retweets": 24,
+   "quotes": 0,
+   "bookmarks": 105,
+   "rank": 9
+  },
+  {
+   "id": "2112396930215027024",
+   "url": "https://x.com/milkynoe/status/2112396930215027024",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112396930215027024",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "THE WAY MARIN WHO'S SUPER SOCIAL GETS ALL SHY WHEN SHE WANTS TO HELP GOJO IS THE CUTEST THING IN THE ENTIRE WORLD",
+   "created_at": "2026-10-20T13:14:09+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/media/HVC9txnXkAAIi0H.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112396819367874560/vid/avc1/1280x720/K-hdwpVScj8uPPhe.mp4",
+     "duration": 62
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7777,
+   "replies": 2,
+   "likes": 361,
+   "retweets": 20,
+   "quotes": 1,
+   "bookmarks": 72,
+   "rank": 10
+  },
+  {
+   "id": "2112334229774483962",
+   "url": "https://x.com/Ceoflicuado/status/2112334229774483962",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112334229774483962",
+   "username": "Ceoflicuado",
+   "name": "Licuado de fresa",
+   "avatar": "https://pbs.twimg.com/profile_images/1960466785032933376/MDU9YwC2_normal.jpg",
+   "text": "TIENE UN PELUCHE DE SHADOW 😭",
+   "created_at": "2026-10-20T09:05:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 768,
+     "h": 768,
+     "thumb": "https://pbs.twimg.com/media/HVCDCGDWQAEVU4t.png"
+    },
+    {
+     "type": "photo",
+     "w": 768,
+     "h": 768,
+     "thumb": "https://pbs.twimg.com/media/HVCDDHpXQAAvg-n.png"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7476,
+   "replies": 4,
+   "likes": 739,
+   "retweets": 24,
+   "quotes": 0,
+   "bookmarks": 81,
+   "rank": 11
+  },
+  {
+   "id": "2112418818307883385",
+   "url": "https://x.com/d0nut2x/status/2112418818307883385",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112418818307883385",
+   "username": "d0nut2x",
+   "name": "d0nut2x 🐀",
+   "avatar": "https://pbs.twimg.com/profile_images/2001098165500395520/do3HHiOp_normal.jpg",
+   "text": "“Classroom of the Elite” SEASON 5 NEW KEY VISUAL",
+   "created_at": "2026-10-20T14:41:07+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 848,
+     "h": 1200,
+     "thumb": "https://pbs.twimg.com/media/HVDRt8pXgAAmIwp.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5768,
+   "replies": 5,
+   "likes": 278,
+   "retweets": 22,
+   "quotes": 0,
+   "bookmarks": 26,
+   "rank": 12
+  },
+  {
+   "id": "2112319508878623054",
+   "url": "https://x.com/milkynoe/status/2112319508878623054",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112319508878623054",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "PRAISE HUNGRY AKARI MY BELOVED 😭",
+   "created_at": "2026-10-20T08:06:30+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1170,
+     "h": 1092,
+     "thumb": "https://pbs.twimg.com/media/HVB3ZaHWkAArRSC.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 4606,
+   "replies": 2,
+   "likes": 495,
+   "retweets": 19,
+   "quotes": 1,
+   "bookmarks": 58,
+   "rank": 13
+  },
+  {
+   "id": "2112325419139826008",
+   "url": "https://x.com/Ceoflicuado/status/2112325419139826008",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112325419139826008",
+   "username": "Ceoflicuado",
+   "name": "Licuado de fresa",
+   "avatar": "https://pbs.twimg.com/profile_images/1960466785032933376/MDU9YwC2_normal.jpg",
+   "text": "GAMMAAAAAA",
+   "created_at": "2026-10-20T08:29:59+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "animated_gif",
+     "w": 720,
+     "h": 406,
+     "thumb": "https://pbs.twimg.com/tweet_video_thumb/HVB8t_bXcAA4JHp.jpg",
+     "mp4": "https://video.twimg.com/tweet_video/HVB8t_bXcAA4JHp.mp4"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 4320,
+   "replies": 0,
+   "likes": 493,
+   "retweets": 15,
+   "quotes": 0,
+   "bookmarks": 111,
+   "rank": 14
+  },
+  {
+   "id": "2112381690832429131",
+   "url": "https://x.com/fubukitweets/status/2112381690832429131",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112381690832429131",
+   "username": "fubukitweets",
+   "name": "ꜰᴜʙᴜᴋɪ",
+   "avatar": "https://pbs.twimg.com/profile_images/2107127506591744000/lDuVUk_E_normal.jpg",
+   "text": "Eris cosplay is so cute 😭👋",
+   "created_at": "2026-10-20T12:13:35+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1080,
+     "h": 1920,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112301381092864000/img/W9nF-XyNo3RL0i8g.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112301381092864000/vid/avc1/720x1280/U-abG8FGXtABJLj-.mp4",
+     "duration": 6
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 4217,
+   "replies": 5,
+   "likes": 582,
+   "retweets": 18,
+   "quotes": 0,
+   "bookmarks": 97,
+   "rank": 15
+  },
+  {
+   "id": "2112389280379420758",
+   "url": "https://x.com/MangaP3ak/status/2112389280379420758",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112389280379420758",
+   "username": "MangaP3ak",
+   "name": "Miwa",
+   "avatar": "https://pbs.twimg.com/profile_images/2017923524699299840/f3_k9Pat_normal.jpg",
+   "text": "When Animators are as freaky as us",
+   "created_at": "2026-10-20T12:43:45+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112389251057041408/img/f2XniCWb08dugI6t.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112389251057041408/vid/avc1/1280x720/Qzhjb5G3g-gfvPGc.mp4",
+     "duration": 27
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3776,
+   "replies": 0,
+   "likes": 72,
+   "retweets": 5,
+   "quotes": 0,
+   "bookmarks": 26,
+   "rank": 16
+  },
+  {
+   "id": "2112314096704249903",
+   "url": "https://x.com/ReignOfBankai/status/2112314096704249903",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112314096704249903",
+   "username": "ReignOfBankai",
+   "name": "Angel🍓🍞",
+   "avatar": "https://pbs.twimg.com/profile_images/2111264458215411712/2_vhJkJw_normal.jpg",
+   "text": "ORIHIME WENT THROUGH ALLAT IN 45 AND STILL LOCKED IN, BEST GIRL FOR A REASON",
+   "created_at": "2026-10-20T07:45:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 722,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112313725206085632/img/-RNgRicr0kR6JeGx.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112313725206085632/vid/avc1/1276x720/DdFIMF3kvBH_KsTk.mp4?tag=14",
+     "duration": 21
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2970,
+   "replies": 0,
+   "likes": 307,
+   "retweets": 41,
+   "quotes": 1,
+   "bookmarks": 37,
+   "rank": 17
+  },
+  {
+   "id": "2112374714891149469",
+   "url": "https://x.com/ncatwt/status/2112374714891149469",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112374714891149469",
+   "username": "ncatwt",
+   "name": "No Context Anime",
+   "avatar": "https://pbs.twimg.com/profile_images/2086415748017381376/EVhFFG60_normal.jpg",
+   "text": "",
+   "created_at": "2026-10-20T11:45:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112374632858943488/img/rBWiAfwlNnBYUhJi.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112374632858943488/vid/avc1/1280x720/9BNV6DH2RGuvJO1Z.mp4",
+     "duration": 27
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2584,
+   "replies": 0,
+   "likes": 62,
+   "retweets": 5,
+   "quotes": 0,
+   "bookmarks": 30,
+   "rank": 18
+  },
+  {
+   "id": "2112388458136142082",
+   "url": "https://x.com/Sayngelic/status/2112388458136142082",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112388458136142082",
+   "username": "Sayngelic",
+   "name": "🇸‌🇦‌🇾‌🇳‌🍡",
+   "avatar": "https://pbs.twimg.com/profile_images/2005317073900126209/mYgp900k_normal.jpg",
+   "text": "Psyren\n[Episode 3]\n\nCrazy icl. Also interested in the idea that they'll be getting psychic powers that melt their brains",
+   "created_at": "2026-10-20T12:40:29+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112388371045572608/img/OA1-vfkRW1mH65j4.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112388371045572608/vid/avc1/1280x720/5JPjAXZUSAGInHEI.mp4",
+     "duration": 55
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2135,
+   "replies": 1,
+   "likes": 50,
+   "retweets": 2,
+   "quotes": 0,
+   "bookmarks": 11,
+   "rank": 19
+  },
+  {
+   "id": "2112307804061016197",
+   "url": "https://x.com/AniClipx/status/2112307804061016197",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112307804061016197",
+   "username": "AniClipx",
+   "name": "Anime Clips",
+   "avatar": "https://pbs.twimg.com/profile_images/2038635451981197312/EvXqZPpY_normal.jpg",
+   "text": "I DIDN’T KNOW SHEDDING SKIN WAS THIS INTENSE 😭",
+   "created_at": "2026-10-20T07:19:59+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112307738738860032/img/AipPMxTJ5YcH2Agf.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112307738738860032/vid/avc1/1280x720/rpaWL8E3eVavPvZs.mp4",
+     "duration": 44
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1942,
+   "replies": 1,
+   "likes": 35,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 10,
+   "rank": 20
+  },
+  {
+   "id": "2112423710603059612",
+   "url": "https://x.com/milkynoe/status/2112423710603059612",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112423710603059612",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "MARIN'S LITTLE POUT HERE WAS ADORABLE",
+   "created_at": "2026-10-20T15:00:34+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1081,
+     "h": 1244,
+     "thumb": "https://pbs.twimg.com/media/HVDWKxoXYAAuTsw.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1170,
+     "h": 1365,
+     "thumb": "https://pbs.twimg.com/media/HVDWKxjXUAAEcED.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1874,
+   "replies": 0,
+   "likes": 167,
+   "retweets": 5,
+   "quotes": 1,
+   "bookmarks": 8,
+   "rank": 21
+  },
+  {
+   "id": "2112303244412178882",
+   "url": "https://x.com/XAnimePosts/status/2112303244412178882",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112303244412178882",
+   "username": "XAnimePosts",
+   "name": "Anime Posts",
+   "avatar": "https://pbs.twimg.com/profile_images/2098371245062692864/Cen-qIcn_normal.jpg",
+   "text": "\"The rain washed it all away\"💀",
+   "created_at": "2026-10-20T07:01:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112303135569874944/img/ASHxZpxkA1dkL4pa.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112303135569874944/vid/avc1/1280x720/S6-5kPekk3rb4ndc.mp4",
+     "duration": 14
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1823,
+   "replies": 0,
+   "likes": 17,
+   "retweets": 3,
+   "quotes": 0,
+   "bookmarks": 8,
+   "rank": 22
+  },
+  {
+   "id": "2112392179457171814",
+   "url": "https://x.com/IMU8276/status/2112392179457171814",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112392179457171814",
+   "username": "IMU8276",
+   "name": "🌶️ 𝙄𝙈𝙐 𝙑𝙊𝙄𝘿",
+   "avatar": "https://pbs.twimg.com/profile_images/1991854659968069632/EBYXCmxa_normal.jpg",
+   "text": "She's broken after seeing them leaving her alone just because she's tanned 😭",
+   "created_at": "2026-10-20T12:55:16+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1050,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112391669832364032/img/YHmuwmi5xWjeYl0m.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112391669832364032/vid/avc1/1316x720/xv23i4oG9G8UZXWa.mp4?tag=14",
+     "duration": 28
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1698,
+   "replies": 1,
+   "likes": 45,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 18,
+   "rank": 23
+  },
+  {
+   "id": "2112441928625033399",
+   "url": "https://x.com/meruii1i/status/2112441928625033399",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112441928625033399",
+   "username": "meruii1i",
+   "name": "minami",
+   "avatar": "https://pbs.twimg.com/profile_images/2085064706943791104/6HCC3sNf_normal.jpg",
+   "text": "Cyberpunk Edgerunners Season 2 Opening\n\n#CyberpunkEdgerunners2\n#サイバーパンクエッジランナーズ",
+   "created_at": "2026-10-20T16:12:57+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112441821473165312/img/gG9HvjpJNOE4XoIB.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112441821473165312/vid/avc1/1280x720/E80c87srFZhi3sgU.mp4",
+     "duration": 90
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1442,
+   "replies": 0,
+   "likes": 14,
+   "retweets": 2,
+   "quotes": 0,
+   "bookmarks": 4,
+   "rank": 24
+  },
+  {
+   "id": "2112449855989661933",
+   "url": "https://x.com/GOJO_6E/status/2112449855989661933",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112449855989661933",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "The biggest mistake done in Aot was letting Erwin die..\n\nHis death was so heartbreaking that i started hating armin",
+   "created_at": "2026-10-20T16:44:27+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 644,
+     "h": 346,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112449800129916928/img/Gww910A2W3VCOPCf.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112449800129916928/vid/avc1/644x346/NXqas4AeQgovMJ1v.mp4",
+     "duration": 68
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1436,
+   "replies": 0,
+   "likes": 11,
+   "retweets": 1,
+   "quotes": 2,
+   "bookmarks": 0,
+   "rank": 25
+  },
+  {
+   "id": "2112449989108744556",
+   "url": "https://x.com/GOJO_6E/status/2112449989108744556",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112449989108744556",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Kill titans = ❌\nBecome titans = ✅",
+   "created_at": "2026-10-20T16:44:59+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 630,
+     "h": 350,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112449965700124672/img/Hr8FeQ18uJj6mo8M.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112449965700124672/vid/avc1/630x350/QMJdkW8ttXQXrMth.mp4",
+     "duration": 13
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1356,
+   "replies": 0,
+   "likes": 10,
+   "retweets": 1,
+   "quotes": 1,
+   "bookmarks": 1,
+   "rank": 26
+  },
+  {
+   "id": "2112288689099567523",
+   "url": "https://x.com/AniClipx/status/2112288689099567523",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112288689099567523",
+   "username": "AniClipx",
+   "name": "Anime Clips",
+   "avatar": "https://pbs.twimg.com/profile_images/2038635451981197312/EvXqZPpY_normal.jpg",
+   "text": "Caught in 4k 😭",
+   "created_at": "2026-10-20T06:04:02+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112288627174551552/img/UWuYbPtf46ILadKB.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112288627174551552/vid/avc1/1280x720/nC7oHjyHMvMwll_k.mp4",
+     "duration": 15
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1226,
+   "replies": 1,
+   "likes": 14,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 4,
+   "rank": 27
+  },
+  {
+   "id": "2112405532355260630",
+   "url": "https://x.com/REINANIME/status/2112405532355260630",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112405532355260630",
+   "username": "REINANIME",
+   "name": "Reina",
+   "avatar": "https://pbs.twimg.com/profile_images/2052056585636093953/50ugwHSw_normal.jpg",
+   "text": "Bulma wished for cosmetic surgery 😂",
+   "created_at": "2026-10-20T13:48:20+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112405243136786432/img/e092CMaMUm9-kcln.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112405243136786432/vid/avc1/1280x720/4by3eaWufziDGfu5.mp4",
+     "duration": 83
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1203,
+   "replies": 0,
+   "likes": 16,
+   "retweets": 4,
+   "quotes": 0,
+   "bookmarks": 4,
+   "rank": 28
+  },
+  {
+   "id": "2112452439655760060",
+   "url": "https://x.com/milkynoe/status/2112452439655760060",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112452439655760060",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "ANGY KITTY MARIN >>>>>",
+   "created_at": "2026-10-20T16:54:43+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 825,
+     "h": 965,
+     "thumb": "https://pbs.twimg.com/media/HVDwTEIWAAAOP5R.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1170,
+     "h": 1329,
+     "thumb": "https://pbs.twimg.com/media/HVDwTEHW4AAfHON.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1158,
+   "replies": 2,
+   "likes": 58,
+   "retweets": 3,
+   "quotes": 1,
+   "bookmarks": 4,
+   "rank": 29
+  },
+  {
+   "id": "2112313597598536102",
+   "url": "https://x.com/Sayngelic/status/2112313597598536102",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112313597598536102",
+   "username": "Sayngelic",
+   "name": "🇸‌🇦‌🇾‌🇳‌🍡",
+   "avatar": "https://pbs.twimg.com/profile_images/2005317073900126209/mYgp900k_normal.jpg",
+   "text": "So What's Wrong with Getting Reborn as a Goblin?\n[Episode 4]\n\nShe actually tried to kill him but it didn't work out 😭",
+   "created_at": "2026-10-20T07:43:01+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "photo",
+     "w": 2897,
+     "h": 4096,
+     "thumb": "https://pbs.twimg.com/media/HVBx9beWkAE0OHC.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1138,
+   "replies": 2,
+   "likes": 63,
+   "retweets": 2,
+   "quotes": 0,
+   "bookmarks": 23,
+   "rank": 30
+  }
+ ],
+ "stats": {
+  "fetched": 114,
+  "in_window": 97,
+  "matched": 32,
+  "reached_window": true,
+  "est_cost_usd": 0.57
+ }
+}
