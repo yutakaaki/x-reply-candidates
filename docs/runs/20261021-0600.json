@@ -1,0 +1,899 @@
+{
+ "id": "20261021-0600",
+ "run_at": "2026-10-21T06:00:00+09:00",
+ "window_start": "2026-10-20T18:00:00+09:00",
+ "conditions": {
+  "window_hours": 12,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 30,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "posts": [
+  {
+   "id": "2112528892976410944",
+   "url": "https://x.com/Neo_AnimeX/status/2112528892976410944",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112528892976410944",
+   "username": "Neo_AnimeX",
+   "name": "⚔️𝓝𝓮𝓸_𝓐𝓷𝓲𝓶𝓮𝓧⚔️",
+   "avatar": "https://pbs.twimg.com/profile_images/2063180229611589632/zqGP0K7U_normal.jpg",
+   "text": "Người giữ đồ lót bí mật của Takane 🤐💯",
+   "created_at": "2026-10-20T21:58:31+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112528109220302848/img/XeYuz1j_o-U0liA2.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112528109220302848/vid/avc1/1280x720/hhSONsq2HQtduRoi.mp4",
+     "duration": 108
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 175909,
+   "replies": 3,
+   "likes": 2371,
+   "retweets": 71,
+   "quotes": 0,
+   "bookmarks": 1279,
+   "rank": 1
+  },
+  {
+   "id": "2112516108418953571",
+   "url": "https://x.com/DlyGachiakuta/status/2112516108418953571",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112516108418953571",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "Tan being sick and still finding time to tease Ume is soo funny , he really doesnt want to accept but he is happy that he visited him 😭",
+   "created_at": "2026-10-20T21:07:43+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1284,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112516045315432448/img/8kfcjiMmWO-r7Lkz.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112516045315432448/vid/avc1/1284x720/QKxZPkYOmw-HdP_8.mp4",
+     "duration": 36
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 75420,
+   "replies": 1,
+   "likes": 3143,
+   "retweets": 90,
+   "quotes": 3,
+   "bookmarks": 673,
+   "rank": 2
+  },
+  {
+   "id": "2112516985737355551",
+   "url": "https://x.com/GOJO_6E/status/2112516985737355551",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112516985737355551",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Naruto Full recap.",
+   "created_at": "2026-10-20T21:11:12+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 640,
+     "h": 336,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2056736310635708416/img/e53lljGeeYIg-J1G.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2056736310635708416/vid/avc1/640x336/24Aag_HJeFLcZoFx.mp4",
+     "duration": 591
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 58671,
+   "replies": 4,
+   "likes": 621,
+   "retweets": 57,
+   "quotes": 0,
+   "bookmarks": 223,
+   "rank": 3
+  },
+  {
+   "id": "2112548318677275055",
+   "url": "https://x.com/JASS1000001/status/2112548318677275055",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112548318677275055",
+   "username": "JASS1000001",
+   "name": "jass",
+   "avatar": "https://pbs.twimg.com/profile_images/1658862811886518272/KpgCe7oQ_normal.jpg",
+   "text": "Pink haired waifus are a national treasure",
+   "created_at": "2026-10-20T23:15:43+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HVFHfkUaYAEYSpI.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112548230861070336/vid/avc1/1280x720/b8Q1dZt91S-0-fxY.mp4",
+     "duration": 101
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 56141,
+   "replies": 5,
+   "likes": 1909,
+   "retweets": 55,
+   "quotes": 0,
+   "bookmarks": 819,
+   "rank": 4
+  },
+  {
+   "id": "2112553696160800955",
+   "url": "https://x.com/Rixi0303/status/2112553696160800955",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112553696160800955",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "That heroic save and those cool gestures from Sota—Koharu's younger cousin actually has fallen in love with Sota now FOR GOD SAKE 😭",
+   "created_at": "2026-10-20T23:37:05+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112553328156819456/img/T92KWDO7bF_dgHuv.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112553328156819456/vid/avc1/1280x720/gJc6zr_OWGTicX47.mp4",
+     "duration": 88
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 55977,
+   "replies": 7,
+   "likes": 1642,
+   "retweets": 92,
+   "quotes": 2,
+   "bookmarks": 722,
+   "rank": 5
+  },
+  {
+   "id": "2112515195876565067",
+   "url": "https://x.com/GOJO_6E/status/2112515195876565067",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112515195876565067",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Naruto (2004).",
+   "created_at": "2026-10-20T21:04:05+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 480,
+     "h": 430,
+     "thumb": "https://pbs.twimg.com/ext_tw_video_thumb/2094314495992631297/pu/img/7l1zeDcI24MSXCpP.jpg",
+     "mp4": "https://video.twimg.com/ext_tw_video/2094314495992631297/pu/vid/avc1/480x430/TIAw7ZU7DSDPb8OC.mp4?tag=12",
+     "duration": 27
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 52947,
+   "replies": 2,
+   "likes": 84,
+   "retweets": 5,
+   "quotes": 2,
+   "bookmarks": 73,
+   "rank": 6
+  },
+  {
+   "id": "2112586522465817043",
+   "url": "https://x.com/BlaxZenix/status/2112586522465817043",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112586522465817043",
+   "username": "BlaxZenix",
+   "name": "BlaxZenix ",
+   "avatar": "https://pbs.twimg.com/profile_images/2081311476594180097/N68uDQWq_normal.jpg",
+   "text": "The self-control from Saku is insane 😳\n\n#チラムネ #Chiramune",
+   "created_at": "2026-10-21T01:47:31+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112586357809790976/img/YtiglPQfBkZSM-lG.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112586357809790976/vid/avc1/1280x720/BzPDQvS0dv-Zj61n.mp4?tag=14",
+     "duration": 262
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 52590,
+   "replies": 3,
+   "likes": 1136,
+   "retweets": 37,
+   "quotes": 0,
+   "bookmarks": 609,
+   "rank": 7
+  },
+  {
+   "id": "2112491515436282199",
+   "url": "https://x.com/kurumiishere/status/2112491515436282199",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112491515436282199",
+   "username": "kurumiishere",
+   "name": "Kurumi 🖤",
+   "avatar": "https://pbs.twimg.com/profile_images/2028100915543048193/rSgt0DpX_normal.jpg",
+   "text": "Bro had a chance right there but didn’t take it 🤧",
+   "created_at": "2026-10-20T19:30:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1320,
+     "h": 738,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112491316412063745/img/gb3tfPfQ6xlfoJKX.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112491316412063745/vid/avc1/1320x738/Blfk5hciA_G88d7v.mp4",
+     "duration": 66
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 49368,
+   "replies": 5,
+   "likes": 680,
+   "retweets": 23,
+   "quotes": 1,
+   "bookmarks": 359,
+   "rank": 8
+  },
+  {
+   "id": "2112584535695069593",
+   "url": "https://x.com/Ceoflicuado/status/2112584535695069593",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112584535695069593",
+   "username": "Ceoflicuado",
+   "name": "Licuado de fresa",
+   "avatar": "https://pbs.twimg.com/profile_images/1960466785032933376/MDU9YwC2_normal.jpg",
+   "text": "ERA NECESARIO DESEARLE LA MUERTE??? 😭",
+   "created_at": "2026-10-21T01:39:37+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112584236976742401/img/fOWCSwojeAm_5U-b.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112584236976742401/vid/avc1/1280x720/BbJDqbAy3e4A3Imi.mp4",
+     "duration": 57
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 37698,
+   "replies": 8,
+   "likes": 860,
+   "retweets": 37,
+   "quotes": 1,
+   "bookmarks": 457,
+   "rank": 9
+  },
+  {
+   "id": "2112566281031590374",
+   "url": "https://x.com/Rixi0303/status/2112566281031590374",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112566281031590374",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Wow... Yamabuki rizzed Rikka up like crazy here. No wonder Rikka got so clingy with him by the end 🥹",
+   "created_at": "2026-10-21T00:27:05+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 2854,
+     "h": 3985,
+     "thumb": "https://pbs.twimg.com/media/HVFXzm4bwAA8I7V.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 2719,
+     "h": 3876,
+     "thumb": "https://pbs.twimg.com/media/HVFX0NLbUAAuRCg.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 960,
+     "h": 1378,
+     "thumb": "https://pbs.twimg.com/media/HVFX07BaoAAEfhj.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 2656,
+     "h": 2986,
+     "thumb": "https://pbs.twimg.com/media/HVFX1RUa4AAHpWA.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 15721,
+   "replies": 8,
+   "likes": 918,
+   "retweets": 48,
+   "quotes": 0,
+   "bookmarks": 237,
+   "rank": 10
+  },
+  {
+   "id": "2112575857734897839",
+   "url": "https://x.com/DlyGachiakuta/status/2112575857734897839",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112575857734897839",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "I was starting to feel bad for Tan and then he instantly tried to get Ume sick 😭😭",
+   "created_at": "2026-10-21T01:05:08+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 718,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112575822217269248/img/oyfqJqlSLNz2rqhz.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112575822217269248/vid/avc1/1280x718/7J7s1vASgqcjKA7P.mp4",
+     "duration": 13
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 15525,
+   "replies": 0,
+   "likes": 619,
+   "retweets": 27,
+   "quotes": 0,
+   "bookmarks": 160,
+   "rank": 11
+  },
+  {
+   "id": "2112529339866566967",
+   "url": "https://x.com/Sayngelic/status/2112529339866566967",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112529339866566967",
+   "username": "Sayngelic",
+   "name": "🇸‌🇦‌🇾‌🇳‌🍡",
+   "avatar": "https://pbs.twimg.com/profile_images/2005317073900126209/mYgp900k_normal.jpg",
+   "text": "Cyberpunk Edgerunners 2\n[Episode 10]\n\nAt a loss for words, man. That last episode was easily the best episode of the show.",
+   "created_at": "2026-10-20T22:00:18+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/media/HVE2PQKWcAAOcug.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112528978904805376/vid/avc1/1280x720/PW2q79gvKtDci3st.mp4",
+     "duration": 63
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 15392,
+   "replies": 5,
+   "likes": 182,
+   "retweets": 13,
+   "quotes": 1,
+   "bookmarks": 47,
+   "rank": 12
+  },
+  {
+   "id": "2112601960151130618",
+   "url": "https://x.com/Rixi0303/status/2112601960151130618",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112601960151130618",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Btw in the LN, Asuka's father actually slapped her, and Saku immediately stepped in to shield her, only for Asuka to bow & apologize to her father. And before they left, her dad actually repaid ¥30K for the bullet train fares and thanked Saku for taking care of Asuka.\n\n#チラムネ",
+   "created_at": "2026-10-21T02:48:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112601482923266048/img/mtugEicoe1GS6mCN.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112601482923266048/vid/avc1/1280x720/hLIHJMDajhf9a0fy.mp4",
+     "duration": 113
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 13752,
+   "replies": 3,
+   "likes": 364,
+   "retweets": 18,
+   "quotes": 1,
+   "bookmarks": 140,
+   "rank": 13
+  },
+  {
+   "id": "2112609009199092041",
+   "url": "https://x.com/EmiIiaSupremacy/status/2112609009199092041",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112609009199092041",
+   "username": "EmiIiaSupremacy",
+   "name": "MizuSawa",
+   "avatar": "https://pbs.twimg.com/profile_images/2105210796175421440/PayG58h7_normal.jpg",
+   "text": "SOMETHING SO NAUGHTY TURNED SO WHOLESOME BY THE END. Also this is like the second time Chitose pinned someone down on the bed, first being Nanase 😭",
+   "created_at": "2026-10-21T03:16:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1320,
+     "h": 732,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112608926869135360/img/AXX225j1VyeEYzOr.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112608926869135360/vid/avc1/1320x732/UmruSxF_xEGp35nm.mp4",
+     "duration": 98
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 13731,
+   "replies": 0,
+   "likes": 316,
+   "retweets": 8,
+   "quotes": 0,
+   "bookmarks": 160,
+   "rank": 14
+  },
+  {
+   "id": "2112593977870524844",
+   "url": "https://x.com/Rixi0303/status/2112593977870524844",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112593977870524844",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "So Saku is breaking under pressure of always having to be perfect, protecting everyone like he must, all while being badmouthed... \n\nFrom Asuka pov, she wants him to see that all his efforts have meant something—that she's living proof of the good he's done ❤️‍🩹\n\n#チラムネ",
+   "created_at": "2026-10-21T02:17:09+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112593926561669120/img/YFoKNC6B3YgqYemL.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112593926561669120/vid/avc1/1280x720/vz1QPUBOsUlOoO85.mp4",
+     "duration": 40
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 13410,
+   "replies": 6,
+   "likes": 550,
+   "retweets": 34,
+   "quotes": 0,
+   "bookmarks": 200,
+   "rank": 15
+  },
+  {
+   "id": "2112544374118883546",
+   "url": "https://x.com/Sayngelic/status/2112544374118883546",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112544374118883546",
+   "username": "Sayngelic",
+   "name": "🇸‌🇦‌🇾‌🇳‌🍡",
+   "avatar": "https://pbs.twimg.com/profile_images/2005317073900126209/mYgp900k_normal.jpg",
+   "text": "Cyberpunk Edgerunners 2\n[Episode 10]\n\nSztybor and I are going to fight for making me cry during the last episode like that",
+   "created_at": "2026-10-20T23:00:02+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1008,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112533074336419840/img/qD9voYdkGspvCVQI.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112533074336419840/vid/avc1/1370x720/bhbXm41nwqt1F_6U.mp4",
+     "duration": 101
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 11856,
+   "replies": 3,
+   "likes": 262,
+   "retweets": 21,
+   "quotes": 1,
+   "bookmarks": 78,
+   "rank": 16
+  },
+  {
+   "id": "2112607005525602566",
+   "url": "https://x.com/EmiIiaSupremacy/status/2112607005525602566",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112607005525602566",
+   "username": "EmiIiaSupremacy",
+   "name": "MizuSawa",
+   "avatar": "https://pbs.twimg.com/profile_images/2105210796175421440/PayG58h7_normal.jpg",
+   "text": "Asuka is maybe getting a little too comfortable with Chitose lol",
+   "created_at": "2026-10-21T03:08:55+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1320,
+     "h": 728,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112606970167664640/img/2Y4VEQownWftCcNk.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112606970167664640/vid/avc1/1320x728/OMeUV1z5PwOnKMkd.mp4",
+     "duration": 33
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 11837,
+   "replies": 2,
+   "likes": 385,
+   "retweets": 12,
+   "quotes": 0,
+   "bookmarks": 165,
+   "rank": 17
+  },
+  {
+   "id": "2112556526930169862",
+   "url": "https://x.com/IMU8276/status/2112556526930169862",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112556526930169862",
+   "username": "IMU8276",
+   "name": "🌶️ 𝙄𝙈𝙐 𝙑𝙊𝙄𝘿",
+   "avatar": "https://pbs.twimg.com/profile_images/1991854659968069632/EBYXCmxa_normal.jpg",
+   "text": "Darkness hardness surprised kazuma because of her touch armour",
+   "created_at": "2026-10-20T23:48:20+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/ext_tw_video_thumb/2036668593803608064/pu/img/SwxBhcNwRQqnI38B.jpg",
+     "mp4": "https://video.twimg.com/ext_tw_video/2036668593803608064/pu/vid/avc1/1280x720/sT7kLvvJVpcuTvCz.mp4",
+     "duration": 29
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 11794,
+   "replies": 0,
+   "likes": 131,
+   "retweets": 6,
+   "quotes": 0,
+   "bookmarks": 44,
+   "rank": 18
+  },
+  {
+   "id": "2112532049168871815",
+   "url": "https://x.com/GOJO_6E/status/2112532049168871815",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112532049168871815",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "هل تغلم انه ماركو اصبح يونكو لمدة سنة بعد سقوط اللحية..#ون_بيس | #ONEPIECE",
+   "created_at": "2026-10-20T22:11:04+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2061435063225438208/img/dhWUd1Te2RvmAhjX.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2061435063225438208/vid/avc1/1280x720/bU1p6SvQFf1DlL7m.mp4",
+     "duration": 105
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 11460,
+   "replies": 4,
+   "likes": 148,
+   "retweets": 7,
+   "quotes": 3,
+   "bookmarks": 94,
+   "rank": 19
+  },
+  {
+   "id": "2112510313480212542",
+   "url": "https://x.com/phantompain281/status/2112510313480212542",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112510313480212542",
+   "username": "phantompain281",
+   "name": "Phantom",
+   "avatar": "https://pbs.twimg.com/profile_images/1887846353260179457/eQ7rCaRH_normal.jpg",
+   "text": "This scene is so beautiful sakuta crying because kaede finally faces her fears and goes outside 😭",
+   "created_at": "2026-10-20T20:44:41+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112510259877048320/img/IYhLfVuV1_OiKCgy.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112510259877048320/vid/avc1/1280x720/iTIlA7Q3hSlc-cW7.mp4",
+     "duration": 104
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 10217,
+   "replies": 0,
+   "likes": 292,
+   "retweets": 12,
+   "quotes": 0,
+   "bookmarks": 62,
+   "rank": 20
+  },
+  {
+   "id": "2112547431762350243",
+   "url": "https://x.com/Rixi0303/status/2112547431762350243",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112547431762350243",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "The fact that Koharu is so down bad for her first love, Sota that she can't even handle a single praise from him at all ♥️",
+   "created_at": "2026-10-20T23:12:11+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112547235691188224/img/erFkkZlvl-G0YRyM.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112547235691188224/vid/avc1/1280x720/DI5xBIU1cKcbQu-Z.mp4",
+     "duration": 32
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 10117,
+   "replies": 2,
+   "likes": 550,
+   "retweets": 33,
+   "quotes": 0,
+   "bookmarks": 134,
+   "rank": 21
+  },
+  {
+   "id": "2112594264391553533",
+   "url": "https://x.com/Ceoflicuado/status/2112594264391553533",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112594264391553533",
+   "username": "Ceoflicuado",
+   "name": "Licuado de fresa",
+   "avatar": "https://pbs.twimg.com/profile_images/1960466785032933376/MDU9YwC2_normal.jpg",
+   "text": "Le queda HORRIBLE 😭",
+   "created_at": "2026-10-21T02:18:17+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112593985910829056/img/RLoDKp_NOl2nmZWk.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112593985910829056/vid/avc1/1280x720/yI02ngptpW_7OyQr.mp4",
+     "duration": 94
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 9577,
+   "replies": 6,
+   "likes": 484,
+   "retweets": 26,
+   "quotes": 0,
+   "bookmarks": 173,
+   "rank": 22
+  },
+  {
+   "id": "2112544811601240270",
+   "url": "https://x.com/GOJO_6E/status/2112544811601240270",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112544811601240270",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "ما راح استغرب لو ماركو طلع اقوى من زورو وسانجي..\n\nالرجال كان يقاتل كينج و كوين لوحده وهزمهم.\n#ون_بيس | #ONEPIECE",
+   "created_at": "2026-10-20T23:01:46+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2077040156000002048/img/TikJx7uOqrhDUdXg.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2077040156000002048/vid/avc1/1280x720/cJUde8JqMiIyyKR6.mp4",
+     "duration": 64
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 8605,
+   "replies": 5,
+   "likes": 141,
+   "retweets": 7,
+   "quotes": 2,
+   "bookmarks": 86,
+   "rank": 23
+  },
+  {
+   "id": "2112544628016865662",
+   "url": "https://x.com/Rixi0303/status/2112544628016865662",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112544628016865662",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Sota and Koharu's dating stylists & wingwomen are FINALLY HERE—Shizuku & Mayo ♥️\n\nI'm actually very looking forward seeing these two. Their little “Yippee” are so catchy 😭\n\n#しおあま",
+   "created_at": "2026-10-20T23:01:03+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112544357425582080/img/KSLrS-K608te6u70.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112544357425582080/vid/avc1/1280x720/I0xmTtzByyY0wJEz.mp4",
+     "duration": 47
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7885,
+   "replies": 3,
+   "likes": 251,
+   "retweets": 35,
+   "quotes": 0,
+   "bookmarks": 74,
+   "rank": 24
+  },
+  {
+   "id": "2112545356479107307",
+   "url": "https://x.com/kurumiishere/status/2112545356479107307",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112545356479107307",
+   "username": "kurumiishere",
+   "name": "Kurumi 🖤",
+   "avatar": "https://pbs.twimg.com/profile_images/2028100915543048193/rSgt0DpX_normal.jpg",
+   "text": "He’s on his way to heaven 😂💕",
+   "created_at": "2026-10-20T23:03:56+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1320,
+     "h": 732,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112545302582382592/img/4VLWf_s-yw8B0ino.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112545302582382592/vid/avc1/1320x732/EzLcSuPG4SpwqWcY.mp4",
+     "duration": 32
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7668,
+   "replies": 6,
+   "likes": 162,
+   "retweets": 9,
+   "quotes": 0,
+   "bookmarks": 72,
+   "rank": 25
+  },
+  {
+   "id": "2112558942186594395",
+   "url": "https://x.com/EmiIiaSupremacy/status/2112558942186594395",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112558942186594395",
+   "username": "EmiIiaSupremacy",
+   "name": "MizuSawa",
+   "avatar": "https://pbs.twimg.com/profile_images/2105210796175421440/PayG58h7_normal.jpg",
+   "text": "CHITOSE IS IN THE RAMUNE BOTTLE EPISODE 15 AIRS TODAY",
+   "created_at": "2026-10-20T23:57:55+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1180,
+     "h": 843,
+     "thumb": "https://pbs.twimg.com/media/HVFRKYqbEAAlmX4.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7534,
+   "replies": 0,
+   "likes": 492,
+   "retweets": 18,
+   "quotes": 0,
+   "bookmarks": 102,
+   "rank": 26
+  },
+  {
+   "id": "2112585872990433648",
+   "url": "https://x.com/Rixi0303/status/2112585872990433648",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112585872990433648",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Light Novel vs Anime\n\nBathrobe Asuka 🤍 That beauty mark on her chest is so hard to miss that Saku can barely keep his eyes off it 🚶🏻‍♀️",
+   "created_at": "2026-10-21T01:44:56+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1000,
+     "h": 1500,
+     "thumb": "https://pbs.twimg.com/media/HVFppUKboAAVLIx.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 2048,
+     "h": 1879,
+     "thumb": "https://pbs.twimg.com/media/HVFppueaEAAC8FL.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7520,
+   "replies": 2,
+   "likes": 409,
+   "retweets": 16,
+   "quotes": 0,
+   "bookmarks": 120,
+   "rank": 27
+  },
+  {
+   "id": "2112550599833125111",
+   "url": "https://x.com/coco_0067/status/2112550599833125111",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112550599833125111",
+   "username": "coco_0067",
+   "name": "CoCo",
+   "avatar": "https://pbs.twimg.com/profile_images/2029567346600509440/jEekQjpw_normal.jpg",
+   "text": "He needs to understand, as a harem protagonist every decision he makes is wrong",
+   "created_at": "2026-10-20T23:24:46+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2112550558989234176/img/HN2tpCcW7cl0YLg-.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2112550558989234176/vid/avc1/1280x720/pf5k1N3Go7exxR4W.mp4",
+     "duration": 32
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 6590,
+   "replies": 3,
+   "likes": 340,
+   "retweets": 22,
+   "quotes": 0,
+   "bookmarks": 125,
+   "rank": 28
+  },
+  {
+   "id": "2112521980712775831",
+   "url": "https://x.com/d0nut2x/status/2112521980712775831",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112521980712775831",
+   "username": "d0nut2x",
+   "name": "d0nut2x 🐀",
+   "avatar": "https://pbs.twimg.com/profile_images/2001098165500395520/do3HHiOp_normal.jpg",
+   "text": "The Laid-Off Cheat-Granting Mage Enjoys a Second Lease on Life #3 Full Staff:\n\nAnimation Cooperation: GAONNURI Animation\n\nSB: Fumie Muroi\nED: Fumie Muroi, Hiroaki Yamamoto\nCAD: Yuito Kiyosawa, Masami Gouda\nMonster/Action AD: Noboru Sugimitsu\nAD: Momoyo, Tsutomu Oono, Hiroya Sasaki, Takurou Sakurai, Bae Geun Young, Choi Hye Jeong, Cho Mee Joung\n\nKA:\nP.A WORKS\nNoboru Sugimitsu, Aiko Natsuzumi\n\nFumie Muroi, Hiromi Makino, Aya Nakanishi, Shingo Nishiyama, Masaaki Yasaka, Takayoshi Hayashi, Mika Takasawa, Moe Takayose\n\nGAONNURI Animation\nLim Jin Woo, Kim Hyoung II, Kang Hyun Kuk, Jang Jae Yong\n\n24 2nd KAs",
+   "created_at": "2026-10-20T21:31:03+09:00",
+   "is_quote": false,
+   "media": [],
+   "media_from_quote": false,
+   "impressions": 6552,
+   "replies": 1,
+   "likes": 73,
+   "retweets": 4,
+   "quotes": 0,
+   "bookmarks": 7,
+   "rank": 29
+  },
+  {
+   "id": "2112539382007857395",
+   "url": "https://x.com/Rixi0303/status/2112539382007857395",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2112539382007857395",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Classroom of the Elite comic alive Halloween illustration • Kiyokei 💕\n\nKitty ears Kei with cat paws cuteee",
+   "created_at": "2026-10-20T22:40:12+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 2560,
+     "h": 3428,
+     "thumb": "https://pbs.twimg.com/media/HVE_XmFboAAKh21.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5915,
+   "replies": 2,
+   "likes": 581,
+   "retweets": 50,
+   "quotes": 4,
+   "bookmarks": 101,
+   "rank": 30
+  }
+ ],
+ "stats": {
+  "fetched": 187,
+  "in_window": 175,
+  "matched": 73,
+  "reached_window": true,
+  "est_cost_usd": 0.935
+ }
+}
