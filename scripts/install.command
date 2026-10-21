@@ -1,5 +1,5 @@
 #!/bin/bash
-# ダブルクリック: 毎日 6:00 / 18:00 の自動抽出を登録する（先に login.command を済ませておく）
+# ダブルクリック: 毎日 6:00 / 21:00 の自動抽出を登録する（先に login.command を済ませておく）
 set -e
 cd "$(dirname "$0")/.."
 PROJECT_DIR="$(pwd -P)"   # 実体のパス（書類フォルダ内のショートカット経由でも）
@@ -28,7 +28,7 @@ cat > "$PLIST" <<PL
   <key>StartCalendarInterval</key>
   <array>
     <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
-    <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>0</integer></dict>
   </array>
   <key>StandardOutPath</key><string>$PROJECT_DIR/logs/run.log</string>
   <key>StandardErrorPath</key><string>$PROJECT_DIR/logs/run.log</string>
@@ -41,7 +41,7 @@ launchctl load "$PLIST"
 # 次の定時にスリープから起きるよう予約（以降は毎回の実行後に自動で次を予約）
 H=$(date +%H)
 if [ "$H" -lt 6 ]; then NEXT="$(date '+%m/%d/%Y') 06:00:00"
-elif [ "$H" -lt 18 ]; then NEXT="$(date '+%m/%d/%Y') 18:00:00"
+elif [ "$H" -lt 21 ]; then NEXT="$(date '+%m/%d/%Y') 21:00:00"
 else NEXT="$(date -v+1d '+%m/%d/%Y') 06:00:00"; fi
 if sudo -n pmset schedule wake "$NEXT" 2>/dev/null; then
   echo "✓ 次回の自動起床を予約: $NEXT"
@@ -51,7 +51,7 @@ else
 fi
 
 echo ""
-echo "✅ 登録完了！ 毎日 6:00 / 18:00 に返信候補を更新します。"
+echo "✅ 登録完了！ 毎日 6:00 / 21:00 に返信候補を更新します。"
 echo "   閲覧: https://yutakaaki.github.io/x-reply-candidates/"
 echo "   ・電源アダプタに接続したままにしてください（スリープ・フタ閉じOK）。"
 echo "このウィンドウは閉じて構いません。"

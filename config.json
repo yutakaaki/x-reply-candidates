@@ -11,5 +11,18 @@
   "max_posts_per_run": 600,
   "cost_per_post_usd": 0.005,
   "keep_runs": 60,
-  "schedule": ["06:00", "18:00"]
+  "schedule": [
+    "06:00",
+    "21:00"
+  ],
+  "slots": {
+    "06:00": {
+      "window_hours": 12,
+      "top_n": 50
+    },
+    "21:00": {
+      "window_hours": 15,
+      "top_n": 30
+    }
+  }
 }

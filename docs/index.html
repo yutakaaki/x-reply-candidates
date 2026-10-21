@@ -57,6 +57,8 @@
   .imp { flex: none; text-align: right; color: var(--imp); font-weight: 700; font-size: 17px;
          font-variant-numeric: tabular-nums; line-height: 1.2; }
   .imp small { display: block; font-size: 11px; font-weight: 500; color: var(--sub); }
+  .imp .vel { display: block; margin-top: 3px; font-size: 12px; font-weight: 600; color: var(--sub); white-space: nowrap; }
+  .imp .vel.on { color: #e0245e; }
   .text { margin: 8px 0 8px 38px; white-space: pre-wrap; word-break: break-word;
           display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
   .text.open { display: block; }
@@ -101,7 +103,8 @@
     並び順
     <div class="seg" role="group" aria-label="並び順">
       <button type="button" data-sort="imp">表示数順</button>
-      <button type="button" data-sort="date">投稿が新しい順</button>
+      <button type="button" data-sort="vel">伸びが速い順</button>
+      <button type="button" data-sort="date">新しい順</button>
     </div>
   </div>
   <div class="tools" id="tools" hidden>
@@ -202,19 +205,27 @@ function render() {
   $('summary').innerHTML = '';
   const sum = $('summary');
   sum.append(el('b', null, `${fmtDate(run.window_start)} 〜 ${fmtTime(run.run_at)}`),
-             ` の投稿｜表示${num(c.min_impressions || 0)}以上・返信${c.max_replies}以下・上位${c.top_n}件`);
+             ` の投稿｜表示${num(c.min_impressions || 0)}以上・返信${c.max_replies}以下・表示数上位${c.top_n}件＋伸びが速い投稿`);
   if (s) sum.append(el('br'), `取得 ${s.fetched}件 → 条件一致 ${s.matched}件｜API推定 $${s.est_cost_usd}`);
 
   const banner = $('banner'); banner.replaceChildren();
   if (run.error) banner.append(el('div', 'banner err', '⚠️ ' + run.error));
-  else if (s && !s.reached_window) banner.append(el('div', 'banner warn', '取得上限に達したため、12時間分を最後まで取り切れていません（古い時間帯が抜けている可能性）。'));
+  else if (s && !s.reached_window) banner.append(el('div', 'banner warn', `取得上限に達したため、${c.window_hours || 12}時間分を最後まで取り切れていません（古い時間帯が抜けている可能性）。`));
 
   const sort = store.get('sort', 'imp');
   document.querySelectorAll('.seg button').forEach(b => b.classList.toggle('on', b.dataset.sort === sort));
-  const posts = (run.posts || []).slice();
-  // 順位の数字は常に表示数の順位のまま。並べ方だけ変える
-  if (sort === 'date') posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-  else posts.sort((a, b) => a.rank - b.rank);
+  const all = (run.posts || []).slice();
+  for (const p of all) if (p.velocity == null)
+    p.velocity = Math.round(p.impressions / Math.max(1, (new Date(run.run_at) - new Date(p.created_at)) / 3600e3));
+  if (all.some(p => p.vrank == null))  // 古い回のデータには伸びの順位が無いので、その場で付ける
+    all.slice().sort((a, b) => b.velocity - a.velocity).forEach((p, i) => { p.vrank = i + 1; });
+  // 表示数順＝表示数の上位N件、伸びが速い順＝伸びの上位N件、新しい順＝候補すべて
+  // （左の順位の数字は常に表示数の順位）
+  const N = c.top_n || 30;
+  let posts;
+  if (sort === 'vel') posts = all.filter(p => p.vrank <= N).sort((a, b) => b.velocity - a.velocity);
+  else if (sort === 'date') posts = all.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  else posts = all.filter(p => p.rank <= N).sort((a, b) => a.rank - b.rank);
   $('sortbar').hidden = !posts.length;
   const hide = $('hideDone').checked;
   const nDone = posts.filter(p => done[p.id]).length;
@@ -234,6 +245,7 @@ function render() {
     who.append(el('div', 'name', p.name || p.username),
                el('div', 'meta', `@${p.username} · ${fmtTime(p.created_at)} · ${ago(p.created_at, run.run_at)}${p.is_quote ? ' · 引用' : ''}`));
     const imp = el('div', 'imp', num(p.impressions)); imp.append(el('small', null, '表示'));
+    imp.append(el('span', 'vel' + (sort === 'vel' ? ' on' : ''), `⚡毎時${num(p.velocity)}`));
     head.append(av, who, imp);
 
     const text = el('div', 'text', p.text);
@@ -245,7 +257,17 @@ function render() {
     const reply = el('a', 'btn primary', '返信する'); reply.href = p.reply_url; reply.target = '_blank'; reply.rel = 'noopener';
     const open = el('a', 'btn', 'ポストを開く'); open.href = p.url; open.target = '_blank'; open.rel = 'noopener';
     const chk = el('button', 'btn check', done[p.id] ? '済 ✓' : '済');
-    chk.onclick = () => { if (done[p.id]) delete done[p.id]; else done[p.id] = Date.now(); store.set('done', done); render(); };
+    chk.onclick = () => {
+      if (done[p.id]) delete done[p.id]; else done[p.id] = Date.now();
+      store.set('done', done);
+      card.classList.toggle('done', !!done[p.id]);
+      chk.textContent = done[p.id] ? '済 ✓' : '済';
+      $('doneCount').textContent = `対応済み ${posts.filter(q => done[q.id]).length} / ${posts.length}`;
+      if (hide && done[p.id]) {  // 「対応済みを隠す」がオンなら、その場で畳んで消す
+        card.style.transition = 'opacity .25s'; card.style.opacity = '0';
+        setTimeout(() => card.remove(), 250);
+      }
+    };
     actions.append(reply, open, chk);
 
     card.append(head);

@@ -105,7 +105,13 @@ def clean_text(t, text, hide_ids):
     return text.strip()
 
 
-def pick_candidates(posts, inc, cfg, cutoff, me_id):
+def velocity(p, now):
+    """投稿から集計時点までの伸びの速さ＝1時間あたりの表示数（投稿直後の過大評価を避けるため最短1時間で割る）"""
+    hours = (now - datetime.fromisoformat(p['created_at'])).total_seconds() / 3600
+    return p['impressions'] / max(1.0, hours)
+
+
+def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
     users = inc['users']
     out = []
     for t in posts:
@@ -152,9 +158,14 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id):
         })
     out.sort(key=lambda p: p['impressions'], reverse=True)
     matched = len(out)
-    out = out[:cfg['top_n']]
     for i, p in enumerate(out, 1):
-        p['rank'] = i
+        p['rank'] = i  # 表示数の順位（条件に合った全件の中で）
+        p['velocity'] = round(velocity(p, now))
+    for i, p in enumerate(sorted(out, key=lambda p: p['velocity'], reverse=True), 1):
+        p['vrank'] = i  # 伸びの速さの順位
+    n = cfg['top_n']
+    # 表示数の上位n件に、伸びが速い上位n件も加える（新しくて表示数がまだ少ない投稿を拾うため）
+    out = [p for p in out if p['rank'] <= n or p['vrank'] <= n]
     return out, matched
 
 
@@ -264,7 +275,9 @@ def main():
     cfg = load_config()
     no_push = '--no-push' in sys.argv
     now = datetime.now(JST).replace(microsecond=0)
-    run_id, _slot = run_id_for(now, cfg)
+    run_id, slot = run_id_for(now, cfg)
+    if slot:  # 定時の回は、回ごとの範囲・件数を使う（6:00=12時間・50件、21:00=15時間・30件）
+        cfg = dict(cfg, **cfg.get('slots', {}).get(slot.strftime('%H:%M'), {}))
     cutoff = (now - timedelta(hours=cfg['window_hours'])).astimezone(timezone.utc)
     run = {'id': run_id, 'run_at': now.isoformat(),
            'window_start': cutoff.astimezone(JST).isoformat(),
@@ -275,12 +288,12 @@ def main():
         token = xauth.access_token()
         me_id = xauth.load_secrets().get('me_id')
         posts, inc, reached = fetch_list_posts(token, cfg, cutoff)
-        run["posts"], matched = pick_candidates(posts, inc, cfg, cutoff, me_id)
+        run["posts"], matched = pick_candidates(posts, inc, cfg, cutoff, me_id, now)
         in_window = sum(1 for t in posts if parse_time(t['created_at']) >= cutoff)
         run['stats'] = {'fetched': len(posts), 'in_window': in_window, 'matched': matched,
                         'reached_window': reached,
                         'est_cost_usd': round(len(posts) * cfg['cost_per_post_usd'], 3)}
-        log(f'取得 {len(posts)}件（12h内 {in_window}件）→ 条件一致 {matched}件 → 上位 {len(run["posts"])}件'
+        log(f'取得 {len(posts)}件（{cfg["window_hours"]}h内 {in_window}件）→ 条件一致 {matched}件 → 候補 {len(run["posts"])}件'
             f'／推定 ${run["stats"]["est_cost_usd"]}')
         if not reached:
             log(f'⚠️ 上限 {cfg["max_posts_per_run"]}件に達したため12時間分を取り切れていません')
