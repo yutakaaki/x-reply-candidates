@@ -1,9 +1,9 @@
 [
  {
   "id": "20261022-2100",
-  "run_at": "2026-10-22T21:00:01+09:00",
-  "count": 0,
-  "error": "予期しないエラー: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  "run_at": "2026-10-22T23:01:16+09:00",
+  "count": 36,
+  "error": null
  },
  {
   "id": "20261022-0600",
