@@ -1,0 +1,14 @@
+{
+ "id": "20261022-2100",
+ "run_at": "2026-10-22T21:00:01+09:00",
+ "window_start": "2026-10-22T06:00:01+09:00",
+ "conditions": {
+  "window_hours": 15,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 30,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "error": "予期しないエラー: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+}
