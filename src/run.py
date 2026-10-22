@@ -5,7 +5,7 @@ launchd から毎日 6:00 / 18:00 に実行される。
   python3 src/run.py            # 抽出 → docs/ 更新 → GitHub へ push → 次回起床予約
   python3 src/run.py --no-push  # 抽出と docs/ 更新だけ（手元確認用）
 """
-import html, json, os, subprocess, sys, traceback
+import html, json, os, socket, subprocess, sys, time, traceback
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
@@ -29,6 +29,19 @@ def load_config():
 
 def parse_time(s):
     return datetime.strptime(s, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
+
+
+def wait_for_network(host='api.x.com', timeout=180):
+    """スリープから起きた直後は Wi-Fi がまだつながっていないことがあるので、名前が引けるまで待つ"""
+    t0 = time.time()
+    while True:
+        try:
+            socket.getaddrinfo(host, 443)
+            return time.time() - t0
+        except OSError:
+            if time.time() - t0 > timeout:
+                return None
+            time.sleep(5)
 
 
 def run_id_for(now, cfg):
@@ -276,14 +289,26 @@ def main():
     no_push = '--no-push' in sys.argv
     now = datetime.now(JST).replace(microsecond=0)
     run_id, slot = run_id_for(now, cfg)
+    forced = next((a.split('=', 1)[1] for a in sys.argv if a.startswith('--slot=')), None)
+    if forced:  # 失敗した定時の回をやり直す: --slot=21:00（範囲の始まりは定時基準、終わりは今）
+        h, m = map(int, forced.split(':'))
+        slot = now.replace(hour=h, minute=m, second=0)
+        if slot > now:
+            slot -= timedelta(days=1)
+        run_id = slot.strftime('%Y%m%d-%H%M')
     if slot:  # 定時の回は、回ごとの範囲・件数を使う（6:00=12時間・50件、21:00=15時間・30件）
         cfg = dict(cfg, **cfg.get('slots', {}).get(slot.strftime('%H:%M'), {}))
-    cutoff = (now - timedelta(hours=cfg['window_hours'])).astimezone(timezone.utc)
+    cutoff = ((slot if forced else now) - timedelta(hours=cfg['window_hours'])).astimezone(timezone.utc)
     run = {'id': run_id, 'run_at': now.isoformat(),
            'window_start': cutoff.astimezone(JST).isoformat(),
            'conditions': {k: cfg[k] for k in ('window_hours', 'min_impressions', 'max_replies', 'top_n',
                                               'exclude_retweets', 'exclude_replies')}}
     log(f'開始 {run_id}（{run["window_start"][5:16]} 以降のポスト）')
+    waited = wait_for_network()
+    if waited is None:
+        log('⚠️ 3分待ってもネットにつながりません（このまま試します）')
+    elif waited >= 1:
+        log(f'ネット接続を {waited:.0f}秒 待ちました')
     try:
         token = xauth.access_token()
         me_id = xauth.load_secrets().get('me_id')
