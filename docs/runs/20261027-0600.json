@@ -1,0 +1,14 @@
+{
+ "id": "20261027-0600",
+ "run_at": "2026-10-27T06:00:00+09:00",
+ "window_start": "2026-10-26T18:00:00+09:00",
+ "conditions": {
+  "window_hours": 12,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 50,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "error": "X API エラー 402：APIクレジット不足 → console.x.com でチャージ"
+}
