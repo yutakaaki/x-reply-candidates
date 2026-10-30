@@ -1,0 +1,1124 @@
+{
+ "id": "20261030-2100",
+ "run_at": "2026-10-30T21:00:04+09:00",
+ "window_start": "2026-10-30T06:00:04+09:00",
+ "conditions": {
+  "window_hours": 15,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 30,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "posts": [
+  {
+   "id": "2116006929768267865",
+   "url": "https://x.com/FlameKaizerX/status/2116006929768267865",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116006929768267865",
+   "username": "FlameKaizerX",
+   "name": "Flame",
+   "avatar": "https://pbs.twimg.com/profile_images/2022582243089367040/CKt85WVU_normal.jpg",
+   "text": "she didn't expect him to be this overpowered.",
+   "created_at": "2026-10-30T12:19:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2116002271637250048/img/unlss097eb49GgfF.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116002271637250048/vid/avc1/1280x720/stZQB8JYnbCyCKQw.mp4",
+     "duration": 82
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 68500,
+   "replies": 7,
+   "likes": 834,
+   "retweets": 34,
+   "quotes": 0,
+   "bookmarks": 400,
+   "rank": 1,
+   "velocity": 7888,
+   "vrank": 1
+  },
+  {
+   "id": "2115977415310844316",
+   "url": "https://x.com/QingBZ/status/2115977415310844316",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115977415310844316",
+   "username": "QingBZ",
+   "name": "Qing",
+   "avatar": "https://pbs.twimg.com/profile_images/2107252279476981760/lbgUc_r7_normal.jpg",
+   "text": "she larped eating healthy to impress him but got exposed immediately\n#アニメ生穴る #せいちょかい #studentholes",
+   "created_at": "2026-10-30T10:21:43+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HV12PWHa8AIlGNd.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115977235589107712/vid/avc1/1280x720/KHw7Xh3j6mM18My8.mp4",
+     "duration": 26
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 33866,
+   "replies": 2,
+   "likes": 1042,
+   "retweets": 22,
+   "quotes": 0,
+   "bookmarks": 189,
+   "rank": 2,
+   "velocity": 3183,
+   "vrank": 3
+  },
+  {
+   "id": "2115933706720567555",
+   "url": "https://x.com/QingBZ/status/2115933706720567555",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115933706720567555",
+   "username": "QingBZ",
+   "name": "Qing",
+   "avatar": "https://pbs.twimg.com/profile_images/2107252279476981760/lbgUc_r7_normal.jpg",
+   "text": "The robot Miku girl is my favorite side character\n#アニメ生穴る #せいちょかい",
+   "created_at": "2026-10-30T07:28:02+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HV1Oe6MboAAXKA2.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115933207199936512/vid/avc1/1280x720/yYsMdI_toC8SjPBb.mp4",
+     "duration": 25
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 19758,
+   "replies": 4,
+   "likes": 665,
+   "retweets": 22,
+   "quotes": 1,
+   "bookmarks": 125,
+   "rank": 3,
+   "velocity": 1460,
+   "vrank": 14
+  },
+  {
+   "id": "2116015234410594583",
+   "url": "https://x.com/Tatsumaki1a/status/2116015234410594583",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116015234410594583",
+   "username": "Tatsumaki1a",
+   "name": "Tatsumaki",
+   "avatar": "https://pbs.twimg.com/profile_images/2007493716198776832/vGO8MnW4_normal.jpg",
+   "text": "She was just curious 🤭",
+   "created_at": "2026-10-30T12:52:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2110217628786814976/img/_RJqaJwhOU_B7B2E.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2110217628786814976/vid/avc1/1280x720/fNE57aO9GS9svlQA.mp4",
+     "duration": 23
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 19083,
+   "replies": 2,
+   "likes": 364,
+   "retweets": 16,
+   "quotes": 0,
+   "bookmarks": 99,
+   "rank": 4,
+   "velocity": 2346,
+   "vrank": 7
+  },
+  {
+   "id": "2116052607513006167",
+   "url": "https://x.com/my_mii_chan/status/2116052607513006167",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116052607513006167",
+   "username": "my_mii_chan",
+   "name": "Mii Chan",
+   "avatar": "https://pbs.twimg.com/profile_images/2004415080231063553/uIkuYD9L_normal.jpg",
+   "text": "I thought I was watching a cooking anime 💀",
+   "created_at": "2026-10-30T15:20:30+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2116052558951407616/img/YgELt-2xAy5lVCL2.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116052558951407616/vid/avc1/1280x720/jpeAbM2JnTVAXSOp.mp4",
+     "duration": 135
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 16074,
+   "replies": 6,
+   "likes": 154,
+   "retweets": 6,
+   "quotes": 0,
+   "bookmarks": 43,
+   "rank": 5,
+   "velocity": 2840,
+   "vrank": 5
+  },
+  {
+   "id": "2115998630851297540",
+   "url": "https://x.com/ncatwt/status/2115998630851297540",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115998630851297540",
+   "username": "ncatwt",
+   "name": "No Context Anime",
+   "avatar": "https://pbs.twimg.com/profile_images/2086415748017381376/EVhFFG60_normal.jpg",
+   "text": "",
+   "created_at": "2026-10-30T11:46:01+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115998505932296192/img/hKp3oEZ0PYKA2vu3.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115998505932296192/vid/avc1/1280x720/WRfZn271iMykJVVW.mp4",
+     "duration": 79
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 14856,
+   "replies": 0,
+   "likes": 304,
+   "retweets": 5,
+   "quotes": 0,
+   "bookmarks": 106,
+   "rank": 6,
+   "velocity": 1609,
+   "vrank": 12
+  },
+  {
+   "id": "2115945776790577582",
+   "url": "https://x.com/milkynoe/status/2115945776790577582",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115945776790577582",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "I'M SO OBSESSED WITH THE MARIN SMILE ✨",
+   "created_at": "2026-10-30T08:16:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115930855830859776/img/hgImnXkH9chk_BQl.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115930855830859776/vid/avc1/1280x720/DyJy-9yMNRyovFE5.mp4",
+     "duration": 9
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 13746,
+   "replies": 2,
+   "likes": 921,
+   "retweets": 55,
+   "quotes": 1,
+   "bookmarks": 147,
+   "rank": 7,
+   "velocity": 1079,
+   "vrank": 17
+  },
+  {
+   "id": "2115922891166384256",
+   "url": "https://x.com/AnimeVerse511/status/2115922891166384256",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115922891166384256",
+   "username": "AnimeVerse511",
+   "name": "AnimeVerse",
+   "avatar": "https://pbs.twimg.com/profile_images/2082589414962720768/oQOV5hWg_normal.jpg",
+   "text": "Annie and Reiner Transforms Fight Sciences | BLU-RAY| Attack on Titan: The Final Season",
+   "created_at": "2026-10-30T06:45:03+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 960,
+     "h": 540,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115922510218772481/img/B_gflHAxBv0Opscn.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115922510218772481/vid/avc1/960x540/YfqkvCFUxP-4mTIs.mp4",
+     "duration": 295
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 13545,
+   "replies": 0,
+   "likes": 140,
+   "retweets": 5,
+   "quotes": 0,
+   "bookmarks": 42,
+   "rank": 8,
+   "velocity": 951,
+   "vrank": 20
+  },
+  {
+   "id": "2116044932817592762",
+   "url": "https://x.com/milkynoe/status/2116044932817592762",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116044932817592762",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "GOJOMARIN TRAIN SCENE JUST IN CASE IT'S BEEN TOO LONG SINCE U WATCHED IT ✨",
+   "created_at": "2026-10-30T14:50:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/media/HV2ziKbWoAA3Ki0.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116044799476117504/vid/avc1/1280x720/DeykHXoDbed4ngpR.mp4",
+     "duration": 40
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 12845,
+   "replies": 3,
+   "likes": 602,
+   "retweets": 31,
+   "quotes": 1,
+   "bookmarks": 85,
+   "rank": 9,
+   "velocity": 2083,
+   "vrank": 9
+  },
+  {
+   "id": "2115921462876123516",
+   "url": "https://x.com/XAnimePosts/status/2115921462876123516",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115921462876123516",
+   "username": "XAnimePosts",
+   "name": "Anime Posts",
+   "avatar": "https://pbs.twimg.com/profile_images/2098371245062692864/Cen-qIcn_normal.jpg",
+   "text": "I've seen that before 😭",
+   "created_at": "2026-10-30T06:39:23+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 2560,
+     "h": 1440,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115921046691807232/img/2EeaPAQHVya0pdSJ.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115921046691807232/vid/avc1/1280x720/BcTCTdZrFQjsTM5i.mp4",
+     "duration": 35
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 12591,
+   "replies": 2,
+   "likes": 140,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 114,
+   "rank": 10,
+   "velocity": 878,
+   "vrank": 21
+  },
+  {
+   "id": "2116077432671510908",
+   "url": "https://x.com/GOJO_6E/status/2116077432671510908",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116077432671510908",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Attack on Titan (2013).",
+   "created_at": "2026-10-30T16:59:09+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 2274,
+     "h": 1254,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2097574697047298048/img/-GAIgXHi18ekKLgE.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2097574697047298048/vid/avc1/1304x720/59-gvTF01qwI6WEj.mp4",
+     "duration": 44
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 12198,
+   "replies": 0,
+   "likes": 83,
+   "retweets": 7,
+   "quotes": 1,
+   "bookmarks": 12,
+   "rank": 11,
+   "velocity": 3038,
+   "vrank": 4
+  },
+  {
+   "id": "2116004591317995951",
+   "url": "https://x.com/Rukia1994443/status/2116004591317995951",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116004591317995951",
+   "username": "Rukia1994443",
+   "name": "Rukia",
+   "avatar": "https://pbs.twimg.com/profile_images/2009095426839072768/F5tgj4MK_normal.jpg",
+   "text": "That's what you call a good wife and this mf still married 10 other women 😭",
+   "created_at": "2026-10-30T12:09:42+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HV2O87QaYAA-6t3.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116004535500189697/vid/avc1/1280x720/HZiWUQVdCWcod9-b.mp4",
+     "duration": 38
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 11507,
+   "replies": 9,
+   "likes": 351,
+   "retweets": 26,
+   "quotes": 0,
+   "bookmarks": 144,
+   "rank": 12,
+   "velocity": 1302,
+   "vrank": 15
+  },
+  {
+   "id": "2115974687020720340",
+   "url": "https://x.com/milkynoe/status/2115974687020720340",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115974687020720340",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "MARIN DEFINITELY KISS ATTACKS WAKANA WHENEVER HE HAS TO DO HER MAKEUP 🥹",
+   "created_at": "2026-10-30T10:10:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1170,
+     "h": 1115,
+     "thumb": "https://pbs.twimg.com/media/HV1zw3BWYAAsEDJ.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 10309,
+   "replies": 2,
+   "likes": 1210,
+   "retweets": 65,
+   "quotes": 2,
+   "bookmarks": 136,
+   "rank": 13,
+   "velocity": 953,
+   "vrank": 19
+  },
+  {
+   "id": "2115930152836510122",
+   "url": "https://x.com/milkynoe/status/2115930152836510122",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115930152836510122",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "marin wifi",
+   "created_at": "2026-10-30T07:13:55+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 934,
+     "h": 1329,
+     "thumb": "https://pbs.twimg.com/media/HV1LQi_X0AEvfdr.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 10139,
+   "replies": 3,
+   "likes": 1585,
+   "retweets": 89,
+   "quotes": 4,
+   "bookmarks": 173,
+   "rank": 14,
+   "velocity": 736,
+   "vrank": 23
+  },
+  {
+   "id": "2116011030455480401",
+   "url": "https://x.com/Musashi88720/status/2116011030455480401",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116011030455480401",
+   "username": "Musashi88720",
+   "name": "Musashi",
+   "avatar": "https://pbs.twimg.com/profile_images/2008792015639900161/NTf_hy-Y_normal.jpg",
+   "text": "He ignored all the girls who have feelings for him and Simps for the girl who he thinks doesn't",
+   "created_at": "2026-10-30T12:35:17+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HV2UzzcakAASQdE.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116010962323193856/vid/avc1/1280x720/huLRZth-owXKfauY.mp4",
+     "duration": 105
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 8830,
+   "replies": 2,
+   "likes": 156,
+   "retweets": 8,
+   "quotes": 0,
+   "bookmarks": 117,
+   "rank": 15,
+   "velocity": 1050,
+   "vrank": 18
+  },
+  {
+   "id": "2115913933005672662",
+   "url": "https://x.com/GOJO_6E/status/2115913933005672662",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115913933005672662",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Dragon Ball Daima (2025).",
+   "created_at": "2026-10-30T06:09:28+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115913824222003201/img/LF0yv8bbitw6EW2j.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115913824222003201/vid/avc1/1280x720/0dHPVlL2TQzKeYQb.mp4",
+     "duration": 127
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 8055,
+   "replies": 0,
+   "likes": 252,
+   "retweets": 19,
+   "quotes": 0,
+   "bookmarks": 94,
+   "rank": 16,
+   "velocity": 543,
+   "vrank": 26
+  },
+  {
+   "id": "2116116629734006976",
+   "url": "https://x.com/d0nut2x/status/2116116629734006976",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116116629734006976",
+   "username": "d0nut2x",
+   "name": "d0nut2x 🐀",
+   "avatar": "https://pbs.twimg.com/profile_images/2001098165500395520/do3HHiOp_normal.jpg",
+   "text": "SHIROTAKA DOESNT FUCKING MISS 😭❤️",
+   "created_at": "2026-10-30T19:34:54+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 960,
+     "h": 558,
+     "thumb": "https://pbs.twimg.com/media/HV30sfzW4AAN4gK.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7814,
+   "replies": 6,
+   "likes": 630,
+   "retweets": 52,
+   "quotes": 1,
+   "bookmarks": 63,
+   "rank": 17,
+   "velocity": 5505,
+   "vrank": 2
+  },
+  {
+   "id": "2116087365483761774",
+   "url": "https://x.com/Rixi0303/status/2116087365483761774",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116087365483761774",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Chiramune light novel Vol. 10 store benefits\n\nNew swimsuit design for Yuzuki, Haru and Yua tho 😍",
+   "created_at": "2026-10-30T17:38:37+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 2263,
+     "h": 3359,
+     "thumb": "https://pbs.twimg.com/media/HV3aN63bIAAn3IQ.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 2359,
+     "h": 3240,
+     "thumb": "https://pbs.twimg.com/media/HV3aObVbYAAyqpD.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 3692,
+     "h": 4000,
+     "thumb": "https://pbs.twimg.com/media/HV3aO8kbAAAANG_.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 2799,
+     "h": 1987,
+     "thumb": "https://pbs.twimg.com/media/HV3aPcMbYAA6mCP.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5930,
+   "replies": 0,
+   "likes": 450,
+   "retweets": 30,
+   "quotes": 0,
+   "bookmarks": 133,
+   "rank": 18,
+   "velocity": 1766,
+   "vrank": 11
+  },
+  {
+   "id": "2116009693311115304",
+   "url": "https://x.com/ChisatoAnime/status/2116009693311115304",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116009693311115304",
+   "username": "ChisatoAnime",
+   "name": "Chisato",
+   "avatar": "https://pbs.twimg.com/profile_images/2005967215141740545/htcFkidu_normal.jpg",
+   "text": "Starting morning like this 🥵",
+   "created_at": "2026-10-30T12:29:59+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/ext_tw_video_thumb/2056580278035087360/pu/img/E5HTfT3WbeuENT2f.jpg",
+     "mp4": "https://video.twimg.com/ext_tw_video/2056580278035087360/pu/vid/avc1/1280x720/gzFDknJ1nYIBnjE_.mp4",
+     "duration": 11
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5828,
+   "replies": 0,
+   "likes": 65,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 16,
+   "rank": 19,
+   "velocity": 686,
+   "vrank": 25
+  },
+  {
+   "id": "2116017175576428798",
+   "url": "https://x.com/Rixi0303/status/2116017175576428798",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116017175576428798",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "The Shiunji Family Children new merchs illustrations • Boyfriend shirts\n\nBet all of them are wearing Arata's shirts OMG 🙈",
+   "created_at": "2026-10-30T12:59:43+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 3200,
+     "h": 2244,
+     "thumb": "https://pbs.twimg.com/media/HV2aZlrbwAAb87p.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5797,
+   "replies": 1,
+   "likes": 550,
+   "retweets": 47,
+   "quotes": 2,
+   "bookmarks": 156,
+   "rank": 20,
+   "velocity": 724,
+   "vrank": 24
+  },
+  {
+   "id": "2116071020863873323",
+   "url": "https://x.com/phantompain281/status/2116071020863873323",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116071020863873323",
+   "username": "phantompain281",
+   "name": "Phantom",
+   "avatar": "https://pbs.twimg.com/profile_images/1887846353260179457/eQ7rCaRH_normal.jpg",
+   "text": "Mai tells sakuta that she want to spend the days with him and go to the hots springs, you can see the excitement on his face😭",
+   "created_at": "2026-10-30T16:33:40+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2116070982351781888/img/dyL9yaTjKQqdjyne.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116070982351781888/vid/avc1/1280x720/cNB5vXFYUx8_t9xZ.mp4",
+     "duration": 32
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5533,
+   "replies": 0,
+   "likes": 153,
+   "retweets": 8,
+   "quotes": 0,
+   "bookmarks": 40,
+   "rank": 21,
+   "velocity": 1246,
+   "vrank": 16
+  },
+  {
+   "id": "2116090597002154071",
+   "url": "https://x.com/Rixi0303/status/2116090597002154071",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116090597002154071",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "🪻New Rintakoaru & Natsubaru merchs illustrations\n\nTWO SHIPS. ALL CANON. ALL OFFICIALLY DATING 😭❤️",
+   "created_at": "2026-10-30T17:51:28+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 2436,
+     "h": 4029,
+     "thumb": "https://pbs.twimg.com/media/HV3dLbQaYAAmjTA.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5004,
+   "replies": 2,
+   "likes": 582,
+   "retweets": 49,
+   "quotes": 2,
+   "bookmarks": 71,
+   "rank": 22,
+   "velocity": 1592,
+   "vrank": 13
+  },
+  {
+   "id": "2115916509843513756",
+   "url": "https://x.com/EmiIiaSupremacy/status/2115916509843513756",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115916509843513756",
+   "username": "EmiIiaSupremacy",
+   "name": "MizuSawa",
+   "avatar": "https://pbs.twimg.com/profile_images/2105210796175421440/PayG58h7_normal.jpg",
+   "text": "S2 information comes tomorrow, trust me 🙏",
+   "created_at": "2026-10-30T06:19:42+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1441,
+     "h": 2048,
+     "thumb": "https://pbs.twimg.com/media/HV0-2eCaoAAEn2q.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1449,
+     "h": 2048,
+     "thumb": "https://pbs.twimg.com/media/HV0-2d_b0AAybC4.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1754,
+     "h": 1299,
+     "thumb": "https://pbs.twimg.com/media/HV0-2d_boAABle6.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3732,
+   "replies": 5,
+   "likes": 284,
+   "retweets": 13,
+   "quotes": 1,
+   "bookmarks": 24,
+   "rank": 23,
+   "velocity": 254,
+   "vrank": 35
+  },
+  {
+   "id": "2115964310585557301",
+   "url": "https://x.com/EmiIiaSupremacy/status/2115964310585557301",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115964310585557301",
+   "username": "EmiIiaSupremacy",
+   "name": "MizuSawa",
+   "avatar": "https://pbs.twimg.com/profile_images/2105210796175421440/PayG58h7_normal.jpg",
+   "text": "This couple might be the most wholesome in all of anime, shit gave me type 1000 diabetes",
+   "created_at": "2026-10-30T09:29:39+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1290,
+     "h": 718,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115964294865321984/img/f49bXv-TYt9_61c8.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115964294865321984/vid/avc1/1290x718/8xA-GaHfPqvQo4IO.mp4",
+     "duration": 14
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3520,
+   "replies": 3,
+   "likes": 88,
+   "retweets": 5,
+   "quotes": 0,
+   "bookmarks": 12,
+   "rank": 24,
+   "velocity": 306,
+   "vrank": 31
+  },
+  {
+   "id": "2116077789862564060",
+   "url": "https://x.com/GOJO_6E/status/2116077789862564060",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116077789862564060",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Attack on Titan (2018).",
+   "created_at": "2026-10-30T17:00:34+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 2274,
+     "h": 1288,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2108467970930364416/img/1WENjIZ-OJBBgUnU.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2108467970930364416/vid/avc1/1270x720/kRaLe1g9js9vGX45.mp4",
+     "duration": 45
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3474,
+   "replies": 1,
+   "likes": 40,
+   "retweets": 2,
+   "quotes": 1,
+   "bookmarks": 4,
+   "rank": 25,
+   "velocity": 870,
+   "vrank": 22
+  },
+  {
+   "id": "2115918156694683660",
+   "url": "https://x.com/phantompain281/status/2115918156694683660",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2115918156694683660",
+   "username": "phantompain281",
+   "name": "Phantom",
+   "avatar": "https://pbs.twimg.com/profile_images/1887846353260179457/eQ7rCaRH_normal.jpg",
+   "text": "Sakuta interaction with touko is dark she's using her song to manifest puberty syndrome and she used to hate Mai",
+   "created_at": "2026-10-30T06:26:15+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2115918016797966336/img/VhLD3TTHtBmkdD62.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2115918016797966336/vid/avc1/1280x720/PVKLdr3TvblEEe9A.mp4",
+     "duration": 138
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3093,
+   "replies": 0,
+   "likes": 92,
+   "retweets": 6,
+   "quotes": 0,
+   "bookmarks": 22,
+   "rank": 26,
+   "velocity": 212,
+   "vrank": 36
+  },
+  {
+   "id": "2116000032080195833",
+   "url": "https://x.com/milkynoe/status/2116000032080195833",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116000032080195833",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "gojo also didn't grow up with parents so marin and gojo being such perfect parents for nichika is giving her everything they both lacked as they grew up.. THEY COMPLETE EACHOTHER 💞",
+   "created_at": "2026-10-30T11:51:35+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1260,
+     "h": 1812,
+     "thumb": "https://pbs.twimg.com/media/HVwVkTvaUAA2E62.jpg"
+    }
+   ],
+   "media_from_quote": true,
+   "impressions": 2916,
+   "replies": 2,
+   "likes": 76,
+   "retweets": 5,
+   "quotes": 1,
+   "bookmarks": 9,
+   "rank": 27,
+   "velocity": 319,
+   "vrank": 30
+  },
+  {
+   "id": "2116121404722851995",
+   "url": "https://x.com/Rixi0303/status/2116121404722851995",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116121404722851995",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Chiramune Episode 17 Preview • Vol. 4 Adaptation — Haru’s Arc\n\nThis arc is a dramatic rollercoaster, revolving around Saku, Haru, and Yuzuki. Haru fans, GET READY… cuz this is going to be one wild ride 🧎🏻‍♀️♥️ \n\n#チラムネ",
+   "created_at": "2026-10-30T19:53:53+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1500,
+     "h": 2122,
+     "thumb": "https://pbs.twimg.com/media/HV35L7qb0AAJpwm.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1500,
+     "h": 2531,
+     "thumb": "https://pbs.twimg.com/media/HV35MWsaQAEgyDv.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1500,
+     "h": 2531,
+     "thumb": "https://pbs.twimg.com/media/HV35MwqbMAANFgy.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2698,
+   "replies": 0,
+   "likes": 198,
+   "retweets": 12,
+   "quotes": 0,
+   "bookmarks": 33,
+   "rank": 28,
+   "velocity": 2446,
+   "vrank": 6
+  },
+  {
+   "id": "2116016996051784116",
+   "url": "https://x.com/milkynoe/status/2116016996051784116",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116016996051784116",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "BLUE EYED MARIN IS UNFAIRLY GORGEOUS",
+   "created_at": "2026-10-30T12:59:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1103,
+     "h": 1251,
+     "thumb": "https://pbs.twimg.com/media/HV2WcjiW0AA6tNE.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2397,
+   "replies": 5,
+   "likes": 224,
+   "retweets": 16,
+   "quotes": 1,
+   "bookmarks": 17,
+   "rank": 29,
+   "velocity": 299,
+   "vrank": 32
+  },
+  {
+   "id": "2116006005872222297",
+   "url": "https://x.com/JASS1000001/status/2116006005872222297",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116006005872222297",
+   "username": "JASS1000001",
+   "name": "jass",
+   "avatar": "https://pbs.twimg.com/profile_images/1658862811886518272/KpgCe7oQ_normal.jpg",
+   "text": "She's Over 5000 😭",
+   "created_at": "2026-10-30T12:15:19+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HV2QPYMbwAAfrlJ.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116005842340483072/vid/avc1/1280x720/M5Sxgykc4_dM_8zM.mp4",
+     "duration": 55
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2337,
+   "replies": 0,
+   "likes": 54,
+   "retweets": 6,
+   "quotes": 0,
+   "bookmarks": 19,
+   "rank": 30,
+   "velocity": 267,
+   "vrank": 34
+  },
+  {
+   "id": "2116126126879969555",
+   "url": "https://x.com/GOJO_6E/status/2116126126879969555",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116126126879969555",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Naruto Shippuden (2010).",
+   "created_at": "2026-10-30T20:12:39+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/ext_tw_video_thumb/2014910061907468288/pu/img/-rKIxQRN3lC5_gWD.jpg",
+     "mp4": "https://video.twimg.com/ext_tw_video/2014910061907468288/pu/vid/avc1/1280x720/IhhQ3K8ju3W0zFGU.mp4",
+     "duration": 209
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2232,
+   "replies": 0,
+   "likes": 66,
+   "retweets": 1,
+   "quotes": 3,
+   "bookmarks": 53,
+   "rank": 31,
+   "velocity": 2232,
+   "vrank": 8
+  },
+  {
+   "id": "2116063778068373879",
+   "url": "https://x.com/AnimeVerse511/status/2116063778068373879",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116063778068373879",
+   "username": "AnimeVerse511",
+   "name": "AnimeVerse",
+   "avatar": "https://pbs.twimg.com/profile_images/2082589414962720768/oQOV5hWg_normal.jpg",
+   "text": "Reiner is crazy-Attack on titan season 2 episode 9 HD",
+   "created_at": "2026-10-30T16:04:53+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2116063644194578432/img/3xiSKeqLlxF4nVKd.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2116063644194578432/vid/avc1/1280x720/Uhm8CSytrcHmn8jS.mp4",
+     "duration": 262
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2171,
+   "replies": 1,
+   "likes": 27,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 4,
+   "rank": 32,
+   "velocity": 441,
+   "vrank": 27
+  },
+  {
+   "id": "2116066283250958633",
+   "url": "https://x.com/milkynoe/status/2116066283250958633",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116066283250958633",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "I LOVE THIS NIINA SMILE",
+   "created_at": "2026-10-30T16:14:51+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "photo",
+     "w": 1170,
+     "h": 1468,
+     "thumb": "https://pbs.twimg.com/media/HV3HEVpXIAANQt4.jpg"
+    },
+    {
+     "type": "photo",
+     "w": 1170,
+     "h": 1494,
+     "thumb": "https://pbs.twimg.com/media/HV3HEVoW0AAthgV.jpg"
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2013,
+   "replies": 2,
+   "likes": 146,
+   "retweets": 11,
+   "quotes": 1,
+   "bookmarks": 16,
+   "rank": 33,
+   "velocity": 423,
+   "vrank": 28
+  },
+  {
+   "id": "2116134769192833066",
+   "url": "https://x.com/d0nut2x/status/2116134769192833066",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116134769192833066",
+   "username": "d0nut2x",
+   "name": "d0nut2x 🐀",
+   "avatar": "https://pbs.twimg.com/profile_images/2001098165500395520/do3HHiOp_normal.jpg",
+   "text": "JoJo's Bizarre Adventure Part 7 STEEL BALL RUN #7 Full Staff:\n\nSB/ED: Tetsuji Nakamura\nCAD: Daisuke Tsumagari\nAss. CAD: Grand Guerrilla\nAD: Kiyotaka Iida, Naoki Hiramura, Masayuki Tachibana\n\nSTUDIO POLARIS\nJiayu Peng\n\nLO Studio\nSeung-U No, Jeong-Hwa Jo, Ye-Jin Yu, Hui-Sun Jang\n\nGrand Guerrilla (NC)\n\nAss. AD: Yui Kinoshita, Shijo, gobble\n\nAction Director: Kanta Suzuki\n\nKA: Eri Kojima, Tomoyuki Makabe, Sadatoshi Matsuzaka, Eiichi Morita, Akihiro Ootake, Yasuhiro Saiki, Takayuki Nakao, Manabu Imura, Yoshitaka Satou, Yuuta Nakajou, Toshihiro Irie, Souichi Honda, Ryuichi Nagaya, Ayu Tanaka, Harumi Kakuda, Takeshi Miyamoto, Mayumi Nakamura, Ryouko Kawamura, Kaori Ikeda, Kass Chapa, Jiamei Deng, TanPaku, Gokaiketsu, Shijo, Yuuta Ogikubo, Satsuki Mizoguchi\n\nDaisuke Tsumagari\n\nLO Co-op: Touichirou Yanagida\n\n51 2nd KAs",
+   "created_at": "2026-10-30T20:46:59+09:00",
+   "is_quote": false,
+   "media": [],
+   "media_from_quote": false,
+   "impressions": 1868,
+   "replies": 1,
+   "likes": 25,
+   "retweets": 4,
+   "quotes": 0,
+   "bookmarks": 5,
+   "rank": 35,
+   "velocity": 1868,
+   "vrank": 10
+  },
+  {
+   "id": "2116080259217191074",
+   "url": "https://x.com/ChisatoAnime/status/2116080259217191074",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2116080259217191074",
+   "username": "ChisatoAnime",
+   "name": "Chisato",
+   "avatar": "https://pbs.twimg.com/profile_images/2005967215141740545/htcFkidu_normal.jpg",
+   "text": "He met his ex after a long time , she has a kid and husband now 🥺 💔",
+   "created_at": "2026-10-30T17:10:23+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2076149325470855169/img/IX5_B3AXdTShQv5v.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2076149325470855169/vid/avc1/1280x720/kbmkbt_sBxExvAE6.mp4",
+     "duration": 84
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1502,
+   "replies": 0,
+   "likes": 26,
+   "retweets": 3,
+   "quotes": 0,
+   "bookmarks": 6,
+   "rank": 37,
+   "velocity": 392,
+   "vrank": 29
+  }
+ ],
+ "stats": {
+  "fetched": 111,
+  "in_window": 93,
+  "matched": 40,
+  "reached_window": true,
+  "est_cost_usd": 0.555
+ }
+}
