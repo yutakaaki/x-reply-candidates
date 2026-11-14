@@ -93,15 +93,16 @@ window.addEventListener('scroll', hideTip, { passive: true });
 async function init() {
   let data;
   try { data = await (await fetch('hourly.json?t=' + Date.now(), { cache: 'no-store' })).json(); }
-  catch (e) { $('main').replaceChildren(el('div', 'empty', 'まだ記録がありません。次の定時実行（6:00 / 18:00）から記録されます。')); return; }
+  catch (e) { $('main').replaceChildren(el('div', 'empty', 'まだ記録がありません。次の定時実行（6:00）から記録されます。')); return; }
   const keys = Object.keys(data.hours || {}).sort();
   if (!keys.length) { $('main').replaceChildren(el('div', 'empty', 'まだ記録がありません。')); return; }
 
   // 時刻（0〜23時台）ごとに平均を出す
-  const by = Array.from({ length: 24 }, () => ({ o: 0, x: 0, n: 0 }));
+  const by = Array.from({ length: 24 }, () => ({ o: 0, x: 0, n: 0, nx: 0 }));
   for (const k of keys) {
     const v = data.hours[k], h = +k.slice(11, 13);
-    by[h].o += v.o; by[h].x += v.rt + v.rp; by[h].n += 1;
+    by[h].o += v.o; by[h].n += 1;
+    if (v.rt != null) { by[h].x += v.rt + v.rp; by[h].nx += 1; }  // 11/14以降はRT・返信を読まない方式なので数えていない
   }
   const days = new Set(keys.map(k => k.slice(0, 10)));
   const main = $('main'); main.replaceChildren();
@@ -109,7 +110,7 @@ async function init() {
   // ① 平均の積み上げ縦棒
   const c1 = el('section', 'card');
   c1.append(el('h2', null, '何時台に投稿が多いか（1時間あたりの平均件数）'),
-            el('p', 'note', `リストのメンバー全員の投稿。記録 ${keys.length}時間分（${days.size}日にまたがる）。棒をタップすると詳細`));
+            el('p', 'note', `リストのメンバー全員の投稿。記録 ${keys.length}時間分（${days.size}日にまたがる）。棒をタップすると詳細。11/14からRT・返信は数えていません（RT・返信の平均はそれより前の記録から）`));
   const lg = el('div', 'legend');
   lg.innerHTML = '<span><i style="background:var(--s1)"></i>通常・引用（返信候補になる投稿）</span><span><i style="background:var(--s2)"></i>RT・返信</span>';
   const chartBox = el('div'); c1.append(lg, chartBox);
@@ -121,7 +122,7 @@ async function init() {
 
   // ② 日付 × 時刻の一覧
   const c2 = el('section', 'card');
-  c2.append(el('h2', null, '日ごとの投稿数（全種類の合計）'),
+  c2.append(el('h2', null, '日ごとの投稿数（通常・引用）'),
             el('p', 'note', '縦が時刻、横が日付（右ほど新しい）。色が濃いほど多い。斜線は未計測。直近14日分'));
   c2.append(heatmap(data.hours, [...days].sort().reverse().slice(0, 14)));
   main.append(c2);
@@ -132,7 +133,7 @@ async function init() {
 
 function barChart(by, W) {
   const H = 200, L = 24, R = 2, T = 8, B = 20;
-  const avg = by.map(b => b.n ? { o: b.o / b.n, x: b.x / b.n } : null);
+  const avg = by.map(b => b.n ? { o: b.o / b.n, x: b.nx ? b.x / b.nx : 0 } : null);
   const max = Math.max(1, ...avg.filter(Boolean).map(a => a.o + a.x));
   const step = max <= 5 ? 1 : max <= 12 ? 2 : max <= 30 ? 5 : 10;
   const top = Math.ceil(max / step) * step;
@@ -181,7 +182,8 @@ function numTable(by) {
   t.innerHTML = '<tr><th>時間帯</th><th>平均</th><th>通常・引用</th><th>RT・返信</th><th>計測回数</th></tr>';
   by.forEach((b, h) => {
     const tr = el('tr');
-    const cells = b.n ? [f1((b.o + b.x) / b.n), f1(b.o / b.n), f1(b.x / b.n), b.n] : ['—', '—', '—', 0];
+    const xa = b.nx ? b.x / b.nx : 0;
+    const cells = b.n ? [f1(b.o / b.n + xa), f1(b.o / b.n), b.nx ? f1(xa) : '—', b.n] : ['—', '—', '—', 0];
     [`${h}時台`, ...cells].forEach(v => tr.append(el('td', null, v)));
     t.append(tr);
   });
@@ -191,7 +193,7 @@ function numTable(by) {
 
 function heatmap(hours, dates) {
   dates = dates.slice().reverse();  // 左が古く、右が新しい
-  const vals = Object.values(hours).map(v => v.o + v.rt + v.rp);
+  const vals = Object.values(hours).map(v => v.o);
   const max = Math.max(1, ...vals);
   const wrap = el('div', 'scroll'), t = el('table', 'heat');
   const h1 = el('tr'), h2 = el('tr');
@@ -207,12 +209,12 @@ function heatmap(hours, dates) {
     for (const d of dates) {
       const k = `${d}T${String(h).padStart(2, '0')}`, v = hours[k];
       if (!v) { tr.append(el('td', 'na', '')); continue; }
-      const n = v.o + v.rt + v.rp;
+      const n = v.o;  // 候補になりうる通常・引用の件数
       const q = Math.min(6, Math.floor((n / max) * 6.999));
       const td = el('td', null, n);
       td.style.background = `var(--q${q})`;
       td.style.color = `var(--i${q})`;
-      bindTip(td, () => `<b>${+d.slice(5, 7)}/${+d.slice(8, 10)} ${h}時台</b>　${n}件<br>通常・引用 ${v.o} ／ RT ${v.rt} ／ 返信 ${v.rp}`);
+      bindTip(td, () => `<b>${+d.slice(5, 7)}/${+d.slice(8, 10)} ${h}時台</b>　通常・引用 ${n}件${v.rt != null ? `<br>（ほかに RT ${v.rt} ／ 返信 ${v.rp}）` : ''}`);
       tr.append(td);
     }
     t.append(tr);

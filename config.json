@@ -12,8 +12,7 @@
   "cost_per_post_usd": 0.005,
   "keep_runs": 60,
   "schedule": [
-    "06:00",
-    "21:00"
+    "06:00"
   ],
   "slots": {
     "06:00": {
@@ -24,5 +23,8 @@
       "window_hours": 15,
       "top_n": 30
     }
-  }
+  },
+  "fetch_mode": "members",
+  "members_refresh_days": 7,
+  "cost_per_user_usd": 0.01
 }

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Xリストの直近12時間のポストから、返信候補（表示数上位）を抽出してページ用JSONを出力する。
 
-launchd から毎日 6:00 / 18:00 に実行される。
+launchd から毎日 6:00 に実行される（21:00 は 2026-11-14 に休止）。
+  取得はメンバーごとに本人の投稿だけ（RT・返信はX側で除外）。fetch_mode="list" で旧方式。
   python3 src/run.py            # 抽出 → docs/ 更新 → GitHub へ push → 次回起床予約
   python3 src/run.py --no-push  # 抽出と docs/ 更新だけ（手元確認用）
 """
@@ -55,15 +56,30 @@ def run_id_for(now, cfg):
     return now.strftime('%Y%m%d-%H%M'), None
 
 
+TWEET_PARAMS = {
+    'tweet.fields': 'created_at,public_metrics,referenced_tweets,author_id,note_tweet,attachments,entities',
+    # 画像・動画（引用ポストの場合は引用元の画像・動画）も一緒にもらう
+    'expansions': 'author_id,attachments.media_keys,referenced_tweets.id,'
+                  'referenced_tweets.id.attachments.media_keys',
+    'media.fields': 'type,url,preview_image_url,variants,duration_ms,width,height',
+    'user.fields': 'username,name,profile_image_url'}
+DATA_DIR = os.path.join(ROOT, 'data')  # 手元だけに置くデータ（Git管理外。非公開リストのメンバー一覧など）
+
+
+def merge_includes(inc, j):
+    includes = j.get('includes') or {}
+    for u in includes.get('users', []):
+        inc['users'][u['id']] = u
+    for m in includes.get('media', []):
+        inc['media'][m['media_key']] = m
+    for t in includes.get('tweets', []):
+        inc['tweets'][t['id']] = t
+
+
 def fetch_list_posts(token, cfg, cutoff):
-    """リストのタイムライン（新しい順）を、12時間前より古くなるまでページ送りで取得"""
-    params = {'max_results': cfg['page_size'],
-              'tweet.fields': 'created_at,public_metrics,referenced_tweets,author_id,note_tweet,attachments,entities',
-              # 画像・動画（引用ポストの場合は引用元の画像・動画）も一緒にもらう
-              'expansions': 'author_id,attachments.media_keys,referenced_tweets.id,'
-                            'referenced_tweets.id.attachments.media_keys',
-              'media.fields': 'type,url,preview_image_url,variants,duration_ms,width,height',
-              'user.fields': 'username,name,profile_image_url'}
+    """[旧方式] リストのタイムライン（新しい順）を、範囲の始まりより古くなるまでページ送りで取得。
+    RT・返信も読んでから捨てるので、その分も料金がかかる"""
+    params = dict(TWEET_PARAMS, max_results=cfg['page_size'])
     posts, next_token, reached = [], None, False
     inc = {'users': {}, 'media': {}, 'tweets': {}}
     while len(posts) < cfg['max_posts_per_run']:
@@ -73,18 +89,92 @@ def fetch_list_posts(token, cfg, cutoff):
         j = xauth.api_get(f'/lists/{cfg["list_id"]}/tweets', p, token)
         data = j.get('data') or []
         posts.extend(data)
-        includes = j.get('includes') or {}
-        for u in includes.get('users', []):
-            inc['users'][u['id']] = u
-        for m in includes.get('media', []):
-            inc['media'][m['media_key']] = m
-        for t in includes.get('tweets', []):
-            inc['tweets'][t['id']] = t
+        merge_includes(inc, j)
         next_token = (j.get('meta') or {}).get('next_token')
         if not data or not next_token or parse_time(data[-1]['created_at']) < cutoff:
-            reached = True  # 12時間分を取り切った（またはリストの投稿を全部見た）
+            reached = True  # 範囲を取り切った（またはリストの投稿を全部見た）
             break
     return posts, inc, reached
+
+
+def list_members(token, cfg, now):
+    """リストのメンバー一覧。1人≒$0.01かかるので data/members.json に保存し、数日に1回だけ取り直す"""
+    path = os.path.join(DATA_DIR, 'members.json')
+    try:
+        cache = json.load(open(path, encoding='utf-8'))
+        age = now - datetime.fromisoformat(cache['fetched_at'])
+        if cache.get('list_id') == cfg['list_id'] and age < timedelta(days=cfg.get('members_refresh_days', 7)) \
+                and '--refresh-members' not in sys.argv:
+            return cache['members'], False
+    except Exception:
+        pass
+    members, next_token = [], None
+    while True:
+        p = {'max_results': 100, 'user.fields': 'username,name,profile_image_url,public_metrics'}
+        if next_token:
+            p['pagination_token'] = next_token
+        j = xauth.api_get(f'/lists/{cfg["list_id"]}/members', p, token)
+        members += [{'id': u['id'], 'username': u['username'], 'name': u.get('name', ''),
+                     'followers': (u.get('public_metrics') or {}).get('followers_count')}
+                    for u in j.get('data') or []]
+        next_token = (j.get('meta') or {}).get('next_token')
+        if not next_token:
+            break
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump({'list_id': cfg['list_id'], 'fetched_at': now.isoformat(), 'members': members},
+                  f, ensure_ascii=False, indent=1)
+    return members, True
+
+
+def fetch_member_posts(token, cfg, cutoff, members):
+    """[新方式] メンバー1人ずつ、範囲内の本人の投稿だけを取得（RT・返信はX側で除くので料金がかからない）"""
+    params = dict(TWEET_PARAMS, max_results=100, exclude='retweets,replies',
+                  start_time=cutoff.strftime('%Y-%m-%dT%H:%M:%SZ'))
+    posts, per_member = [], {}
+    inc = {'users': {}, 'media': {}, 'tweets': {}}
+    for mem in members:
+        got, next_token = [], None
+        while len(posts) + len(got) < cfg['max_posts_per_run']:
+            p = dict(params)
+            if next_token:
+                p['pagination_token'] = next_token
+            j = xauth.api_get(f'/users/{mem["id"]}/tweets', p, token)
+            got += j.get('data') or []
+            merge_includes(inc, j)
+            next_token = (j.get('meta') or {}).get('next_token')
+            if not next_token:
+                break
+        posts += got
+        per_member[mem['id']] = got
+        if len(posts) >= cfg['max_posts_per_run']:
+            return posts, inc, False, per_member
+    posts.sort(key=lambda t: t['created_at'], reverse=True)
+    return posts, inc, True, per_member
+
+
+def update_member_stats(run_id, cfg, members, per_member, now, cutoff, keep_runs=60):
+    """メンバーごとの投稿数・表示数を data/member_stats.json にためる（リストの見直し用）"""
+    path = os.path.join(DATA_DIR, 'member_stats.json')
+    try:
+        data = json.load(open(path, encoding='utf-8'))
+    except Exception:
+        data = {'runs': []}
+    stats = {}
+    for mem in members:
+        got = per_member.get(mem['id'], [])
+        stats[mem['username']] = {
+            'id': mem['id'], 'followers': mem.get('followers'),
+            'imps': [(t.get('public_metrics') or {}).get('impression_count', 0) for t in got],
+            'reps': [(t.get('public_metrics') or {}).get('reply_count', 0) for t in got]}
+    data['runs'] = [r for r in data['runs'] if r['id'] != run_id]
+    data['runs'].append({'id': run_id, 'at': now.isoformat(),
+                         'window_hours': round((now - cutoff).total_seconds() / 3600, 2),  # 実際に見た時間幅
+                         'members': stats})
+    data['runs'] = sorted(data['runs'], key=lambda r: r['id'])[-keep_runs:]
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, separators=(',', ':'))
 
 
 def media_of(t, inc):
@@ -182,26 +272,31 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
     return out, matched
 
 
-def hourly_counts(posts, cutoff, now):
+def hourly_counts(posts, cutoff, now, member_mode=False):
     """読めた範囲の中で丸ごと見えた1時間ごと（JST）に、投稿数を種類別に数える。
-    o=通常・引用、rt=リツイート、rp=返信。範囲の端で欠ける時間は数えない（開始10分の欠けまでは許容）"""
+    o=通常・引用、rt=リツイート、rp=返信。範囲の端で欠ける時間は数えない（開始10分の欠けまでは許容）。
+    新方式（member_mode）はRT・返信を読まないので o だけを記録する"""
     hour = timedelta(hours=1)
-    # 投稿は新しい順に切れ目なく読んでいるので、読めた一番古い投稿の時刻までは全件そろっている
-    start = parse_time(posts[-1]['created_at']).astimezone(JST) if posts else cutoff.astimezone(JST)
+    if member_mode:  # 範囲の始まりから全員分そろっている
+        start = cutoff.astimezone(JST)
+    else:  # 投稿は新しい順に切れ目なく読んでいるので、読めた一番古い投稿の時刻までは全件そろっている
+        start = parse_time(posts[-1]['created_at']).astimezone(JST) if posts else cutoff.astimezone(JST)
     first = start.replace(minute=0, second=0, microsecond=0)
     if start - first > timedelta(minutes=10):
         first += hour
     end = now.replace(minute=0, second=0, microsecond=0)
     hours, h = {}, first
     while h + hour <= end:
-        hours[h.strftime('%Y-%m-%dT%H')] = {'o': 0, 'rt': 0, 'rp': 0}
+        hours[h.strftime('%Y-%m-%dT%H')] = {'o': 0} if member_mode else {'o': 0, 'rt': 0, 'rp': 0}
         h += hour
     for t in posts:
         k = parse_time(t['created_at']).astimezone(JST).strftime('%Y-%m-%dT%H')
         if k not in hours:
             continue
         refs = {r['type'] for r in t.get('referenced_tweets') or []}
-        hours[k]['rt' if 'retweeted' in refs else 'rp' if 'replied_to' in refs else 'o'] += 1
+        kind = 'rt' if 'retweeted' in refs else 'rp' if 'replied_to' in refs else 'o'
+        if kind in hours[k]:
+            hours[k][kind] += 1
     return hours
 
 
@@ -214,7 +309,7 @@ def update_hourly(hours, now, keep_days=60):
         data = {'hours': {}}
     for k, v in hours.items():
         old = data['hours'].get(k)
-        if not old or sum(v.values()) >= sum(old.values()):
+        if not old or (v['o'], sum(v.values())) >= (old['o'], sum(old.values())):
             data['hours'][k] = v
     oldest = (now - timedelta(days=keep_days)).strftime('%Y-%m-%dT%H')
     data['hours'] = {k: v for k, v in sorted(data['hours'].items()) if k >= oldest}
@@ -312,17 +407,30 @@ def main():
     try:
         token = xauth.access_token()
         me_id = xauth.load_secrets().get('me_id')
-        posts, inc, reached = fetch_list_posts(token, cfg, cutoff)
+        member_mode = cfg.get('fetch_mode', 'members') == 'members'
+        cost, users_read = 0.0, 0
+        if member_mode:
+            members, refreshed = list_members(token, cfg, now)
+            if refreshed:
+                users_read = len(members)
+                log(f'リストのメンバー一覧を取り直しました: {len(members)}人')
+            members = [m for m in members if m['id'] != me_id]
+            posts, inc, reached, per_member = fetch_member_posts(token, cfg, cutoff, members)
+            update_member_stats(run_id, cfg, members, per_member, now, cutoff)
+        else:
+            posts, inc, reached = fetch_list_posts(token, cfg, cutoff)
         run["posts"], matched = pick_candidates(posts, inc, cfg, cutoff, me_id, now)
         in_window = sum(1 for t in posts if parse_time(t['created_at']) >= cutoff)
-        run['stats'] = {'fetched': len(posts), 'in_window': in_window, 'matched': matched,
-                        'reached_window': reached,
-                        'est_cost_usd': round(len(posts) * cfg['cost_per_post_usd'], 3)}
+        cost = len(posts) * cfg['cost_per_post_usd'] + users_read * cfg.get('cost_per_user_usd', 0.01)
+        run['stats'] = {'mode': 'members' if member_mode else 'list',
+                        'fetched': len(posts), 'in_window': in_window, 'matched': matched,
+                        'reached_window': reached, 'users_read': users_read,
+                        'est_cost_usd': round(cost, 3)}
         log(f'取得 {len(posts)}件（{cfg["window_hours"]}h内 {in_window}件）→ 条件一致 {matched}件 → 候補 {len(run["posts"])}件'
-            f'／推定 ${run["stats"]["est_cost_usd"]}')
+            f'／推定 ${run["stats"]["est_cost_usd"]}' + ('（RT・返信は読まない方式）' if member_mode else ''))
         if not reached:
-            log(f'⚠️ 上限 {cfg["max_posts_per_run"]}件に達したため12時間分を取り切れていません')
-        hours = hourly_counts(posts, cutoff, now)
+            log(f'⚠️ 上限 {cfg["max_posts_per_run"]}件に達したため範囲を取り切れていません')
+        hours = hourly_counts(posts, cutoff, now, member_mode)
         update_hourly(hours, now)
         log(f'時間帯別の投稿数を記録: {len(hours)}時間分')
         status_msg = f'{len(run["posts"])}件の返信候補を更新しました'
