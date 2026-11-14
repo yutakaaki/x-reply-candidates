@@ -16,7 +16,7 @@
   ],
   "slots": {
     "06:00": {
-      "window_hours": 12,
+      "window_hours": 9,
       "top_n": 50
     },
     "21:00": {
