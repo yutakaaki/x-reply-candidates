@@ -153,7 +153,7 @@ def fetch_member_posts(token, cfg, cutoff, members):
     return posts, inc, True, per_member
 
 
-def update_member_stats(run_id, cfg, members, per_member, now, cutoff, keep_runs=60):
+def update_member_stats(run_id, cfg, members, per_member, inc, now, cutoff, keep_runs=60):
     """メンバーごとの投稿数・表示数を data/member_stats.json にためる（リストの見直し用）"""
     path = os.path.join(DATA_DIR, 'member_stats.json')
     try:
@@ -166,7 +166,8 @@ def update_member_stats(run_id, cfg, members, per_member, now, cutoff, keep_runs
         stats[mem['username']] = {
             'id': mem['id'], 'followers': mem.get('followers'),
             'imps': [(t.get('public_metrics') or {}).get('impression_count', 0) for t in got],
-            'reps': [(t.get('public_metrics') or {}).get('reply_count', 0) for t in got]}
+            'reps': [(t.get('public_metrics') or {}).get('reply_count', 0) for t in got],
+            'kinds': ''.join(kind_of(t, inc) for t in got)}  # 動画以外を読まない方式にした場合の節約額の見積もり用
     data['runs'] = [r for r in data['runs'] if r['id'] != run_id]
     data['runs'].append({'id': run_id, 'at': now.isoformat(),
                          'window_hours': round((now - cutoff).total_seconds() / 3600, 2),  # 実際に見た時間幅
@@ -197,6 +198,16 @@ def media_of(t, inc):
                 item['duration'] = round(m['duration_ms'] / 1000)
         out.append(item)
     return out
+
+
+def kind_of(t, inc):
+    """投稿の種類: v=動画・GIF（引用元の動画も含む）、p=画像だけ、t=テキストだけ"""
+    types = {m['type'] for m in media_of(t, inc)}
+    if not types:
+        q = [r['id'] for r in t.get('referenced_tweets') or [] if r['type'] == 'quoted']
+        if q and q[0] in inc['tweets']:
+            types = {m['type'] for m in media_of(inc['tweets'][q[0]], inc)}
+    return 'v' if types & {'video', 'animated_gif'} else 'p' if types else 't'
 
 
 def clean_text(t, text, hide_ids):
@@ -238,6 +249,8 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
         if not media and quoted_ids and quoted_ids[0] in inc['tweets']:
             media = media_of(inc['tweets'][quoted_ids[0]], inc)  # 引用ポストは引用元の動画・画像を見せる
             media_from_quote = bool(media)
+        if cfg.get('video_only') and not any(x['type'] in ('video', 'animated_gif') for x in media):
+            continue  # テキストだけ・画像だけの投稿は候補にしない
         text = (t.get('note_tweet') or {}).get('text') or t.get('text', '')
         text = clean_text(t, text, quoted_ids)
         out.append({
@@ -416,7 +429,7 @@ def main():
                 log(f'リストのメンバー一覧を取り直しました: {len(members)}人')
             members = [m for m in members if m['id'] != me_id]
             posts, inc, reached, per_member = fetch_member_posts(token, cfg, cutoff, members)
-            update_member_stats(run_id, cfg, members, per_member, now, cutoff)
+            update_member_stats(run_id, cfg, members, per_member, inc, now, cutoff)
         else:
             posts, inc, reached = fetch_list_posts(token, cfg, cutoff)
         run["posts"], matched = pick_candidates(posts, inc, cfg, cutoff, me_id, now)

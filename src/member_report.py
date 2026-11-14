@@ -51,9 +51,10 @@ def main():
     stats = {}
     for r in st_runs:
         for name, s in r['members'].items():
-            a = stats.setdefault(name.lower(), {'imps': [], 'reps': []})
+            a = stats.setdefault(name.lower(), {'imps': [], 'reps': [], 'kinds': ''})
             a['imps'] += s['imps']
             a['reps'] += s['reps']
+            a['kinds'] += s.get('kinds', '')
 
     # 1日に読む時間幅（いまの定時の回の合計。6:00だけなら12時間）
     slots = cfg.get('slots', {})
@@ -62,7 +63,7 @@ def main():
     for m in members:
         key = m['username'].lower()
         c = cand.get(key, {'ids': set(), 'best': 0})
-        s = stats.get(key, {'imps': [], 'reps': []})
+        s = stats.get(key, {'imps': [], 'reps': [], 'kinds': ''})
         per_hour = len(s['imps']) / hours_seen if hours_seen else None
         per_day = per_hour * 24 if per_hour is not None else None
         rows.append({
@@ -72,6 +73,7 @@ def main():
             'median': statistics.median(s['imps']) if s['imps'] else None,
             'hit': sum(1 for i, rp in zip(s['imps'], s['reps']) if i >= min_imp and rp <= cfg.get('max_replies', 10)),
             'posts': len(s['imps']),
+            'video': s['kinds'].count('v') / len(s['kinds']) if s['kinds'] else None,
             'cost_month': per_hour * read_hours * 30 * COST_PER_POST if per_hour is not None else None,
         })
     # 候補に入った回数が少ない順 → 同じなら費用が高い順
@@ -86,15 +88,20 @@ def main():
         f'- 月の費用＝いまの定時の回（1日{read_hours}時間分を読む）で、その人の投稿を読む料金',
         f'- 「条件内」＝表示数{min_imp:,}以上・返信10件以下だった投稿の数',
         '',
-        '| アカウント | フォロワー | 候補に載った投稿数 | 候補での最高表示数 | 1日の投稿数 | 表示数の中央値 | 条件内/読んだ数 | 月の費用 |',
-        '|---|---:|---:|---:|---:|---:|---:|---:|',
+        '| アカウント | フォロワー | 候補に載った投稿数 | 候補での最高表示数 | 1日の投稿数 | 表示数の中央値 | 条件内/読んだ数 | 動画の割合 | 月の費用 |',
+        '|---|---:|---:|---:|---:|---:|---:|---:|---:|',
     ]
     for r in rows:
         lines.append(f"| @{r['user']} | {f(r['followers'], ',')} | {r['cand']} | {f(r['best'] or None, ',')} | "
-                     f"{f(r['per_day'], '.1f')} | {f(r['median'], ',.0f')} | {r['hit']}/{r['posts']} | "
+                     f"{f(r['per_day'], '.1f')} | {f(r['median'], ',.0f')} | {r['hit']}/{r['posts']} | {'—' if r['video'] is None else format(r['video'], '.0%')} | "
                      f"{'—' if r['cost_month'] is None else '$' + format(r['cost_month'], '.2f')} |")
     total = sum(r['cost_month'] or 0 for r in rows)
     lines += ['', f'月の費用の合計（メンバー一覧の取り直し 週1回≒$0.5 を除く）: 約${total:.1f}']
+    kinds = ''.join(s['kinds'] for s in stats.values())
+    if kinds:
+        v, p_, t_ = (kinds.count(k) / len(kinds) for k in 'vpt')
+        lines.append(f'読んだ投稿の内訳（{len(kinds)}件）: 動画・GIF {v:.0%} ／ 画像だけ {p_:.0%} ／ テキストだけ {t_:.0%}'
+                     f' → 動画だけを読む方式にすると約{1 - v:.0%}安くなる見込み')
     out = '\n'.join(lines)
     print(out)
     os.makedirs(DATA, exist_ok=True)
