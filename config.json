@@ -27,7 +27,7 @@
   "fetch_mode": "members",
   "cost_per_user_usd": 0.01,
   "video_only": true,
-  "member_count_check": true,
   "quote_video_ok": false,
-  "exclude_shared_video": true
+  "exclude_shared_video": true,
+  "member_count_check_days": 7
 }

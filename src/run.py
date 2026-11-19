@@ -132,6 +132,24 @@ def list_members(token, cfg, now, force=False):
     return members, True
 
 
+MEMBER_COUNT_PATH = os.path.join(DATA_DIR, 'member_count.json')
+
+
+def load_member_count():
+    try:
+        return json.load(open(MEMBER_COUNT_PATH, encoding='utf-8'))
+    except Exception:
+        return {}
+
+
+def save_member_count(count, now):
+    mc = {'count': count, 'checked_at': now.isoformat()}
+    os.makedirs(DATA_DIR, exist_ok=True)
+    with open(MEMBER_COUNT_PATH, 'w', encoding='utf-8') as f:
+        json.dump(mc, f)
+    return mc
+
+
 def list_member_count(token, cfg, me_id):
     """X上のリストの人数。自分が持っているリストの一覧から読む（自分のデータの読み取り≒$0.001）"""
     next_token = None
@@ -481,17 +499,23 @@ def main():
             if refreshed:
                 users_read = len(members)
                 log(f'リストのメンバー一覧を取り直しました: {len(members)}人')
-            if cfg.get('member_count_check', True):  # 入れ替えの伝え忘れに気づくため、人数だけ毎回確かめる
+            # 入れ替えの伝え忘れに気づくため、週1回だけリストの人数を確かめる（結果は members.json に残す）
+            mc = load_member_count()
+            due = not mc.get('checked_at') or now - datetime.fromisoformat(mc['checked_at']) \
+                >= timedelta(days=cfg.get('member_count_check_days', 7)) - timedelta(hours=2)
+            if due:
                 try:
-                    count = list_member_count(token, cfg, me_id)
+                    mc = save_member_count(list_member_count(token, cfg, me_id), now)
                     extra_cost += 0.001
-                    if count is not None and count != len(members):
-                        run['warning'] = (f'リストの人数（{count}人）とツールの一覧（{len(members)}人）が合いません。'
-                                          'scripts/members.command で変わった人を伝えてください')
-                        log('⚠️ ' + run['warning'])
-                        notify(f'リストの人数が合いません（X {count}人／ツール {len(members)}人）')
+                    log(f'リストの人数を確認: X {mc["count"]}人／ツール {len(members)}人')
                 except xauth.ApiError as e:
                     log(f'⚠️ リストの人数を確認できませんでした: {e.status}')
+            if mc.get('count') is not None and mc['count'] != len(members):  # 直すまで毎回ページに出す
+                run['warning'] = (f'リストの人数（{mc["count"]}人、{mc["checked_at"][5:10].replace("-", "/")}確認）と'
+                                  f'ツールの一覧（{len(members)}人）が合いません。scripts/members.command で変わった人を伝えてください')
+                log('⚠️ ' + run['warning'])
+                if due:
+                    notify(f'リストの人数が合いません（X {mc["count"]}人／ツール {len(members)}人）')
             members = [m for m in members if m['id'] != me_id]
             posts, inc, reached, per_member = fetch_member_posts(token, cfg, cutoff, members)
             update_member_stats(run_id, cfg, members, per_member, inc, now, cutoff)

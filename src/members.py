@@ -5,6 +5,7 @@
   python3 src/members.py                           # 入力を聞かれる（scripts/members.command から）
   python3 src/members.py --all                     # 一覧を全部取り直す（50人で約$0.5）
   python3 src/members.py --check                   # Xのリストの人数と比べるだけ（≒$0.001）
+  python3 src/members.py --list                    # ツールの一覧を見るだけ（無料）
 """
 import json, os, sys
 from datetime import datetime
@@ -25,6 +26,7 @@ def save(cache):
 
 def check(token, cfg, me_id, n):
     count = run.list_member_count(token, cfg, me_id)
+    run.save_member_count(count, datetime.now(JST).replace(microsecond=0))
     if count is None:
         print('⚠️ リストが見つかりませんでした（config.json の list_id を確認）')
     elif count == n:
@@ -33,9 +35,28 @@ def check(token, cfg, me_id, n):
         print(f'⚠️ Xのリストは {count}人、ツールの一覧は {n}人です。追加・削除の伝え漏れがないか確認してください')
 
 
+def show():
+    """ツールの一覧を表示する（APIは使わない）"""
+    cache = json.load(open(run.MEMBERS_PATH, encoding='utf-8'))
+    ms = sorted(cache['members'], key=lambda m: m['username'].lower())
+    print(f'ツールの一覧: {len(ms)}人（一覧を取った日 {cache["fetched_at"][:10]}'
+          + (f'、最後に編集 {cache["edited_at"][:10]}' if cache.get('edited_at') else '') + '）')
+    for i, m in enumerate(ms, 1):
+        print(f'{i:3} @{m["username"]}  {m.get("name", "")}')
+    mc = run.load_member_count()
+    if mc.get('count') is not None:
+        print(f'（Xのリストは {mc["count"]}人: {mc["checked_at"][:10]} 確認）')
+    print()
+
+
 def main():
     cfg = run.load_config()
     args = sys.argv[1:]
+    if '--list' in args:
+        show()
+        return
+    if not args and os.path.exists(run.MEMBERS_PATH):
+        show()
     token = xauth.access_token()
     me_id = xauth.load_secrets().get('me_id')
     now = datetime.now(JST).replace(microsecond=0)
