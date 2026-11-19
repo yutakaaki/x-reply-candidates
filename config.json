@@ -25,7 +25,9 @@
     }
   },
   "fetch_mode": "members",
-  "members_refresh_days": 7,
   "cost_per_user_usd": 0.01,
-  "video_only": true
+  "video_only": true,
+  "member_count_check": true,
+  "quote_video_ok": false,
+  "exclude_shared_video": true
 }

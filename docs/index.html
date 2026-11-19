@@ -12,12 +12,14 @@
     --bg: #f5f6f8; --card: #ffffff; --text: #0f1419; --sub: #5b6670; --line: #e3e7eb;
     --accent: #1d9bf0; --accent-ink: #ffffff; --imp: #0b6bcb; --chip: #eef3f8;
     --done: #8a959e; --warn-bg: #fff4e0; --warn: #8a5300; --err-bg: #fdeaea; --err: #b42318;
+    --rep-bg: #ffe8d6; --rep: #9a3d00; --dup-bg: #ece8ff; --dup: #4b3bb3;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --bg: #0b0e12; --card: #151a20; --text: #e7ecf0; --sub: #8b98a5; --line: #26303a;
       --accent: #1d9bf0; --accent-ink: #ffffff; --imp: #6cb8ff; --chip: #1c242d;
       --done: #5d6873; --warn-bg: #2d2412; --warn: #f0c27a; --err-bg: #2e1616; --err: #ff8a80;
+      --rep-bg: #3a2312; --rep: #ffb27a; --dup-bg: #231f3d; --dup: #b9adff;
     }
   }
   * { box-sizing: border-box; }
@@ -85,7 +87,13 @@
   .media video, .media img { display: block; width: 100%; max-height: 420px; object-fit: contain;
                              background: #000; border-radius: 0; }
   .media.n2 img, .media.n3 img, .media.n4 img { height: 160px; object-fit: cover; }
-  @media (max-width: 420px) { .text, .stats, .actions, .more, .kind, .media { margin-left: 0; } }
+  .flags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0 38px; }
+  .flag { font-size: 12.5px; font-weight: 600; border-radius: 8px; padding: 3px 9px; text-decoration: none;
+          overflow-wrap: anywhere; }
+  .flag.replied { background: var(--rep-bg); color: var(--rep); }
+  .flag.dup { background: var(--dup-bg); color: var(--dup); }
+  .flag a { color: inherit; }
+  @media (max-width: 420px) { .text, .stats, .actions, .more, .kind, .media, .flags { margin-left: 0; } }
 </style>
 </head>
 <body>
@@ -200,6 +208,26 @@ function renderMedia(p) {
   return [label, box];
 }
 
+function link(text, href) { const a = el('a', null, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; }
+
+// 同じ動画の印: 以前返信した動画と同じ／この回の候補にも同じ動画がある
+function renderFlags(p) {
+  if (!p.replied && !(p.same_as && p.same_as.length)) return null;
+  const box = el('div', 'flags');
+  if (p.replied) {
+    const r = p.replied, f = el('span', 'flag replied');
+    if (r.same_post) f.append('↩︎ 返信済みの投稿');
+    else f.append('↩︎ 返信済みと同じ動画（', link(`@${r.username}`, r.post_url), `に${fmtDate(r.replied_at)}返信）`);
+    box.append(f);
+  }
+  if (p.same_as && p.same_as.length) {
+    const f = el('span', 'flag dup', `⧉ 同じ動画 ほか${p.same_as.length}件: `);
+    p.same_as.forEach((q, i) => { if (i) f.append(', '); f.append(link(`@${q.username}`, q.url)); });
+    box.append(f);
+  }
+  return box;
+}
+
 function render() {
   const run = current, c = run.conditions || {}, s = run.stats;
   $('summary').innerHTML = '';
@@ -207,8 +235,15 @@ function render() {
   sum.append(el('b', null, `${fmtDate(run.window_start)} 〜 ${fmtTime(run.run_at)}`),
              ` の投稿｜表示${num(c.min_impressions || 0)}以上・返信${c.max_replies}以下・表示数上位${c.top_n}件＋伸びが速い投稿`);
   if (s) sum.append(el('br'), `取得 ${s.fetched}件 → 条件一致 ${s.matched}件｜API推定 $${s.est_cost_usd}`);
+  if (s && s.skipped) {
+    const k = s.skipped, parts = [];
+    if (k.quote_only) parts.push(`引用元だけ動画 ${k.quote_only}`);
+    if (k.shared) parts.push(`他アカウントの動画を共有 ${k.shared}`);
+    if (parts.length) sum.append(el('br'), `除外: ${parts.join('・')}件`);
+  }
 
   const banner = $('banner'); banner.replaceChildren();
+  if (run.warning) banner.append(el('div', 'banner warn', '⚠️ ' + run.warning));
   if (run.error) banner.append(el('div', 'banner err', '⚠️ ' + run.error));
   else if (s && !s.reached_window) banner.append(el('div', 'banner warn', `取得上限に達したため、${c.window_hours || 12}時間分を最後まで取り切れていません（古い時間帯が抜けている可能性）。`));
 
@@ -271,6 +306,8 @@ function render() {
     actions.append(reply, open, chk);
 
     card.append(head);
+    const flags = renderFlags(p);
+    if (flags) card.append(flags);
     if (p.media) card.append(...renderMedia(p));
     card.append(text);
     requestAnimationFrame(() => { if (text.scrollHeight > text.clientHeight + 2) {

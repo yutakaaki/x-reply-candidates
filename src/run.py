@@ -6,12 +6,14 @@ launchd から毎日 6:00 に実行される（21:00 は 2026-11-14 に休止）
   python3 src/run.py            # 抽出 → docs/ 更新 → GitHub へ push → 次回起床予約
   python3 src/run.py --no-push  # 抽出と docs/ 更新だけ（手元確認用）
 """
-import html, json, os, socket, subprocess, sys, time, traceback
+import html, json, os, re, socket, subprocess, sys, time, traceback
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import xauth
+import vfp  # 動画の指紋（av は指紋を作るときだけ読み込む）
+import dupes
 
 ROOT     = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS     = os.path.join(ROOT, 'docs')
@@ -97,14 +99,17 @@ def fetch_list_posts(token, cfg, cutoff):
     return posts, inc, reached
 
 
-def list_members(token, cfg, now):
-    """リストのメンバー一覧。1人≒$0.01かかるので data/members.json に保存し、数日に1回だけ取り直す"""
-    path = os.path.join(DATA_DIR, 'members.json')
+MEMBERS_PATH = os.path.join(DATA_DIR, 'members.json')
+
+
+def list_members(token, cfg, now, force=False):
+    """リストのメンバー一覧。1人≒$0.01かかるので data/members.json に保存し、普段はそれを使う。
+    取り直すのは、一覧が無いとき・--refresh-members のときだけ。
+    メンバーを入れ替えたら scripts/members.command で変わった人だけ伝える（src/members.py）"""
+    path = MEMBERS_PATH
     try:
         cache = json.load(open(path, encoding='utf-8'))
-        age = now - datetime.fromisoformat(cache['fetched_at'])
-        if cache.get('list_id') == cfg['list_id'] and age < timedelta(days=cfg.get('members_refresh_days', 7)) \
-                and '--refresh-members' not in sys.argv:
+        if cache.get('list_id') == cfg['list_id'] and not force and '--refresh-members' not in sys.argv:
             return cache['members'], False
     except Exception:
         pass
@@ -125,6 +130,22 @@ def list_members(token, cfg, now):
         json.dump({'list_id': cfg['list_id'], 'fetched_at': now.isoformat(), 'members': members},
                   f, ensure_ascii=False, indent=1)
     return members, True
+
+
+def list_member_count(token, cfg, me_id):
+    """X上のリストの人数。自分が持っているリストの一覧から読む（自分のデータの読み取り≒$0.001）"""
+    next_token = None
+    while True:
+        p = {'max_results': 100, 'list.fields': 'member_count'}
+        if next_token:
+            p['pagination_token'] = next_token
+        j = xauth.api_get(f'/users/{me_id}/owned_lists', p, token)
+        for lst in j.get('data') or []:
+            if lst['id'] == cfg['list_id']:
+                return lst.get('member_count')
+        next_token = (j.get('meta') or {}).get('next_token')
+        if not next_token:
+            return None
 
 
 def fetch_member_posts(token, cfg, cutoff, members):
@@ -210,6 +231,21 @@ def kind_of(t, inc):
     return 'v' if types & {'video', 'animated_gif'} else 'p' if types else 't'
 
 
+SHARED_RE = re.compile(r'https?://(?:x|twitter)\.com/([^/]+)/status/\d+/(?:video|photo)/')
+
+
+def shared_from(t, username):
+    """Xの「動画を共有」で他アカウントの動画を貼った投稿なら、元のアカウント名を返す。
+    自分で上げた動画は、動画のリンク先が自分の投稿（x.com/本人/status/この投稿/video/1）になる。
+    他人の動画を貼ると、リンク先が元の投稿（x.com/元の人/status/…/video/1）になる"""
+    keys = set((t.get('attachments') or {}).get('media_keys', []))
+    for u in (t.get('entities') or {}).get('urls', []):
+        mt = SHARED_RE.match(u.get('expanded_url', ''))
+        if mt and u.get('media_key') in keys and mt.group(1).lower() != username.lower():
+            return mt.group(1)
+    return None
+
+
 def clean_text(t, text, hide_ids):
     """本文末尾の画像・動画・引用元への t.co リンクを消す（別枠で表示するため）"""
     for u in (t.get('entities') or {}).get('urls', []):
@@ -228,6 +264,7 @@ def velocity(p, now):
 def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
     users = inc['users']
     out = []
+    skipped = {'no_video': 0, 'quote_only': 0, 'shared': 0}  # 条件（表示数・返信数）は満たしたが外したもの
     for t in posts:
         if parse_time(t['created_at']) < cutoff:
             continue
@@ -246,11 +283,27 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
         username = u.get('username', 'i')
         quoted_ids = [r['id'] for r in t.get('referenced_tweets') or [] if r['type'] == 'quoted']
         media, media_from_quote = media_of(t, inc), False
+        is_video = lambda ms: any(x['type'] in ('video', 'animated_gif') for x in ms)
         if not media and quoted_ids and quoted_ids[0] in inc['tweets']:
             media = media_of(inc['tweets'][quoted_ids[0]], inc)  # 引用ポストは引用元の動画・画像を見せる
             media_from_quote = bool(media)
-        if cfg.get('video_only') and not any(x['type'] in ('video', 'animated_gif') for x in media):
+        if cfg.get('video_only') and not is_video(media):
+            skipped['no_video'] += 1
             continue  # テキストだけ・画像だけの投稿は候補にしない
+        if cfg.get('video_only') and media_from_quote and not cfg.get('quote_video_ok', True):
+            skipped['quote_only'] += 1
+            continue  # 動画が引用元にしか無い（本人はテキストだけ）引用ポストも候補にしない
+        if cfg.get('exclude_shared_video') and shared_from(t, username):
+            skipped['shared'] += 1
+            continue  # 他アカウントの動画を「動画を共有」で貼っただけの投稿
+        # 同じ動画の照合用（ページには出さない）: 本人の投稿の最初の動画
+        vid = None
+        if not media_from_quote:
+            for key in (t.get('attachments') or {}).get('media_keys', []):
+                mm = inc['media'].get(key) or {}
+                if mm.get('type') in ('video', 'animated_gif'):
+                    vid = {'media_key': key, 'mp4': vfp.smallest_mp4(mm)}
+                    break
         text = (t.get('note_tweet') or {}).get('text') or t.get('text', '')
         text = clean_text(t, text, quoted_ids)
         out.append({
@@ -271,6 +324,7 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
             'retweets': m.get('retweet_count', 0),
             'quotes': m.get('quote_count', 0),
             'bookmarks': m.get('bookmark_count', 0),
+            '_vid': vid,
         })
     out.sort(key=lambda p: p['impressions'], reverse=True)
     matched = len(out)
@@ -282,7 +336,7 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
     n = cfg['top_n']
     # 表示数の上位n件に、伸びが速い上位n件も加える（新しくて表示数がまだ少ない投稿を拾うため）
     out = [p for p in out if p['rank'] <= n or p['vrank'] <= n]
-    return out, matched
+    return out, matched, skipped
 
 
 def hourly_counts(posts, cutoff, now, member_mode=False):
@@ -421,26 +475,51 @@ def main():
         token = xauth.access_token()
         me_id = xauth.load_secrets().get('me_id')
         member_mode = cfg.get('fetch_mode', 'members') == 'members'
-        cost, users_read = 0.0, 0
+        cost, users_read, extra_cost = 0.0, 0, 0.0
         if member_mode:
             members, refreshed = list_members(token, cfg, now)
             if refreshed:
                 users_read = len(members)
                 log(f'リストのメンバー一覧を取り直しました: {len(members)}人')
+            if cfg.get('member_count_check', True):  # 入れ替えの伝え忘れに気づくため、人数だけ毎回確かめる
+                try:
+                    count = list_member_count(token, cfg, me_id)
+                    extra_cost += 0.001
+                    if count is not None and count != len(members):
+                        run['warning'] = (f'リストの人数（{count}人）とツールの一覧（{len(members)}人）が合いません。'
+                                          'scripts/members.command で変わった人を伝えてください')
+                        log('⚠️ ' + run['warning'])
+                        notify(f'リストの人数が合いません（X {count}人／ツール {len(members)}人）')
+                except xauth.ApiError as e:
+                    log(f'⚠️ リストの人数を確認できませんでした: {e.status}')
             members = [m for m in members if m['id'] != me_id]
             posts, inc, reached, per_member = fetch_member_posts(token, cfg, cutoff, members)
             update_member_stats(run_id, cfg, members, per_member, inc, now, cutoff)
         else:
             posts, inc, reached = fetch_list_posts(token, cfg, cutoff)
-        run["posts"], matched = pick_candidates(posts, inc, cfg, cutoff, me_id, now)
+        run["posts"], matched, skipped = pick_candidates(posts, inc, cfg, cutoff, me_id, now)
+        dup_stats = {}
+        try:  # 同じ動画の見分け（失敗しても候補の出力は続ける）
+            cache = dupes.FpCache(now)
+            _, c = dupes.update_replied(token, me_id, now, cache, log)
+            extra_cost += c
+            dup_stats = dupes.label(run['posts'], cache, log)
+            cache.save()
+        except Exception as e:
+            log(f'⚠️ 同じ動画の照合に失敗（候補はそのまま出します）: {e}\n{traceback.format_exc()}')
+        for p in run['posts']:
+            p.pop('_vid', None)
         in_window = sum(1 for t in posts if parse_time(t['created_at']) >= cutoff)
-        cost = len(posts) * cfg['cost_per_post_usd'] + users_read * cfg.get('cost_per_user_usd', 0.01)
+        cost = len(posts) * cfg['cost_per_post_usd'] + users_read * cfg.get('cost_per_user_usd', 0.01) + extra_cost
         run['stats'] = {'mode': 'members' if member_mode else 'list',
                         'fetched': len(posts), 'in_window': in_window, 'matched': matched,
+                        'skipped': skipped, **dup_stats,
                         'reached_window': reached, 'users_read': users_read,
                         'est_cost_usd': round(cost, 3)}
         log(f'取得 {len(posts)}件（{cfg["window_hours"]}h内 {in_window}件）→ 条件一致 {matched}件 → 候補 {len(run["posts"])}件'
             f'／推定 ${run["stats"]["est_cost_usd"]}' + ('（RT・返信は読まない方式）' if member_mode else ''))
+        log(f'外したもの: 動画なし {skipped["no_video"]}件・引用元だけ動画 {skipped["quote_only"]}件・'
+            f'他アカウントの動画を共有 {skipped["shared"]}件')
         if not reached:
             log(f'⚠️ 上限 {cfg["max_posts_per_run"]}件に達したため範囲を取り切れていません')
         hours = hourly_counts(posts, cutoff, now, member_mode)
