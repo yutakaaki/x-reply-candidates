@@ -1,0 +1,652 @@
+{
+ "id": "20261120-0600",
+ "run_at": "2026-11-20T06:00:02+09:00",
+ "window_start": "2026-11-19T21:00:02+09:00",
+ "conditions": {
+  "window_hours": 9,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 50,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "posts": [
+  {
+   "id": "2123431768099586062",
+   "url": "https://x.com/DlyGachiakuta/status/2123431768099586062",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123431768099586062",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "She is crazy 😭, poor Ume gets into trouble just for being a helpful student",
+   "created_at": "2026-11-20T00:02:39+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1205,
+     "h": 676,
+     "thumb": "https://pbs.twimg.com/media/HXfx5uUXAAAeAEU.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123431723312541696/vid/avc1/1280x718/qixV5XGW7aeGIX-0.mp4",
+     "duration": 33
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 20782,
+   "replies": 0,
+   "likes": 549,
+   "retweets": 19,
+   "quotes": 0,
+   "bookmarks": 203,
+   "rank": 1,
+   "velocity": 3489,
+   "vrank": 2
+  },
+  {
+   "id": "2123457210139509032",
+   "url": "https://x.com/Rixi0303/status/2123457210139509032",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123457210139509032",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Ch. 98 adaptation—IT'S FINALLY HERE OMG ♥️\n\nMIKI HAS FINALLY FALLEN IN LOVE WITH YOTA 😭\n\n#氷の城壁",
+   "created_at": "2026-11-20T01:43:45+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123456756240334849/img/Dou5GGVxVNlZ4iWw.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123456756240334849/vid/avc1/1280x720/k4h5gBnpjjc-rsxi.mp4",
+     "duration": 151
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 18305,
+   "replies": 3,
+   "likes": 1049,
+   "retweets": 118,
+   "quotes": 12,
+   "bookmarks": 159,
+   "rank": 2,
+   "velocity": 4285,
+   "vrank": 1
+  },
+  {
+   "id": "2123452444218925201",
+   "url": "https://x.com/Rixi0303/status/2123452444218925201",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123452444218925201",
+   "username": "Rixi0303",
+   "name": "𝓡𝓲𝔁𝓲 🌺",
+   "avatar": "https://pbs.twimg.com/profile_images/2054461968451596288/VjxkjpWn_normal.jpg",
+   "text": "Sometimes, you only realize how much someone truly cherished you after they've walked out of your life, and by then, it's already too late 🥀\n\nKoyun's advice to Momoka about how her selfishness was blinding her to the feelings of others feels PAINFULLY ironic now. Damn...",
+   "created_at": "2026-11-20T01:24:49+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123452323813113858/img/R78dy4s323o4HJVE.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123452323813113858/vid/avc1/1280x720/EVbMCxxrgckrOSnG.mp4",
+     "duration": 66
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 9857,
+   "replies": 1,
+   "likes": 342,
+   "retweets": 48,
+   "quotes": 2,
+   "bookmarks": 71,
+   "rank": 3,
+   "velocity": 2149,
+   "vrank": 4
+  },
+  {
+   "id": "2123416504809181679",
+   "url": "https://x.com/youknowmearound/status/2123416504809181679",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123416504809181679",
+   "username": "youknowmearound",
+   "name": "Natsuki",
+   "avatar": "https://pbs.twimg.com/profile_images/2117547788322086912/fgvpooY3_normal.jpg",
+   "text": "He saved the universe But he couldn't keep the  one person he loved💔💔",
+   "created_at": "2026-11-19T23:02:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123416312059965440/img/LJ2PTuoVGh6AXhkn.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123416312059965440/vid/avc1/1280x720/HbD9IcCDqDqhnyaX.mp4",
+     "duration": 161
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 8320,
+   "replies": 3,
+   "likes": 127,
+   "retweets": 7,
+   "quotes": 0,
+   "bookmarks": 34,
+   "rank": 4,
+   "velocity": 1194,
+   "vrank": 6
+  },
+  {
+   "id": "2123469872948802037",
+   "url": "https://x.com/youknowmearound/status/2123469872948802037",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123469872948802037",
+   "username": "youknowmearound",
+   "name": "Natsuki",
+   "avatar": "https://pbs.twimg.com/profile_images/2117547788322086912/fgvpooY3_normal.jpg",
+   "text": "A girl’s worst nightmare",
+   "created_at": "2026-11-20T02:34:04+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1072,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123469845065011200/img/bA5ADuL0qB9MMguK.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123469845065011200/vid/avc1/1288x720/9A1KKWzmby1FBOc6.mp4",
+     "duration": 38
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 8162,
+   "replies": 1,
+   "likes": 133,
+   "retweets": 3,
+   "quotes": 0,
+   "bookmarks": 65,
+   "rank": 5,
+   "velocity": 2378,
+   "vrank": 3
+  },
+  {
+   "id": "2123420194496458997",
+   "url": "https://x.com/OKonosuba/status/2123420194496458997",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123420194496458997",
+   "username": "OKonosuba",
+   "name": "Out Of Context Konosuba",
+   "avatar": "https://pbs.twimg.com/profile_images/2116900375642910720/LzKNG4B7_normal.jpg",
+   "text": "",
+   "created_at": "2026-11-19T23:16:40+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123420155673751552/img/M7z-8IPzR1hdBGC6.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123420155673751552/vid/avc1/1280x720/s0-96xxdt5WKZU0a.mp4?tag=14",
+     "duration": 12
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 4957,
+   "replies": 1,
+   "likes": 248,
+   "retweets": 18,
+   "quotes": 0,
+   "bookmarks": 39,
+   "rank": 6,
+   "velocity": 737,
+   "vrank": 10
+  },
+  {
+   "id": "2123401896840826969",
+   "url": "https://x.com/GOJO_6E/status/2123401896840826969",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123401896840826969",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "#حرق_ون_بيس | #ONEPIECE1199 \n\nبنسبة 99,99% شانكس هو الي بيجي الباف ويوقف لوفي بطور نيكا المدمر لأنه حاليا مافي احد في الباف يقدر يوقفه..",
+   "created_at": "2026-11-19T22:03:57+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123401860878888960/img/MTih1HCYQ6XPMDJJ.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123401860878888960/vid/avc1/1280x720/IxswAxHvbfUPOflx.mp4",
+     "duration": 71
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 4230,
+   "replies": 1,
+   "likes": 20,
+   "retweets": 2,
+   "quotes": 1,
+   "bookmarks": 1,
+   "rank": 7,
+   "velocity": 533,
+   "vrank": 14
+  },
+  {
+   "id": "2123478650112630851",
+   "url": "https://x.com/GOJO_6E/status/2123478650112630851",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123478650112630851",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "أطالب غوشو بتغيير لقب اكاي من الرصاصة الفضية إلى جلاد المنظمة..#فانز_كونان",
+   "created_at": "2026-11-20T03:08:57+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 888,
+     "h": 478,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123478629921308672/img/OpicfGoC05hnVKU_.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123478629921308672/vid/avc1/888x478/9KEs4s3M4qL0kfIM.mp4",
+     "duration": 59
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3235,
+   "replies": 1,
+   "likes": 98,
+   "retweets": 4,
+   "quotes": 2,
+   "bookmarks": 69,
+   "rank": 8,
+   "velocity": 1135,
+   "vrank": 7
+  },
+  {
+   "id": "2123421033139220747",
+   "url": "https://x.com/FlameKaizerX/status/2123421033139220747",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123421033139220747",
+   "username": "FlameKaizerX",
+   "name": "Flame",
+   "avatar": "https://pbs.twimg.com/profile_images/2022582243089367040/CKt85WVU_normal.jpg",
+   "text": "this is exactly how everyone should deal with their bullies fr 😭",
+   "created_at": "2026-11-19T23:20:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1038,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123396941249937408/img/QlCraJ-lmlwkDFB7.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123396941249937408/vid/avc1/1330x720/N2LSM-5sX_Vzymgp.mp4",
+     "duration": 51
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2876,
+   "replies": 0,
+   "likes": 27,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 11,
+   "rank": 9,
+   "velocity": 431,
+   "vrank": 16
+  },
+  {
+   "id": "2123487972406264119",
+   "url": "https://x.com/GOJO_6E/status/2123487972406264119",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123487972406264119",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Gon knew his adult form was able to take down 2 royal guards at once that’s why he stayed calm here..",
+   "created_at": "2026-11-20T03:45:59+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 2258,
+     "h": 1270,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2099939821837803520/img/IAR7k6ztpvSrNFLE.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2099939821837803520/vid/avc1/1280x720/EowMAhr78j00KOt9.mp4",
+     "duration": 22
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2747,
+   "replies": 0,
+   "likes": 27,
+   "retweets": 3,
+   "quotes": 2,
+   "bookmarks": 8,
+   "rank": 10,
+   "velocity": 1230,
+   "vrank": 5
+  },
+  {
+   "id": "2123468020962242784",
+   "url": "https://x.com/BlaxZenix/status/2123468020962242784",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123468020962242784",
+   "username": "BlaxZenix",
+   "name": "BlaxZenix ",
+   "avatar": "https://pbs.twimg.com/profile_images/2081311476594180097/N68uDQWq_normal.jpg",
+   "text": "I wish they pierced him with the swords 😞\n\n#hyouken #冰剣の魔術師 #冰剣の魔術師が世界を統べる",
+   "created_at": "2026-11-20T02:26:42+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123467740182691840/img/p7peGvt5AV3d_xti.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123467740182691840/vid/avc1/1280x720/sb0NS7VlI7I39f53.mp4?tag=14",
+     "duration": 95
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2490,
+   "replies": 0,
+   "likes": 18,
+   "retweets": 0,
+   "quotes": 0,
+   "bookmarks": 7,
+   "rank": 11,
+   "velocity": 700,
+   "vrank": 11
+  },
+  {
+   "id": "2123490661580042366",
+   "url": "https://x.com/OKonosuba/status/2123490661580042366",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123490661580042366",
+   "username": "OKonosuba",
+   "name": "Out Of Context Konosuba",
+   "avatar": "https://pbs.twimg.com/profile_images/2116900375642910720/LzKNG4B7_normal.jpg",
+   "text": "",
+   "created_at": "2026-11-20T03:56:40+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123490624946982912/img/BgDgVaef_o6JusF2.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123490624946982912/vid/avc1/1280x720/iGIT_4ebkQ2sY3hL.mp4?tag=14",
+     "duration": 26
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2149,
+   "replies": 1,
+   "likes": 132,
+   "retweets": 8,
+   "quotes": 0,
+   "bookmarks": 16,
+   "rank": 12,
+   "velocity": 1045,
+   "vrank": 9
+  },
+  {
+   "id": "2123491501359431907",
+   "url": "https://x.com/BOAnimeDubs/status/2123491501359431907",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123491501359431907",
+   "username": "BOAnimeDubs",
+   "name": "Best of Anime Dubs💫",
+   "avatar": "https://pbs.twimg.com/profile_images/2031486728431661056/r6MbmKW6_normal.jpg",
+   "text": "Tojima Wants to Be a Kamen Rider\n[Ep 3]\n\n🎙️Tojima - @Seitz_Unseen \n🎙️Yuriko - @ccarrollbeard 🌟 \n\nRequested by @AmogusKnight \"Yuriko henshins as Tackle in front of Tojima from Tojima Wants to become a Kamen Rider episode 3\"",
+   "created_at": "2026-11-20T04:00:01+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123470577516101632/img/5cRSQ7P0atxAShnk.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123470577516101632/vid/avc1/1280x720/KaOz0iVcsvUT8blm.mp4",
+     "duration": 60
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2101,
+   "replies": 2,
+   "likes": 108,
+   "retweets": 17,
+   "quotes": 1,
+   "bookmarks": 53,
+   "rank": 13,
+   "velocity": 1050,
+   "vrank": 8
+  },
+  {
+   "id": "2123478581326090674",
+   "url": "https://x.com/phantompain281/status/2123478581326090674",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123478581326090674",
+   "username": "phantompain281",
+   "name": "Phantom",
+   "avatar": "https://pbs.twimg.com/profile_images/1887846353260179457/eQ7rCaRH_normal.jpg",
+   "text": "Miyuki playing a guessing game with kaguya then he thinks she actually likes him but he finds out it's a dog😭",
+   "created_at": "2026-11-20T03:08:40+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123478416422756352/img/yN34s5ELeNv82bsv.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123478416422756352/vid/avc1/1280x720/hMKxxNmn6PLlqKOj.mp4",
+     "duration": 93
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1911,
+   "replies": 0,
+   "likes": 71,
+   "retweets": 7,
+   "quotes": 0,
+   "bookmarks": 14,
+   "rank": 14,
+   "velocity": 669,
+   "vrank": 12
+  },
+  {
+   "id": "2123425108996096084",
+   "url": "https://x.com/ChisatoAnime/status/2123425108996096084",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123425108996096084",
+   "username": "ChisatoAnime",
+   "name": "Chisato",
+   "avatar": "https://pbs.twimg.com/profile_images/2005967215141740545/htcFkidu_normal.jpg",
+   "text": "Douki Chan in big trouble the Cat sent that maid selfie 🤣",
+   "created_at": "2026-11-19T23:36:11+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123425069384994816/img/BmyyItamYyDD1AMs.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123425069384994816/vid/avc1/1280x720/NIKb_6rkaZQDf2vg.mp4",
+     "duration": 24
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1827,
+   "replies": 3,
+   "likes": 54,
+   "retweets": 2,
+   "quotes": 0,
+   "bookmarks": 29,
+   "rank": 15,
+   "velocity": 286,
+   "vrank": 19
+  },
+  {
+   "id": "2123462557264433190",
+   "url": "https://x.com/ReignOfBankai/status/2123462557264433190",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123462557264433190",
+   "username": "ReignOfBankai",
+   "name": "Angel🍓🍞",
+   "avatar": "https://pbs.twimg.com/profile_images/2121815566801338368/BVmVkSs3_normal.jpg",
+   "text": "The way Maomao gently brushes Jinshi's hair out of his face 🥺",
+   "created_at": "2026-11-20T02:05:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 722,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123457008833585152/img/xz2_TjqbhHHvS-fo.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123457008833585152/vid/avc1/1276x720/-7NrhEWwTVwoFEIv.mp4?tag=14",
+     "duration": 13
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1657,
+   "replies": 1,
+   "likes": 112,
+   "retweets": 11,
+   "quotes": 1,
+   "bookmarks": 11,
+   "rank": 16,
+   "velocity": 423,
+   "vrank": 17
+  },
+  {
+   "id": "2123472623208411193",
+   "url": "https://x.com/ReignOfBankai/status/2123472623208411193",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123472623208411193",
+   "username": "ReignOfBankai",
+   "name": "Angel🍓🍞",
+   "avatar": "https://pbs.twimg.com/profile_images/2121815566801338368/BVmVkSs3_normal.jpg",
+   "text": "Maomao making Jinshi laugh so much with her silly makeup was so precious",
+   "created_at": "2026-11-20T02:45:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 722,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123463922309087233/img/yXcoOXJ7TlULPZ9m.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123463922309087233/vid/avc1/1276x720/NVli6T1TRKtucqv6.mp4?tag=14",
+     "duration": 51
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1403,
+   "replies": 2,
+   "likes": 91,
+   "retweets": 11,
+   "quotes": 1,
+   "bookmarks": 7,
+   "rank": 17,
+   "velocity": 432,
+   "vrank": 15
+  },
+  {
+   "id": "2123464073757204964",
+   "url": "https://x.com/BlaxZenix/status/2123464073757204964",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123464073757204964",
+   "username": "BlaxZenix",
+   "name": "BlaxZenix ",
+   "avatar": "https://pbs.twimg.com/profile_images/2081311476594180097/N68uDQWq_normal.jpg",
+   "text": "Every week I love how this anime plays the opening, it's really good \n\n#hyouken #冰剣の魔術師 #冰剣の魔術師が世界を統べる",
+   "created_at": "2026-11-20T02:11:01+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123463938926952448/img/y1BNJJbWOFo7KATi.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123463938926952448/vid/avc1/1280x720/hZlqta5tkvw2oEK8.mp4?tag=14",
+     "duration": 172
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1396,
+   "replies": 0,
+   "likes": 12,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 4,
+   "rank": 18,
+   "velocity": 366,
+   "vrank": 18
+  },
+  {
+   "id": "2123486355057770962",
+   "url": "https://x.com/AniClipx/status/2123486355057770962",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123486355057770962",
+   "username": "AniClipx",
+   "name": "Anime Clips",
+   "avatar": "https://pbs.twimg.com/profile_images/2038635451981197312/EvXqZPpY_normal.jpg",
+   "text": "This genuinely pissed me off",
+   "created_at": "2026-11-20T03:39:34+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1270,
+     "h": 718,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123486296601489408/img/I7F9Fw6aKPa41IL8.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123486296601489408/vid/avc1/1270x718/a1Zpks6RmqSWIysZ.mp4",
+     "duration": 87
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1384,
+   "replies": 2,
+   "likes": 19,
+   "retweets": 4,
+   "quotes": 0,
+   "bookmarks": 3,
+   "rank": 19,
+   "velocity": 591,
+   "vrank": 13
+  },
+  {
+   "id": "2123455007496245384",
+   "url": "https://x.com/ReignOfBankai/status/2123455007496245384",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2123455007496245384",
+   "username": "ReignOfBankai",
+   "name": "Angel🍓🍞",
+   "avatar": "https://pbs.twimg.com/profile_images/2121815566801338368/BVmVkSs3_normal.jpg",
+   "text": "Jinshi unknowingly cleaning his face with Maomao's feet water, he's so downbad I don't think he would've cared if he knew 😭",
+   "created_at": "2026-11-20T01:35:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 722,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2123452934650257408/img/8To4LxjzFKDzVvbL.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2123452934650257408/vid/avc1/1276x720/cu-IaIwAWC3Fl8yo.mp4?tag=14",
+     "duration": 64
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1157,
+   "replies": 0,
+   "likes": 43,
+   "retweets": 6,
+   "quotes": 1,
+   "bookmarks": 4,
+   "rank": 20,
+   "velocity": 262,
+   "vrank": 20
+  }
+ ],
+ "stats": {
+  "mode": "members",
+  "fetched": 61,
+  "in_window": 61,
+  "matched": 20,
+  "skipped": {
+   "no_video": 3,
+   "quote_only": 0,
+   "shared": 9
+  },
+  "replied_match": 0,
+  "dup_in_run": 0,
+  "fingerprinted": 20,
+  "reached_window": true,
+  "users_read": 0,
+  "est_cost_usd": 0.311
+ }
+}
