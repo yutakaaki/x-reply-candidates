@@ -311,8 +311,11 @@ def pick_candidates(posts, inc, cfg, cutoff, me_id, now):
         if cfg.get('video_only') and media_from_quote and not cfg.get('quote_video_ok', True):
             skipped['quote_only'] += 1
             continue  # 動画が引用元にしか無い（本人はテキストだけ）引用ポストも候補にしない
-        if cfg.get('exclude_shared_video') and shared_from(t, username):
+        src = cfg.get('exclude_shared_video') and shared_from(t, username)
+        if src:
             skipped['shared'] += 1
+            # 確認用にログだけに残す（公開ページには出さない）
+            log(f'  共有動画で除外: https://x.com/{username}/status/{t["id"]} ← 元 @{src}（表示{imp}）')
             continue  # 他アカウントの動画を「動画を共有」で貼っただけの投稿
         # 同じ動画の照合用（ページには出さない）: 本人の投稿の最初の動画
         vid = None
