@@ -1,0 +1,697 @@
+{
+ "id": "20261124-0600",
+ "run_at": "2026-11-24T06:00:02+09:00",
+ "window_start": "2026-11-23T21:00:02+09:00",
+ "conditions": {
+  "window_hours": 9,
+  "min_impressions": 1000,
+  "max_replies": 10,
+  "top_n": 50,
+  "exclude_retweets": true,
+  "exclude_replies": true
+ },
+ "posts": [
+  {
+   "id": "2124870584853316054",
+   "url": "https://x.com/FlameKaizerX/status/2124870584853316054",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124870584853316054",
+   "username": "FlameKaizerX",
+   "name": "Flame",
+   "avatar": "https://pbs.twimg.com/profile_images/2022582243089367040/CKt85WVU_normal.jpg",
+   "text": "the fact that she's more upset that he immediately pulled away 😭",
+   "created_at": "2026-11-23T23:20:00+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124866127759364096/img/So8KmB-wXyrinnTf.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124866127759364096/vid/avc1/1280x720/eFDS_BnQFTHV3-Rx.mp4",
+     "duration": 91
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 54412,
+   "replies": 7,
+   "likes": 1006,
+   "retweets": 48,
+   "quotes": 0,
+   "bookmarks": 531,
+   "rank": 1,
+   "velocity": 8161,
+   "vrank": 1
+  },
+  {
+   "id": "2124872326160265242",
+   "url": "https://x.com/AnimeVerse511/status/2124872326160265242",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124872326160265242",
+   "username": "AnimeVerse511",
+   "name": "AnimeVerse",
+   "avatar": "https://pbs.twimg.com/profile_images/2082589414962720768/oQOV5hWg_normal.jpg",
+   "text": "Screentime: 30 seconds\nDamage: 1000%",
+   "created_at": "2026-11-23T23:26:55+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124872251182903297/img/bK-jadoFYKCwkDlL.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124872251182903297/vid/avc1/1280x720/gyO64x4CL1ME6Xj9.mp4",
+     "duration": 45
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 28593,
+   "replies": 1,
+   "likes": 103,
+   "retweets": 6,
+   "quotes": 0,
+   "bookmarks": 30,
+   "rank": 2,
+   "velocity": 4364,
+   "vrank": 2
+  },
+  {
+   "id": "2124898024027467911",
+   "url": "https://x.com/GOJO_6E/status/2124898024027467911",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124898024027467911",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "Megumi wanted to drop a mahoraga vs sukuna in season 1 but realized that there is no budget for it..",
+   "created_at": "2026-11-24T01:09:02+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 2256,
+     "h": 1280,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2103881745120493568/img/vuUWfXm69PfrKING.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2103881745120493568/vid/avc1/1268x720/oEwOkPUKxmV0W3-1.mp4",
+     "duration": 59
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 9690,
+   "replies": 0,
+   "likes": 150,
+   "retweets": 5,
+   "quotes": 3,
+   "bookmarks": 68,
+   "rank": 3,
+   "velocity": 1998,
+   "vrank": 5
+  },
+  {
+   "id": "2124923163805098149",
+   "url": "https://x.com/youknowmearound/status/2124923163805098149",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124923163805098149",
+   "username": "youknowmearound",
+   "name": "Natsuki",
+   "avatar": "https://pbs.twimg.com/profile_images/2117547788322086912/fgvpooY3_normal.jpg",
+   "text": "He misunderstood everything 😂",
+   "created_at": "2026-11-24T02:48:56+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1838,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124923083303915520/img/T1TNCtdS_HIOijrs.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124923083303915520/vid/avc1/1224x720/WRxDiFjUTPE2v1al.mp4",
+     "duration": 65
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 9093,
+   "replies": 0,
+   "likes": 131,
+   "retweets": 5,
+   "quotes": 0,
+   "bookmarks": 52,
+   "rank": 4,
+   "velocity": 2855,
+   "vrank": 3
+  },
+  {
+   "id": "2124877356418363826",
+   "url": "https://x.com/DlyGachiakuta/status/2124877356418363826",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124877356418363826",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "No way she is 38 😭, Kotobuki’s mom is soo cute, wonder how will the others react",
+   "created_at": "2026-11-23T23:46:54+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1282,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124877319135191040/img/vsmm8deldHKaqJmr.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124877319135191040/vid/avc1/1282x720/dILTjdNo2WLacK8Q.mp4",
+     "duration": 24
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 8079,
+   "replies": 1,
+   "likes": 485,
+   "retweets": 15,
+   "quotes": 1,
+   "bookmarks": 147,
+   "rank": 5,
+   "velocity": 1299,
+   "vrank": 7,
+   "replied": {
+    "post_url": "https://x.com/AnimeVerse511/status/2123720999048794318",
+    "username": "AnimeVerse511",
+    "replied_at": "2026-11-20T10:33:14.000Z",
+    "same_post": false,
+    "share": 0.88
+   }
+  },
+  {
+   "id": "2124868959216476316",
+   "url": "https://x.com/Rukia1994443/status/2124868959216476316",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124868959216476316",
+   "username": "Rukia1994443",
+   "name": "Rukia",
+   "avatar": "https://pbs.twimg.com/profile_images/2009095426839072768/F5tgj4MK_normal.jpg",
+   "text": "Ngl, this femboy looking mf has more aura than Gojo.",
+   "created_at": "2026-11-23T23:13:32+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HX0NDPxaEAASF03.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124868872427933697/vid/avc1/1280x720/6hR-w87WTW88zidF.mp4",
+     "duration": 94
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7906,
+   "replies": 4,
+   "likes": 139,
+   "retweets": 16,
+   "quotes": 0,
+   "bookmarks": 33,
+   "rank": 6,
+   "velocity": 1167,
+   "vrank": 8
+  },
+  {
+   "id": "2124910028058755191",
+   "url": "https://x.com/DlyGachiakuta/status/2124910028058755191",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124910028058755191",
+   "username": "DlyGachiakuta",
+   "name": "Daily Anime Post",
+   "avatar": "https://pbs.twimg.com/profile_images/2027258626881327104/ixZRTjyE_normal.jpg",
+   "text": "Her voice makes her extra cute, she wants to give the best 1st impression to Kotobuki’s friends 😭",
+   "created_at": "2026-11-24T01:56:44+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 718,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124909963214553088/img/TDuC9TrHVHZf7CbU.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124909963214553088/vid/avc1/1280x718/KxEYHE9ZemvgYyAo.mp4",
+     "duration": 19
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7729,
+   "replies": 0,
+   "likes": 425,
+   "retweets": 19,
+   "quotes": 0,
+   "bookmarks": 157,
+   "rank": 7,
+   "velocity": 1906,
+   "vrank": 6
+  },
+  {
+   "id": "2124868119923659181",
+   "url": "https://x.com/youknowmearound/status/2124868119923659181",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124868119923659181",
+   "username": "youknowmearound",
+   "name": "Natsuki",
+   "avatar": "https://pbs.twimg.com/profile_images/2117547788322086912/fgvpooY3_normal.jpg",
+   "text": "Her: Stop staring \nHim: Staring intensifies 😭",
+   "created_at": "2026-11-23T23:10:12+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124868074671316992/img/xESHnPpT6I1a1Yv1.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124868074671316992/vid/avc1/1280x720/ZG7k-tSLooDJ90wB.mp4",
+     "duration": 14
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 7082,
+   "replies": 0,
+   "likes": 187,
+   "retweets": 9,
+   "quotes": 1,
+   "bookmarks": 56,
+   "rank": 8,
+   "velocity": 1037,
+   "vrank": 9
+  },
+  {
+   "id": "2124876621807304899",
+   "url": "https://x.com/yellow_primal/status/2124876621807304899",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124876621807304899",
+   "username": "yellow_primal",
+   "name": "Carrera💛✨",
+   "avatar": "https://pbs.twimg.com/profile_images/1967142789797605386/p7Vy4JjV_normal.jpg",
+   "text": "I have an idea for black Frieza arc\n\nFrieza goes to universe 6 Saiyan planet to destroy them and hearing this Goku and Vegeta rushes there to save them",
+   "created_at": "2026-11-23T23:43:59+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124876529394196480/img/854QaKDfuxFFevCx.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124876529394196480/vid/avc1/1280x720/ShwbsTypGWzDcrFi.mp4",
+     "duration": 124
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5861,
+   "replies": 0,
+   "likes": 61,
+   "retweets": 2,
+   "quotes": 0,
+   "bookmarks": 23,
+   "rank": 9,
+   "velocity": 935,
+   "vrank": 10
+  },
+  {
+   "id": "2124873251143008623",
+   "url": "https://x.com/coco_0067/status/2124873251143008623",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124873251143008623",
+   "username": "coco_0067",
+   "name": "CoCo",
+   "avatar": "https://pbs.twimg.com/profile_images/2029567346600509440/jEekQjpw_normal.jpg",
+   "text": "Academy Entrance exam is like a piece of cake for him",
+   "created_at": "2026-11-23T23:30:35+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124873197673930752/img/6mbRyM-6v6NMrp-w.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124873197673930752/vid/avc1/1280x720/rW09HVjmGqM6uc8x.mp4",
+     "duration": 76
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 5179,
+   "replies": 3,
+   "likes": 133,
+   "retweets": 13,
+   "quotes": 0,
+   "bookmarks": 39,
+   "rank": 10,
+   "velocity": 798,
+   "vrank": 15
+  },
+  {
+   "id": "2124899649689387068",
+   "url": "https://x.com/GOJO_6E/status/2124899649689387068",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124899649689387068",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "It’s funny that mahoraga waited for megumi to aura farm before knocking him out..",
+   "created_at": "2026-11-24T01:15:29+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124899536032174080/img/ia7rXQ6jfpSrh9Po.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124899536032174080/vid/avc1/1280x720/Q2V5qno20e9uycY4.mp4",
+     "duration": 215
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 4126,
+   "replies": 1,
+   "likes": 95,
+   "retweets": 6,
+   "quotes": 2,
+   "bookmarks": 62,
+   "rank": 11,
+   "velocity": 870,
+   "vrank": 12
+  },
+  {
+   "id": "2124880114857185550",
+   "url": "https://x.com/Yukari1a/status/2124880114857185550",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124880114857185550",
+   "username": "Yukari1a",
+   "name": "Yukari",
+   "avatar": "https://pbs.twimg.com/profile_images/2063233287901081600/133Igxrf_normal.jpg",
+   "text": "Every Boy Dreams of saving their Crush like this 😍",
+   "created_at": "2026-11-23T23:57:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124879711851696128/img/Auo5OP0zGqGcazbH.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124879711851696128/vid/avc1/1280x720/9iMQJMiCloIy4khz.mp4",
+     "duration": 62
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3939,
+   "replies": 0,
+   "likes": 66,
+   "retweets": 1,
+   "quotes": 0,
+   "bookmarks": 25,
+   "rank": 12,
+   "velocity": 653,
+   "vrank": 16
+  },
+  {
+   "id": "2124910232937586859",
+   "url": "https://x.com/Sayngelic/status/2124910232937586859",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124910232937586859",
+   "username": "Sayngelic",
+   "name": "🇸‌🇦‌🇾‌🇳‌🍡",
+   "avatar": "https://pbs.twimg.com/profile_images/2005317073900126209/mYgp900k_normal.jpg",
+   "text": "Hello, I Am a Witch and My Crush Wants Me to Make a Love Potion!\n[Episode 8]\n\nThese two are so adorable together",
+   "created_at": "2026-11-24T01:57:33+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/media/HX0yllsW8AAmy8S.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124909555691773952/vid/avc1/1280x720/zQYo9Om1O9_A1coX.mp4",
+     "duration": 27
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3712,
+   "replies": 2,
+   "likes": 123,
+   "retweets": 9,
+   "quotes": 1,
+   "bookmarks": 31,
+   "rank": 13,
+   "velocity": 918,
+   "vrank": 11
+  },
+  {
+   "id": "2124908049936646293",
+   "url": "https://x.com/phantompain281/status/2124908049936646293",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124908049936646293",
+   "username": "phantompain281",
+   "name": "Phantom",
+   "avatar": "https://pbs.twimg.com/profile_images/1887846353260179457/eQ7rCaRH_normal.jpg",
+   "text": "Chika teaching miyuki how to play volleyball is so funny they're having a training arc",
+   "created_at": "2026-11-24T01:48:52+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124907969657585664/img/Z-vh-N65ovmyE2Cq.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124907969657585664/vid/avc1/1280x720/zz7DNHv-Dk4LJDYH.mp4",
+     "duration": 62
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3487,
+   "replies": 0,
+   "likes": 78,
+   "retweets": 11,
+   "quotes": 0,
+   "bookmarks": 18,
+   "rank": 14,
+   "velocity": 833,
+   "vrank": 13
+  },
+  {
+   "id": "2124952284874654048",
+   "url": "https://x.com/milkynoe/status/2124952284874654048",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124952284874654048",
+   "username": "milkynoe",
+   "name": "𝐌𝐢𝐥𝐤 ✿",
+   "avatar": "https://pbs.twimg.com/profile_images/1788091131604901888/rzkHLo_q_normal.jpg",
+   "text": "EPISODE 10 MARIN NOISES MY BELOVED 😭",
+   "created_at": "2026-11-24T04:44:39+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124952135213187073/img/XI_wQTeocRZyM9Wo.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124952135213187073/vid/avc1/1280x720/cwLmSlhoDQX2v3tv.mp4",
+     "duration": 60
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 3469,
+   "replies": 5,
+   "likes": 345,
+   "retweets": 24,
+   "quotes": 1,
+   "bookmarks": 53,
+   "rank": 15,
+   "velocity": 2761,
+   "vrank": 4
+  },
+  {
+   "id": "2124926662663897534",
+   "url": "https://x.com/GOJO_6E/status/2124926662663897534",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124926662663897534",
+   "username": "GOJO_6E",
+   "name": "A7MED",
+   "avatar": "https://pbs.twimg.com/profile_images/2099846110810427393/skZJq8wp_normal.jpg",
+   "text": "أتوقع اغلب فانز كونان يتفقون انه هذا الفيلم من بين افضل خمس أفلام في كونان..#فانز_كونان",
+   "created_at": "2026-11-24T03:02:50+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1036,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124926523496972288/img/sAPFtQ6gebgkGH8e.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124926523496972288/vid/avc1/1334x720/bE452RSFGdPTrnpQ.mp4",
+     "duration": 82
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 2460,
+   "replies": 4,
+   "likes": 156,
+   "retweets": 6,
+   "quotes": 3,
+   "bookmarks": 106,
+   "rank": 16,
+   "velocity": 833,
+   "vrank": 14
+  },
+  {
+   "id": "2124873726458253478",
+   "url": "https://x.com/Musashi88720/status/2124873726458253478",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124873726458253478",
+   "username": "Musashi88720",
+   "name": "Musashi",
+   "avatar": "https://pbs.twimg.com/profile_images/2008792015639900161/NTf_hy-Y_normal.jpg",
+   "text": "Why does bro get jealous over her when he sleeps with other women every day without feeling an ounce of guilt?",
+   "created_at": "2026-11-23T23:32:29+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/media/HX0RYtqbQAAByUO.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124873658732797952/vid/avc1/1280x720/JMrv2CKO9JRtKtuj.mp4",
+     "duration": 67
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1991,
+   "replies": 0,
+   "likes": 35,
+   "retweets": 4,
+   "quotes": 0,
+   "bookmarks": 9,
+   "rank": 17,
+   "velocity": 308,
+   "vrank": 19
+  },
+  {
+   "id": "2124886200997888304",
+   "url": "https://x.com/Peakanime0/status/2124886200997888304",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124886200997888304",
+   "username": "Peakanime0",
+   "name": "Yuki",
+   "avatar": "https://pbs.twimg.com/profile_images/2031118418360020994/ikDBhB40_normal.jpg",
+   "text": "She showed up to school with such a terrible case of bedhead that her friend had to give her an entire makeover 😭",
+   "created_at": "2026-11-24T00:22:03+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1920,
+     "h": 1080,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124886079656673280/img/O5ufbCirqVVBox6T.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124886079656673280/vid/avc1/1280x720/yF6dHJD_YMzEjyvL.mp4",
+     "duration": 121
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1809,
+   "replies": 1,
+   "likes": 45,
+   "retweets": 4,
+   "quotes": 0,
+   "bookmarks": 10,
+   "rank": 18,
+   "velocity": 321,
+   "vrank": 18
+  },
+  {
+   "id": "2124853146832744478",
+   "url": "https://x.com/phantompain281/status/2124853146832744478",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124853146832744478",
+   "username": "phantompain281",
+   "name": "Phantom",
+   "avatar": "https://pbs.twimg.com/profile_images/1887846353260179457/eQ7rCaRH_normal.jpg",
+   "text": "Miyuki is so ass at volleyball, not the disappointed look from kaguya😭",
+   "created_at": "2026-11-23T22:10:42+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124853060224610304/img/ur3dtutFUpF3BuSW.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124853060224610304/vid/avc1/1280x720/aT_92L0SLt5AGO8S.mp4",
+     "duration": 83
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1615,
+   "replies": 1,
+   "likes": 15,
+   "retweets": 2,
+   "quotes": 0,
+   "bookmarks": 4,
+   "rank": 19,
+   "velocity": 206,
+   "vrank": 20,
+   "replied": {
+    "post_url": "https://x.com/phantompain281/status/2124853146832744478",
+    "username": "phantompain281",
+    "replied_at": "2026-11-23T13:37:41.000Z",
+    "same_post": true,
+    "share": 1.0
+   }
+  },
+  {
+   "id": "2124845569017626857",
+   "url": "https://x.com/mitsuritwt/status/2124845569017626857",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124845569017626857",
+   "username": "mitsuritwt",
+   "name": "Komi",
+   "avatar": "https://pbs.twimg.com/profile_images/2036118419238731776/dNcjNGNU_normal.jpg",
+   "text": "You can question his methods, but you can't deny how iconic this character is",
+   "created_at": "2026-11-23T21:40:36+09:00",
+   "is_quote": true,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2101523265412116480/img/WwArmdlnOm7ZiSXl.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2101523265412116480/vid/avc1/1280x720/P4gOMyWZAQK2E36t.mp4",
+     "duration": 185
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1359,
+   "replies": 0,
+   "likes": 18,
+   "retweets": 0,
+   "quotes": 0,
+   "bookmarks": 7,
+   "rank": 20,
+   "velocity": 163,
+   "vrank": 21
+  },
+  {
+   "id": "2124941076226093357",
+   "url": "https://x.com/OKonosuba/status/2124941076226093357",
+   "reply_url": "https://x.com/intent/post?in_reply_to=2124941076226093357",
+   "username": "OKonosuba",
+   "name": "Out Of Context Konosuba",
+   "avatar": "https://pbs.twimg.com/profile_images/2116900375642910720/LzKNG4B7_normal.jpg",
+   "text": "",
+   "created_at": "2026-11-24T04:00:06+09:00",
+   "is_quote": false,
+   "media": [
+    {
+     "type": "video",
+     "w": 1280,
+     "h": 720,
+     "thumb": "https://pbs.twimg.com/amplify_video_thumb/2124941023335870464/img/Vh_JB7yQ4r0c3Ad8.jpg",
+     "mp4": "https://video.twimg.com/amplify_video/2124941023335870464/vid/avc1/1280x720/EfeQ-N0-zTVpPUVl.mp4?tag=14",
+     "duration": 29
+    }
+   ],
+   "media_from_quote": false,
+   "impressions": 1149,
+   "replies": 0,
+   "likes": 47,
+   "retweets": 3,
+   "quotes": 0,
+   "bookmarks": 5,
+   "rank": 21,
+   "velocity": 575,
+   "vrank": 17
+  }
+ ],
+ "stats": {
+  "mode": "members",
+  "fetched": 55,
+  "in_window": 55,
+  "matched": 21,
+  "skipped": {
+   "no_video": 4,
+   "quote_only": 0,
+   "shared": 6
+  },
+  "replied_match": 2,
+  "dup_in_run": 0,
+  "fingerprinted": 21,
+  "reached_window": true,
+  "users_read": 0,
+  "est_cost_usd": 0.342
+ }
+}
