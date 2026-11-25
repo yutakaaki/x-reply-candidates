@@ -4,7 +4,7 @@
 
 使うデータ（追加のAPI料金はかからない）
   - docs/runs/*.json        … 過去の回で候補に入った投稿（最大60回分）
-  - data/members.json       … いまのリストのメンバー（run.py が週1回取り直す）
+  - data/members.json       … いまのリストのメンバー（members.py で変わった人だけ反映）
   - data/member_stats.json  … 11/14以降の回でメンバーごとに読んだ投稿の表示数
 """
 import glob, json, os, statistics
@@ -96,7 +96,7 @@ def main():
                      f"{f(r['per_day'], '.1f')} | {f(r['median'], ',.0f')} | {r['hit']}/{r['posts']} | {'—' if r['video'] is None else format(r['video'], '.0%')} | "
                      f"{'—' if r['cost_month'] is None else '$' + format(r['cost_month'], '.2f')} |")
     total = sum(r['cost_month'] or 0 for r in rows)
-    lines += ['', f'月の費用の合計（メンバー一覧の取り直し 週1回≒$0.5 を除く）: 約${total:.1f}']
+    lines += ['', f'月の費用の合計（返信済みの記録≒月$3 を除く）: 約${total:.1f}']
     kinds = ''.join(s['kinds'] for s in stats.values())
     if kinds:
         v, p_, t_ = (kinds.count(k) / len(kinds) for k in 'vpt')
